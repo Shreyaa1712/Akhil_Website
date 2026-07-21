@@ -118,41 +118,73 @@ export default function Home() {
       </section>
 
       {/* Section 3: Our Services Preview */}
-      <section className="w-full bg-[var(--brand-maroon-dark)] text-[var(--brand-light)] py-24 mt-10 relative">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="w-full bg-[var(--brand-maroon-dark)] text-[var(--brand-light)] py-24 mt-10 relative overflow-hidden">
+        {/* Ambient background glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center mb-16 gap-4">
             <div className="inline-flex items-center gap-2 text-[var(--brand-peach)] font-bold tracking-widest uppercase text-sm">
               <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
               Practice Areas
               <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold">Our Services</h2>
+            <h2 className="text-4xl md:text-5xl font-bold font-serif">Our Services</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             {[
-              { id: '01', title: 'ITD', full: 'International Trade Law', icon: '/images/icon-itd.png' },
-              { id: '02', title: 'TD', full: 'Trade Defence', icon: '/images/icon-td.png' },
-              { id: '03', title: 'C&I', full: 'Customs & Internal Market', icon: '/images/icon-ci.png' },
-              { id: '04', title: 'ESG & RA', full: 'Trade-related ESG', icon: '/images/icon-esg.png' },
+              { id: '01', title: 'ITD', full: 'International Trade Law', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement' },
+              { id: '02', title: 'TD', full: 'Trade Defence', icon: '/images/icon-td.png', slug: 'trade-defence' },
+              { id: '03', title: 'C&I', full: 'Customs & Internal Market', icon: '/images/icon-ci.png', slug: 'customs-and-importation' },
+              { id: '04', title: 'ESG & RA', full: 'Trade-related ESG', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory' },
             ].map((service) => (
-              <div key={service.id} className="group bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col items-center text-center relative overflow-hidden backdrop-blur-sm hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--brand-peach)]/10 cursor-pointer">
-                <div className="absolute top-4 left-4 text-4xl font-black text-white/5 pointer-events-none group-hover:text-white/10 transition-colors">
+              <Link 
+                key={service.id} 
+                href={`/services/${service.slug}`}
+                className="group bg-white/5 border border-white/10 hover:border-[var(--brand-peach)]/60 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 flex flex-col justify-between items-center text-center relative overflow-hidden backdrop-blur-md hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[var(--brand-peach)]/20 cursor-pointer min-h-[300px]"
+              >
+                {/* Top Border Glow Beam */}
+                <div className="absolute top-0 left-0 w-0 h-1 bg-[var(--brand-peach)] shadow-[0_0_12px_var(--brand-peach)] group-hover:w-full transition-all duration-500 ease-out"></div>
+
+                {/* Animated Watermark Number */}
+                <div className="absolute top-3 left-4 text-5xl font-black text-white/5 pointer-events-none group-hover:text-[var(--brand-peach)]/20 group-hover:scale-110 transition-all duration-500 font-serif">
                   {service.id}
                 </div>
-                <div className="h-20 w-20 bg-[var(--brand-peach)] rounded-full flex items-center justify-center mb-6 p-4 shadow-lg">
-                  <img src={service.icon} alt={service.title} className="w-full h-full object-contain filter drop-shadow-md brightness-0 invert-0 sepia-[1] saturate-[100] hue-rotate-[330deg]" style={{filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)'}} />
+
+                <div className="flex flex-col items-center z-10 w-full pt-4">
+                  {/* Icon Badge */}
+                  <div className="h-20 w-20 bg-[var(--brand-peach)] rounded-2xl flex items-center justify-center mb-6 p-4 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                    <img 
+                      src={service.icon} 
+                      alt={service.title} 
+                      className="w-full h-full object-contain filter drop-shadow-md" 
+                      style={{filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)'}} 
+                    />
+                  </div>
+
+                  <h3 className="text-2xl font-bold font-serif mb-2 text-[var(--brand-peach)] group-hover:text-white transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-white/80 group-hover:text-white leading-relaxed">
+                    {service.full}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-[var(--brand-peach)]">{service.title}</h3>
-                <p className="text-sm opacity-80">{service.full}</p>
-              </div>
+
+                {/* Hover Action Link Indicator */}
+                <div className="mt-6 pt-4 border-t border-white/10 w-full flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[var(--brand-peach)] opacity-80 group-hover:opacity-100 transition-opacity z-10">
+                  <span>Explore Practice</span>
+                  <ChevronRight className="ml-1 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
             ))}
 
           </div>
 
           <div className="mt-16 text-center">
-            <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 bg-[var(--brand-peach)] text-[var(--brand-maroon-dark)] rounded-full text-lg font-bold hover:bg-white hover:shadow-xl transition-all duration-300">
+            <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 bg-[var(--brand-peach)] text-[var(--brand-maroon-dark)] rounded-full text-lg font-bold hover:bg-white hover:shadow-xl transition-all duration-300 hover:scale-105">
               View All Services
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
@@ -211,6 +243,53 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Academic & Thought Leadership */}
+      <section className="w-full bg-white py-24 border-t border-[var(--brand-peach)]/50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-[var(--brand-peach)]/20 via-white to-[var(--brand-peach)]/10 rounded-3xl p-8 md:p-14 border border-[var(--brand-peach)]/60 shadow-xl shadow-[var(--brand-maroon)]/5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              
+              <div className="lg:col-span-8 flex flex-col gap-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--brand-maroon)]/10 text-[var(--brand-maroon)] text-xs font-bold uppercase tracking-widest rounded-full w-fit">
+                  Practice-Integrated Research & Teaching
+                </div>
+
+                <h2 className="text-3xl md:text-5xl font-bold font-serif text-[var(--brand-maroon-dark)] leading-tight">
+                  Academic & Thought Leadership
+                </h2>
+
+                <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
+                  Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> (formerly <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute, Bern</strong>), training government officials and students across Europe, Asia, Africa, and South America.
+                </p>
+
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
+                    KU Leuven & ELPO Athens Faculty
+                  </div>
+                  <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
+                    10+ Peer-Reviewed Publications
+                  </div>
+                  <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
+                    Global Capacity Building
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
+                <Link 
+                  href="/academic" 
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-5 bg-[var(--brand-maroon)] hover:bg-[var(--brand-maroon-dark)] text-white font-bold text-sm uppercase tracking-wider rounded-2xl transition-all duration-300 shadow-xl shadow-[var(--brand-maroon)]/20 hover:scale-105 group text-center"
+                >
+                  <span>Explore Academic Work</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>

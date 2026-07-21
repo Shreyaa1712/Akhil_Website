@@ -29,6 +29,7 @@ export default function Footer() {
           <Link href="/about" className="hover:text-[var(--brand-maroon-dark)] transition-colors">About</Link>
           <Link href="/services" className="hover:text-[var(--brand-maroon-dark)] transition-colors">Services</Link>
           <Link href="/work" className="hover:text-[var(--brand-maroon-dark)] transition-colors">Work</Link>
+          <Link href="/academic" className="hover:text-[var(--brand-maroon-dark)] transition-colors">Academic</Link>
           <Link href="/contact" className="hover:text-[var(--brand-maroon-dark)] transition-colors">Contact</Link>
         </div>
 

@@ -152,7 +152,7 @@ export default function WorldMap() {
 
           {/* Green blinking dots for highlighted regions */}
           {annotations.map((ann, idx) => (
-            <Marker key={`marker-${idx}`} coordinates={ann.subject} style={{ pointerEvents: "none" }}>
+            <Marker key={`marker-${idx}`} coordinates={ann.subject} style={{ default: { pointerEvents: "none" } }}>
               <circle r={6} fill="#22c55e" className="animate-ping opacity-75 pointer-events-none" />
               <circle r={3} fill="#16a34a" className="pointer-events-none" />
             </Marker>

@@ -21,7 +21,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-8 text-sm font-bold tracking-widest uppercase text-[var(--brand-maroon)]">
-          {['About', 'Services', 'Work', 'Contact'].map((item) => (
+          {['About', 'Services', 'Work', 'Academic', 'Contact'].map((item) => (
             <Link 
               key={item} 
               href={`/${item.toLowerCase()}`} 
@@ -52,7 +52,7 @@ export default function Navbar() {
       {/* Mobile Links Dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-[var(--brand-light)] border-t border-[var(--brand-peach)]/50 px-6 py-4 flex flex-col gap-4 shadow-lg absolute w-full animate-in slide-in-from-top-2">
-          {['About', 'Services', 'Work', 'Contact'].map((item) => (
+          {['About', 'Services', 'Work', 'Academic', 'Contact'].map((item) => (
             <Link 
               key={item} 
               href={`/${item.toLowerCase()}`} 

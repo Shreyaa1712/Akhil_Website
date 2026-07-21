@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.arlegal.eu';
 
@@ -9,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/services',
     '/work',
+    '/academic',
     '/contact',
     '/privacy-policy',
     '/disclaimer',
