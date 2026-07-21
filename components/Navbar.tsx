@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[var(--brand-light)]/80 backdrop-blur-md border-b border-[var(--brand-peach)]/50 shadow-sm transition-all duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         
         {/* Logo Section */}
         <Link href="/" className="flex items-center group">

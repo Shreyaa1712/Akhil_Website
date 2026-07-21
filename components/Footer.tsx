@@ -6,7 +6,7 @@ export default function Footer() {
       {/* Subtle Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)] rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 flex flex-col items-center text-center gap-8 z-10 relative">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center gap-8 z-10 relative">
         
         {/* Centered Logo */}
         <Link href="/" className="inline-block group">

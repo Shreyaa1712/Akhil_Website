@@ -27,7 +27,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-peach)]/40 to-[var(--brand-light)] -z-10" />
         <div className="absolute top-1/4 -left-24 w-96 h-96 bg-[var(--brand-peach)] rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10" />
 
-        <div className="max-w-4xl mx-auto z-10 w-full">
+        <div className="max-w-5xl mx-auto z-10 w-full">
           <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
             <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
             Get In Touch

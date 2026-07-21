@@ -47,7 +47,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-peach)]/40 to-[var(--brand-light)] -z-10" />
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[var(--brand-peach)] rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10" />
 
-        <div className="max-w-4xl mx-auto z-10">
+        <div className="max-w-5xl mx-auto z-10">
           <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
             <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
             Practice Areas
@@ -63,7 +63,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-6 pb-24 -mt-10">
+      <div className="max-w-7xl mx-auto px-6 pb-24 -mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service) => (
             <Link 

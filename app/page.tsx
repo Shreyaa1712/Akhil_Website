@@ -43,7 +43,7 @@ export default function Home() {
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[var(--brand-peach)] rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10" />
         <div className="absolute top-1/2 -right-24 w-[30rem] h-[30rem] bg-[var(--brand-peach-dark)] rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
 
-        <div className="max-w-5xl mx-auto z-10">
+        <div className="max-w-7xl mx-auto z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)] drop-shadow-sm">
             Clarity in Complex <br className="hidden md:block" /> 
             <span className="text-[var(--brand-maroon)]">International Trade</span>
@@ -64,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Section 2: About Us Preview */}
-      <section className="w-full max-w-6xl mx-auto px-6 py-20">
+      <section className="w-full max-w-7xl mx-auto px-6 py-20">
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-center gap-12 md:gap-16 relative overflow-hidden border border-[var(--brand-peach)]/50">
           {/* Decorative Accent */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--brand-peach-dark)]/20 rounded-bl-full -z-0" />
@@ -119,7 +119,7 @@ export default function Home() {
 
       {/* Section 3: Our Services Preview */}
       <section className="w-full bg-[var(--brand-maroon-dark)] text-[var(--brand-light)] py-24 mt-10 relative">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center text-center mb-16 gap-4">
             <div className="inline-flex items-center gap-2 text-[var(--brand-peach)] font-bold tracking-widest uppercase text-sm">
               <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
@@ -161,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* Section 4: Representative Matters Preview */}
-      <section className="w-full max-w-6xl mx-auto px-6 py-24 relative">
+      <section className="w-full max-w-7xl mx-auto px-6 py-24 relative">
         <div className="flex flex-col text-center items-center mb-16 gap-4">
           <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm">
             <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
@@ -171,7 +171,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)]">Representative Matters</h2>
         </div>
         
-        <div className="w-full max-w-5xl mx-auto flex justify-center items-center bg-white rounded-3xl shadow-xl shadow-[var(--brand-maroon)]/5 p-8 border border-[var(--brand-peach)]/50 hover:shadow-2xl transition-shadow duration-500 min-h-[400px]">
+        <div className="w-full max-w-7xl mx-auto flex justify-center items-center bg-white rounded-3xl shadow-xl shadow-[var(--brand-maroon)]/5 p-8 border border-[var(--brand-peach)]/50 hover:shadow-2xl transition-shadow duration-500 min-h-[400px]">
           <WorldMap />
         </div>
         
@@ -185,7 +185,7 @@ export default function Home() {
 
       {/* Section 5: The Way We Work */}
       <section className="w-full bg-[var(--brand-peach)]/30 py-24 border-t border-[var(--brand-peach)]/50 relative">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center text-center mb-20 gap-4">
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)]">The Way We Work</h2>
             <p className="text-lg text-[var(--brand-maroon-light)] max-w-2xl">A structured, strategic approach to delivering excellence in every mandate.</p>

@@ -56,7 +56,7 @@ export default async function ServicePage({ params }: Params) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20">
+    <div className="max-w-5xl mx-auto px-6 py-20">
       <div className="mb-12">
         <Link href="/services" className="text-sm font-bold uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity">
           ← Back to Services

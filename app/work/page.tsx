@@ -16,7 +16,7 @@ export default function WorkPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-peach)]/40 to-[var(--brand-light)] -z-10" />
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[var(--brand-peach)] rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10" />
 
-        <div className="max-w-4xl mx-auto z-10">
+        <div className="max-w-6xl mx-auto z-10">
           <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
             <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
             Our Work
@@ -32,7 +32,7 @@ export default function WorkPage() {
       </section>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 pb-24 -mt-10 w-full">
+      <div className="max-w-6xl mx-auto px-6 pb-24 -mt-10 w-full">
         
         {/* Map Section */}
         <div className="mb-20 bg-white rounded-3xl p-8 border border-[var(--brand-peach)]/50 shadow-xl shadow-[var(--brand-maroon)]/5 min-h-[400px]">

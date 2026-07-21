@@ -9,7 +9,7 @@ export default function DisclaimerPage() {
     <div className="flex flex-col items-center bg-[var(--brand-light)] min-h-screen text-[var(--brand-maroon-dark)]">
       
       <section className="w-full px-6 py-20 md:py-24 flex flex-col items-center text-center">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
             <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
             Terms & Conditions
@@ -21,7 +21,7 @@ export default function DisclaimerPage() {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-6 pb-24 w-full">
+      <div className="max-w-5xl mx-auto px-6 pb-24 w-full">
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
           <div className="prose prose-lg text-[var(--brand-maroon-light)] max-w-none space-y-6 leading-relaxed">
             <p>

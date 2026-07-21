@@ -32,28 +32,10 @@ const highlightedCountries: Record<string, string> = {
   // EU Countries (European Union - DG trade)
   "France": "European Union (DG trade)",
   "Germany": "European Union (DG trade)",
-  "Spain": "European Union (DG trade)",
-  "Italy": "European Union (DG trade)",
-  "Poland": "European Union (DG trade)",
-  "Romania": "European Union (DG trade)",
-  "Netherlands": "European Union (DG trade)",
   "Belgium": "European Union (DG trade)",
-  "Greece": "European Union (DG trade)",
-  "Portugal": "European Union (DG trade)",
-  "Czechia": "European Union (DG trade)",
-  "Hungary": "European Union (DG trade)",
   "Sweden": "European Union (DG trade)",
-  "Austria": "European Union (DG trade)",
-  "Bulgaria": "European Union (DG trade)",
   "Denmark": "European Union (DG trade)",
-  "Finland": "European Union (DG trade)",
-  "Slovakia": "European Union (DG trade)",
-  "Ireland": "European Union (DG trade)",
-  "Croatia": "European Union (DG trade)",
-  "Lithuania": "European Union (DG trade)",
-  "Slovenia": "European Union (DG trade)",
-  "Latvia": "European Union (DG trade)",
-  "Estonia": "European Union (DG trade)",
+  "Austria": "European Union (DG trade)"
 };
 
 const annotations = [
@@ -112,13 +94,13 @@ export default function WorldMap() {
 
   return (
     <div className="w-full h-full bg-transparent flex items-center justify-center">
-      <div className="w-full max-w-5xl">
+      <div className="w-full max-w-7xl">
         <ComposableMap
           projectionConfig={{
             scale: 145,
             center: [0, 15], // Lower latitude to move map UP and trim top empty space
           }}
-          width={800}
+          width={700}
           height={320} // Tighter height to crop vertical space
           className="w-full h-auto bg-transparent"
         >
