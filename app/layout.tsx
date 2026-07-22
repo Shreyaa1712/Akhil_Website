@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   title: "AR Legal | International Trade Law & Policy",
   description: "AR Legal advises governments and businesses navigating the complex landscape of international trade law and policy. Based in Brussels and New Delhi.",
   keywords: ["International Trade Law", "Trade Defence", "WTO Litigation", "Customs", "ESG", "AR Legal", "Akhil Raina"],
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "AR Legal | International Trade Law & Policy",
     description: "AR Legal advises governments and businesses navigating the complex landscape of international trade law and policy. Based in Brussels and New Delhi.",
