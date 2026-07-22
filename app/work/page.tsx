@@ -35,7 +35,7 @@ export default function WorkPage() {
       <div className="max-w-6xl mx-auto px-6 pb-24 -mt-10 w-full">
         
         {/* Map Section */}
-        <div className="mb-20 bg-white rounded-3xl p-8 border border-[var(--brand-peach)]/50 shadow-xl shadow-[var(--brand-maroon)]/5 min-h-[400px]">
+        <div className="mb-20 bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-6 md:p-8 border border-[var(--brand-peach)]/50 shadow-xl shadow-[var(--brand-maroon)]/5">
           <WorldMap />
         </div>
 

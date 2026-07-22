@@ -93,15 +93,15 @@ export default function WorldMap() {
   const [tooltipContent, setTooltipContent] = useState("");
 
   return (
-    <div className="w-full h-full bg-transparent flex items-center justify-center">
-      <div className="w-full max-w-7xl">
+    <div className="w-full bg-transparent flex items-center justify-center overflow-x-auto pb-1">
+      <div className="w-full min-w-[340px] sm:min-w-0 max-w-7xl">
         <ComposableMap
           projectionConfig={{
-            scale: 145,
-            center: [0, 15], // Lower latitude to move map UP and trim top empty space
+            scale: 155,
+            center: [5, 12],
           }}
-          width={700}
-          height={320} // Tighter height to crop vertical space
+          width={800}
+          height={340}
           className="w-full h-auto bg-transparent"
         >
           <Geographies geography={geoUrl}>

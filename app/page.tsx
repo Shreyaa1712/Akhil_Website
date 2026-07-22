@@ -203,7 +203,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)]">Representative Matters</h2>
         </div>
         
-        <div className="w-full max-w-7xl mx-auto flex justify-center items-center bg-white rounded-3xl shadow-xl shadow-[var(--brand-maroon)]/5 p-8 border border-[var(--brand-peach)]/50 hover:shadow-2xl transition-shadow duration-500 min-h-[400px]">
+        <div className="w-full max-w-7xl mx-auto flex justify-center items-center bg-white rounded-2xl sm:rounded-3xl shadow-xl shadow-[var(--brand-maroon)]/5 p-3 sm:p-6 md:p-8 border border-[var(--brand-peach)]/50 hover:shadow-2xl transition-shadow duration-500">
           <WorldMap />
         </div>
         
