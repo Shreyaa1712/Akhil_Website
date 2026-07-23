@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="AR Legal provides counsel on international trade law, trade defence, and regulatory policy.">
+  <title>AR Legal | International Trade Law</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1" rel="stylesheet">
+  <style>
+    :root {
+      /* Original Theme Colors */
+      --paper: #f7ead8;
+      --ink: #4b1719;
+      --muted: #795c50;
+      --line: rgba(157, 105, 51, 0.35);
+      --accent: #a97431;
+
+      /* New supportive variables for the enhanced look */
+      --bg-gradient: radial-gradient(circle at top right, rgba(255, 255, 255, 0.5) 0%, transparent 60%);
+      --glass-bg: rgba(255, 255, 255, 0.35);
+      --glass-border: rgba(169, 116, 49, 0.25);
+      --glass-glow: rgba(169, 116, 49, 0.08);
+
+      /* Typography */
+      --font-display: 'EB Garamond', 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    /* Courtroom background with theme overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(247, 234, 216, 1) 0%, rgba(247, 234, 216, 0.95) 45%, rgba(247, 234, 216, 0.2) 100%),
+        url('bg_courtroom.png') center bottom / cover no-repeat;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(3px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 5px rgba(169, 116, 49, 0.3));
+      }
+
+      50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 12px rgba(169, 116, 49, 0.6));
+      }
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 4rem;
+    }
+
+    
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--line);
+      animation: fade-in-up 1s ease-out forwards;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .brand:hover {
+      opacity: 0.8;
+    }
+
+    .brand img {
+      height: 52px;
+      width: auto;
+      mix-blend-mode: multiply;
+      filter: contrast(1.08);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .status-badge::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse-glow 2s infinite;
+    }
+
+    .ticker-wrap {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+      overflow: hidden;
+      display: flex;
+      background: rgba(169, 116, 49, 0.05);
+      animation: fade-in-up 1s ease-out 0.1s forwards;
+      opacity: 0;
+    }
+
+    .ticker {
+      display: flex;
+      animation: ticker-scroll 35s linear infinite;
+    }
+
+    .ticker-content {
+      display: flex;
+      gap: 3rem;
+      padding-right: 3rem;
+    }
+
+    .ticker-item {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--ink);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      white-space: nowrap;
+    }
+
+    .ticker-item span {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    @keyframes ticker-scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 0;
+    }
+
+    .hero-content {
+      opacity: 0;
+      animation: fade-in-up 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 5.5vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-content h1 span {
+      font-style: italic;
+      color: var(--accent);
+      text-transform: none;
+      font-weight: 500;
+    }
+
+    .hero-content p {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .commitment {
+      text-align: center;
+      padding: 3rem 0;
+      opacity: 0;
+      animation: fade-in-up 1s ease-out 0.6s forwards;
+      position: relative;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 168px;
+      margin: 0 auto 1.5rem;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .ornament-mark {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .commitment p {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      color: #ffffff;
+      font-weight: 600;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .commitment em {
+      color: var(--paper);
+      font-style: italic;
+    }
+
+    footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--line);
+      opacity: 0;
+      animation: fade-in-up 1s ease-out 0.8s forwards;
+    }
+
+    .contact-card {
+      background: rgba(247, 234, 216, 0.95);
+      border: 1px solid rgba(169, 116, 49, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      backdrop-filter: blur(12px);
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 30px rgba(75, 23, 25, 0.08), 0 0 20px var(--glass-glow);
+      border-color: rgba(169, 116, 49, 0.45);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(169, 116, 49, 0.1);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+      border: 1px solid var(--glass-border);
+    }
+
+    .contact-card:hover .card-icon {
+      transform: scale(1.1);
+      background: rgba(169, 116, 49, 0.15);
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .card-value {
+      font-size: 1.05rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    @media (max-width: 968px) {
+      .page-wrapper {
+        padding: 2rem;
+      }
+
+      main {
+        padding: 2rem 0;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      footer {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header>
+      <a href="#" class="brand">
+        <img src="Screenshot_2026-07-23_131516-removebg-preview.png" alt="AR Legal">
+      </a>
+      <div class="status-badge">Launching Soon</div>
+    </header>
+
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <div class="ticker-content">
+          <div class="ticker-item">Website Coming Soon <span>❧</span></div>
+          <div class="ticker-item">International Trade Law <span>❧</span></div>
+          <div class="ticker-item">Trade Defence <span>❧</span></div>
+          <div class="ticker-item">Regulatory Policy <span>❧</span></div>
+          <div class="ticker-item">Global Counsel <span>❧</span></div>
+        </div>
+        <div class="ticker-content" aria-hidden="true">
+          <div class="ticker-item">Website Coming Soon <span>❧</span></div>
+          <div class="ticker-item">International Trade Law <span>❧</span></div>
+          <div class="ticker-item">Trade Defence <span>❧</span></div>
+          <div class="ticker-item">Regulatory Policy <span>❧</span></div>
+          <div class="ticker-item">Global Counsel <span>❧</span></div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="hero-content">
+        <h1>Clarity in Complex<br><span>International Trade</span></h1>
+        <p>AR Legal helps governments and businesses navigate the increasingly complex landscape of international trade
+          law, trade defence, and regulatory policy.</p>
+      </div>
+    </main>
+
+    <section class="commitment">
+      <div class="ornament" aria-hidden="true"><span class="ornament-mark">❧</span></div>
+      <p>Law is not just a profession.<br><em>It is a commitment to justice.</em></p>
+    </section>
+
+    <footer>
+      <div class="contact-card">
+        <div class="card-icon">
+          <span class="material-symbols-outlined">location_on</span>
+        </div>
+        <span class="card-label">Offices</span>
+        <span class="card-value">Brussels, New Delhi</span>
+      </div>
+      <a href="mailto:akhil.rilc@gmail.com" class="contact-card">
+        <div class="card-icon">
+          <span class="material-symbols-outlined">mail</span>
+        </div>
+        <span class="card-label">Email</span>
+        <span class="card-value">akhil.rilc@gmail.com</span>
+      </a>
+      <a href="tel:+32487136150" class="contact-card">
+        <div class="card-icon">
+          <span class="material-symbols-outlined">phone</span>
+        </div>
+        <span class="card-label">Phone</span>
+        <span class="card-value">+32 487 136 150</span>
+      </a>
+    </footer>
+  </div>
+</body>
+
+</html>
