@@ -1,467 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="AR Legal provides counsel on international trade law, trade defence, and regulatory policy.">
-  <title>AR Legal | International Trade Law</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>AR Legal - Launching Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    try {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "error": "#ba1a1a",
+              "outline-variant": "#d8c1c0",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#26190b",
+              "outline": "#867372",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#79542d",
+              "surface": "#FDE9D9",
+              "on-tertiary-fixed-variant": "#554433",
+              "tertiary-fixed-dim": "#dbc2ad",
+              "background": "#FDE9D9",
+              "on-surface-variant": "#534342",
+              "tertiary-fixed": "#f8dec8",
+              "primary-fixed-dim": "#ffb3b2",
+              "surface-bright": "#FDE9D9",
+              "on-primary-fixed-variant": "#733334",
+              "surface-dim": "#ead7c7",
+              "secondary-fixed": "#ffdcbd",
+              "inverse-surface": "#3a2e24",
+              "surface-container-highest": "#f3dfcf",
+              "primary-container": "#491316",
+              "surface-variant": "#f3dfcf",
+              "surface-container": "#feeada",
+              "surface-tint": "#8f4a4a",
+              "tertiary-container": "#322315",
+              "on-primary-fixed": "#3b080c",
+              "on-secondary-fixed-variant": "#61401b",
+              "surface-container-low": "#fff1e7",
+              "tertiary": "#1b0f04",
+              "on-primary-container": "#c77777",
+              "inverse-on-surface": "#ffeee0",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdcb9b",
+              "on-surface": "#231a10",
+              "inverse-primary": "#ffb3b2",
+              "secondary-fixed-dim": "#eebd8e",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "secondary": "#7c5730",
+              "surface-container-high": "#f9e5d5",
+              "on-secondary-fixed": "#2c1600",
+              "primary": "#2c0104",
+              "primary-fixed": "#ffdad9",
+              "on-background": "#231a10",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#9f8976"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+            "spacing": {
+              "margin-desktop": "64px",
+              "container-max": "1200px",
+              "unit": "8px",
+              "margin-mobile": "20px",
+              "section-gap": "120px",
+              "gutter": "24px"
+            },
+            "fontFamily": {
+              "headline-sm": ["Playfair Display"],
+              "label-caps": ["Manrope"],
+              "headline-lg-mobile": ["Playfair Display"],
+              "headline-lg": ["Playfair Display"],
+              "display-lg": ["Playfair Display"],
+              "body-sm": ["Manrope"],
+              "body-lg": ["Manrope"],
+              "body-md": ["Manrope"],
+              "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+              "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+              "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+              "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+              "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+              "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+              "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+              "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+              "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+              "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+            }
+          }
+        }
+      };
+    } catch (_e) {}
+  </script>
   <style>
-    :root {
-      /* Original Theme Colors */
-      --paper: #f7ead8;
-      --ink: #4b1719;
-      --muted: #795c50;
-      --line: rgba(157, 105, 51, 0.35);
-      --accent: #a97431;
-
-      /* New supportive variables for the enhanced look */
-      --bg-gradient: radial-gradient(circle at top right, rgba(255, 255, 255, 0.5) 0%, transparent 60%);
-      --glass-bg: rgba(255, 255, 255, 0.35);
-      --glass-border: rgba(169, 116, 49, 0.25);
-      --glass-glow: rgba(169, 116, 49, 0.08);
-
-      /* Typography */
-      --font-display: 'EB Garamond', 'Playfair Display', serif;
-      --font-body: 'Inter', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
     body {
-      height: 100%;
-      background-color: var(--paper);
-      color: var(--ink);
-      font-family: var(--font-body);
-      overflow-x: hidden;
+      background: #fde9d9;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Courtroom background with theme overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background:
-        linear-gradient(to bottom, rgba(247, 234, 216, 1) 0%, rgba(247, 234, 216, 0.95) 45%, rgba(247, 234, 216, 0.2) 100%),
-        url('bg_courtroom.png') center bottom / cover no-repeat;
-      pointer-events: none;
-      z-index: 0;
+    .arl-logo-reveal {
+      --arl-logo-offset: 52px;
+      position: relative;
+      display: block;
+      aspect-ratio: 1488 / 1722;
+      transform-origin: center;
+      animation: arl-logo-settle 2s cubic-bezier(0.22, 0.61, 0.36, 1) both;
     }
 
-    @keyframes fade-in-up {
+    .arl-logo-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      animation: arl-logo-appear 1.05s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s forwards;
+      filter: drop-shadow(0 18px 28px rgba(44, 1, 4, 0.12));
+    }
+
+    .arl-logo-legal {
+      position: absolute;
+      top: 86%;
+      left: 50%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      width: 83%;
+      overflow: hidden;
+      color: #2c0104;
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 31px;
+      font-weight: 400;
+      line-height: 1;
+      opacity: 0;
+      text-align: center;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      clip-path: inset(0 100% 0 0);
+      animation: arl-legal-type 0.85s steps(5, end) 1.15s forwards;
+    }
+
+    .hero-copy {
+      animation: fade-up 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s both;
+    }
+
+    .hero-title {
+      position: relative;
+      display: inline-block;
+      letter-spacing: -0.04em;
+      text-shadow: 0 10px 30px rgba(44, 1, 4, 0.1);
+    }
+
+    .hero-title::after {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      bottom: -0.4rem;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124, 87, 48, 0), rgba(124, 87, 48, 0.7), rgba(124, 87, 48, 0));
+      opacity: 0.9;
+      animation: line-glow 2.6s ease-in-out infinite alternate;
+    }
+
+    .hero-subtitle {
+      animation: fade-up 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.7s both;
+    }
+
+    .contact-item {
+      animation: fade-up 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    }
+
+    .contact-item--phone { animation-delay: 0.9s; }
+    .contact-item--email { animation-delay: 1.05s; }
+    .contact-item--office { animation-delay: 1.2s; }
+
+    @keyframes arl-logo-appear {
       from {
         opacity: 0;
-        transform: translateY(30px);
-        filter: blur(3px);
       }
+      to {
+        opacity: 1;
+      }
+    }
 
+    @keyframes arl-logo-settle {
+      0%, 60% {
+        transform: translateY(var(--arl-logo-offset)) scale(0.98);
+      }
+      100% {
+        transform: translateY(var(--arl-logo-offset)) scale(1);
+      }
+    }
+
+    @keyframes arl-legal-type {
+      from {
+        opacity: 1;
+        clip-path: inset(0 100% 0 0);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
       to {
         opacity: 1;
         transform: translateY(0);
-        filter: blur(0);
       }
     }
 
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0px);
+    @keyframes line-glow {
+      from {
+        transform: scaleX(0.75);
+        opacity: 0.6;
       }
-
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @keyframes pulse-glow {
-
-      0%,
-      100% {
-        opacity: 0.7;
-        filter: drop-shadow(0 0 5px rgba(169, 116, 49, 0.3));
-      }
-
-      50% {
+      to {
+        transform: scaleX(1);
         opacity: 1;
-        filter: drop-shadow(0 0 12px rgba(169, 116, 49, 0.6));
       }
     }
 
-    .page-wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      z-index: 1;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 4rem 2%;
-    }
-
-    
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 0;
-      border-bottom: none;
-      animation: fade-in-up 1s ease-out forwards;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .brand:hover {
-      opacity: 0.8;
-    }
-
-    .brand img {
-      height: 120px;
-      width: auto;
-      mix-blend-mode: multiply;
-      filter: contrast(1.08);
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 2rem;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--ink);
-      font-weight: 600;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    }
-
-    .status-badge::before {
-      content: '';
-      display: block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse-glow 2s infinite;
-    }
-
-    .ticker-wrap {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      border-bottom: 1px solid var(--line);
-      padding: 12px 0;
-      overflow: hidden;
-      display: flex;
-      background: rgba(169, 116, 49, 0.05);
-      animation: fade-in-up 1s ease-out 0.1s forwards;
-      opacity: 0;
-    }
-
-    .ticker {
-      display: flex;
-      animation: ticker-scroll 35s linear infinite;
-    }
-
-    .ticker-content {
-      display: flex;
-      gap: 3rem;
-      padding-right: 3rem;
-    }
-
-    .ticker-item {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--ink);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      white-space: nowrap;
-    }
-
-    .ticker-item span {
-      color: var(--accent);
-      font-size: 1.1rem;
-    }
-
-    @keyframes ticker-scroll {
-      0% {
-        transform: translateX(0);
+    @media (max-width: 639px) {
+      .arl-logo-reveal {
+        --arl-logo-offset: 28px;
       }
 
-      100% {
-        transform: translateX(-50%);
+      .arl-logo-legal {
+        font-size: 22px;
       }
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem 0 1rem;
-    }
-
-    .hero-content {
-      opacity: 0;
-      animation: fade-in-up 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-    }
-
-    .hero-content h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3.2rem, 5.5vw, 5.5rem);
-      font-weight: 600;
-      line-height: 1.05;
-      margin-bottom: 0.75;
-      color: var(--ink);
-      text-transform: uppercase;
-      letter-spacing: -0.5px;
-    }
-
-    .hero-content h1 span {
-      font-style: italic;
-      color: var(--accent);
-      text-transform: none;
-      font-weight: 500;
-    }
-
-    .hero-content p {
-      font-size: 1.35rem;
-      line-height: 1.6;
-      color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto;
-      font-weight: 400;
-      margin-bottom: 2rem; 
-    }
-
-    .commitment {
-      text-align: center;
-      padding: 0.5rem 0 1rem;
-      opacity: 0;
-      animation: fade-in-up 1s ease-out 0.6s forwards;
-      position: relative;
-    }
-
-    .ornament {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      width: 168px;
-      margin: 0 auto 1.5rem;
-      color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    }
-
-    .ornament::before,
-    .ornament::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    .ornament-mark {
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .commitment p {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      color: #ffffff;
-      font-weight: 600;
-      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-    }
-
-    .commitment em {
-      color: var(--paper);
-      font-style: italic;
-    }
-
-    footer {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--line);
-      opacity: 0;
-      animation: fade-in-up 1s ease-out 0.8s forwards;
-    }
-
-    .contact-card {
-      background: rgba(247, 234, 216, 0.95);
-      border: 1px solid rgba(169, 116, 49, 0.3);
-      border-radius: 12px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      backdrop-filter: blur(12px);
-      text-decoration: none;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .contact-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.6);
-      box-shadow: 0 10px 30px rgba(75, 23, 25, 0.08), 0 0 20px var(--glass-glow);
-      border-color: rgba(169, 116, 49, 0.45);
-    }
-
-    .card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(169, 116, 49, 0.1);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-      transition: transform 0.3s ease, background 0.3s ease;
-      border: 1px solid var(--glass-border);
-    }
-
-    .contact-card:hover .card-icon {
-      transform: scale(1.1);
-      background: rgba(169, 116, 49, 0.15);
-    }
-
-    .card-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .card-value {
-      font-size: 1.05rem;
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    @media (max-width: 968px) {
-      .page-wrapper {
-        padding: 2rem;
+    @media (prefers-reduced-motion: reduce) {
+      .arl-logo-reveal,
+      .arl-logo-image,
+      .arl-logo-legal,
+      .hero-copy,
+      .hero-subtitle,
+      .contact-item,
+      .hero-title::after {
+        animation: none;
       }
 
-      main {
-        padding: 2rem 0;
+      .arl-logo-reveal {
+        transform: translateY(var(--arl-logo-offset));
       }
 
-      header {
-        flex-direction: column;
-        gap: 1.5rem;
+      .arl-logo-image,
+      .arl-logo-legal,
+      .hero-copy,
+      .hero-subtitle,
+      .contact-item {
+        opacity: 1;
       }
 
-      footer {
-        grid-template-columns: 1fr;
+      .arl-logo-legal {
+        clip-path: inset(0 0 0 0);
       }
     }
   </style>
 </head>
+<body class="h-screen max-h-screen flex flex-col justify-between items-center overflow-hidden text-on-background bg-background px-6 py-8 box-border">
+  <!-- Header -->
+  <header class="w-full flex justify-center items-center z-10 pt-10 sm:pt-14 pb-2">
+    <div aria-label="AR Legal Logo" class="arl-logo-reveal w-[200px] sm:w-[280px] mx-auto" role="img">
+      <img alt="" aria-hidden="true" class="arl-logo-image object-contain" src="logo.png"/>
+      <span aria-hidden="true" class="arl-logo-legal"><span>L</span><span>E</span><span>G</span><span>A</span><span>L</span></span>
+    </div>
+  </header>
 
-<body>
-  <div class="page-wrapper">
-    <header>
-      <a href="#" class="brand">
-        <img src="Screenshot_2026-07-23_131516-removebg-preview.png" alt="AR Legal">
-      </a>
-      <div class="status-badge">Launching Soon</div>
-    </header>
+  <!-- Main Content Canvas -->
+  <main class="flex-grow flex flex-col items-center justify-between z-10 max-w-container-max mx-auto w-full pb-4">
+    <!-- Hero Block -->
+    <div class="hero-copy flex flex-col items-center text-center max-w-3xl mt-8 sm:mt-10 pt-2 sm:pt-3 mb-auto">
+      <h1 class="hero-title font-display-lg text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3 sm:mb-4 pt-2 sm:pt-4 hidden md:block">Our Website is Coming Soon</h1>
+      <h1 class="hero-title font-headline-lg-mobile text-2xl sm:text-3xl font-bold text-primary mb-3 pt-4 md:hidden">Our Website is<br/>Coming Soon</h1>
+      <p class="hero-subtitle font-body-lg text-base sm:text-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+        We're building a modern digital experience to better serve our clients.
+      </p>
+    </div>
 
-    <div class="ticker-wrap">
-      <div class="ticker">
-        <div class="ticker-content">
-          <div class="ticker-item">Website Coming Soon <span>❧</span></div>
-          <div class="ticker-item">International Trade Law <span>❧</span></div>
-          <div class="ticker-item">Trade Defence <span>❧</span></div>
-          <div class="ticker-item">Regulatory Policy <span>❧</span></div>
-          <div class="ticker-item">Global Counsel <span>❧</span></div>
+    <!-- Contact Details -->
+    <div class="w-full max-w-3xl border-t border-secondary/30 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left mt-auto mb-8 sm:mb-14">
+      <div class="contact-item contact-item--phone flex items-center justify-center md:justify-start gap-3 ">
+        <span class="material-symbols-outlined text-secondary text-[22px]">call</span>
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Phone</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">+32 487 136 150</p>
         </div>
-        <div class="ticker-content" aria-hidden="true">
-          <div class="ticker-item">Website Coming Soon <span>❧</span></div>
-          <div class="ticker-item">International Trade Law <span>❧</span></div>
-          <div class="ticker-item">Trade Defence <span>❧</span></div>
-          <div class="ticker-item">Regulatory Policy <span>❧</span></div>
-          <div class="ticker-item">Global Counsel <span>❧</span></div>
+      </div>
+
+      <div class="hidden md:block w-px h-10 bg-secondary/30"></div>
+      <div class="md:hidden w-12 h-px bg-secondary/30"></div>
+
+      <div class="contact-item contact-item--email flex items-center justify-center md:justify-start gap-3">
+        <span class="material-symbols-outlined text-secondary text-[22px]">mail</span>
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Email</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">akhilrilc@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="hidden md:block w-px h-10 bg-secondary/30"></div>
+      <div class="md:hidden w-12 h-px bg-secondary/30"></div>
+
+      <div class="contact-item contact-item--office flex items-center justify-center md:justify-start gap-3 ">
+        <span class="material-symbols-outlined text-secondary text-[22px]">location_on</span>
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Offices</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">Brussels, New Delhi</p>
         </div>
       </div>
     </div>
-
-    <main>
-      <div class="hero-content">
-        <h1>Clarity in Complex<br><span>International Trade</span></h1>
-        <p>AR Legal helps governments and businesses navigate the increasingly complex landscape of international trade
-          law, trade defence, and regulatory policy.</p>
-      </div>
-    </main>
-
-    <section class="commitment">
-      <div class="ornament" aria-hidden="true"><span class="ornament-mark">❧</span></div>
-      <p>Law is not just a profession.<br><em>It is a commitment to justice.</em></p>
-    </section>
-
-    <footer>
-      <div class="contact-card">
-        <div class="card-icon">
-          <span class="material-symbols-outlined">location_on</span>
-        </div>
-        <span class="card-label">Offices</span>
-        <span class="card-value">Brussels, New Delhi</span>
-      </div>
-      <a href="mailto:akhil.rilc@gmail.com" class="contact-card">
-        <div class="card-icon">
-          <span class="material-symbols-outlined">mail</span>
-        </div>
-        <span class="card-label">Email</span>
-        <span class="card-value">akhil.rilc@gmail.com</span>
-      </a>
-      <a href="tel:+32487136150" class="contact-card">
-        <div class="card-icon">
-          <span class="material-symbols-outlined">phone</span>
-        </div>
-        <span class="card-label">Phone</span>
-        <span class="card-value">+32 487 136 150</span>
-      </a>
-    </footer>
-  </div>
+  </main>
 </body>
-
 </html>
