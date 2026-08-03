@@ -103,54 +103,228 @@
       };
     } catch (_e) {}
   </script>
+  <style>
+    body {
+      background: #fde9d9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arl-logo-reveal {
+      --arl-logo-offset: 52px;
+      position: relative;
+      display: block;
+      aspect-ratio: 1488 / 1722;
+      transform-origin: center;
+      animation: arl-logo-settle 2s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    }
+
+    .arl-logo-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      animation: arl-logo-appear 1.05s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s forwards;
+      filter: drop-shadow(0 18px 28px rgba(44, 1, 4, 0.12));
+    }
+
+    .arl-logo-legal {
+      position: absolute;
+      top: 86%;
+      left: 50%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      width: 83%;
+      overflow: hidden;
+      color: #2c0104;
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 31px;
+      font-weight: 400;
+      line-height: 1;
+      opacity: 0;
+      text-align: center;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      clip-path: inset(0 100% 0 0);
+      animation: arl-legal-type 0.85s steps(5, end) 1.15s forwards;
+    }
+
+    .hero-copy {
+      animation: fade-up 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.35s both;
+    }
+
+    .hero-title {
+      position: relative;
+      display: inline-block;
+      letter-spacing: -0.04em;
+      text-shadow: 0 10px 30px rgba(44, 1, 4, 0.1);
+    }
+
+    .hero-title::after {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      bottom: -0.4rem;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124, 87, 48, 0), rgba(124, 87, 48, 0.7), rgba(124, 87, 48, 0));
+      opacity: 0.9;
+      animation: line-glow 2.6s ease-in-out infinite alternate;
+    }
+
+    .hero-subtitle {
+      animation: fade-up 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.7s both;
+    }
+
+    .contact-item {
+      animation: fade-up 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    }
+
+    .contact-item--phone { animation-delay: 0.9s; }
+    .contact-item--email { animation-delay: 1.05s; }
+    .contact-item--office { animation-delay: 1.2s; }
+
+    @keyframes arl-logo-appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes arl-logo-settle {
+      0%, 60% {
+        transform: translateY(var(--arl-logo-offset)) scale(0.98);
+      }
+      100% {
+        transform: translateY(var(--arl-logo-offset)) scale(1);
+      }
+    }
+
+    @keyframes arl-legal-type {
+      from {
+        opacity: 1;
+        clip-path: inset(0 100% 0 0);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes line-glow {
+      from {
+        transform: scaleX(0.75);
+        opacity: 0.6;
+      }
+      to {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .arl-logo-reveal {
+        --arl-logo-offset: 28px;
+      }
+
+      .arl-logo-legal {
+        font-size: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .arl-logo-reveal,
+      .arl-logo-image,
+      .arl-logo-legal,
+      .hero-copy,
+      .hero-subtitle,
+      .contact-item,
+      .hero-title::after {
+        animation: none;
+      }
+
+      .arl-logo-reveal {
+        transform: translateY(var(--arl-logo-offset));
+      }
+
+      .arl-logo-image,
+      .arl-logo-legal,
+      .hero-copy,
+      .hero-subtitle,
+      .contact-item {
+        opacity: 1;
+      }
+
+      .arl-logo-legal {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+  </style>
 </head>
 <body class="h-screen max-h-screen flex flex-col justify-between items-center overflow-hidden text-on-background bg-background px-6 py-8 box-border">
   <!-- Header -->
-  <header class="w-full flex justify-center z-10 pt-2 pb-4">
-    <img alt="AR Legal Logo" class="w-[150px] sm:w-[170px] h-auto object-contain" src="logo.png"/>
+  <header class="w-full flex justify-center items-center z-10 pt-10 sm:pt-14 pb-2">
+    <div aria-label="AR Legal Logo" class="arl-logo-reveal w-[200px] sm:w-[280px] mx-auto" role="img">
+      <img alt="" aria-hidden="true" class="arl-logo-image object-contain" src="logo.png"/>
+      <span aria-hidden="true" class="arl-logo-legal"><span>L</span><span>E</span><span>G</span><span>A</span><span>L</span></span>
+    </div>
   </header>
 
   <!-- Main Content Canvas -->
   <main class="flex-grow flex flex-col items-center justify-between z-10 max-w-container-max mx-auto w-full pb-4">
     <!-- Hero Block -->
-    <div class="flex flex-col items-center text-center max-w-3xl mt-4 sm:mt-8 pt-4 sm:pt-6 mb-auto">
-      <!-- Badge -->
-      <div class="bg-tertiary-fixed text-primary px-5 py-2 rounded-full font-label-caps text-xs uppercase tracking-widest border border-outline-variant/30 mb-6 sm:mb-8">
-        Launching Soon
-      </div>
-
-      <!-- Hero Text -->
-      <h1 class="font-display-lg text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3 sm:mb-4 pt-4 sm:pt-6 hidden md:block">Our Website is Coming Soon</h1>
-      <h1 class="font-headline-lg-mobile text-2xl sm:text-3xl font-bold text-primary mb-3 pt-4 md:hidden">Our Website is<br/>Coming Soon</h1>
-      <p class="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
-        We're building a modern digital experience to better serve our clients. Our website will be launching soon. Thank you for your patience.
+    <div class="hero-copy flex flex-col items-center text-center max-w-3xl mt-8 sm:mt-10 pt-2 sm:pt-3 mb-auto">
+      <h1 class="hero-title font-display-lg text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3 sm:mb-4 pt-2 sm:pt-4 hidden md:block">Our Website is Coming Soon</h1>
+      <h1 class="hero-title font-headline-lg-mobile text-2xl sm:text-3xl font-bold text-primary mb-3 pt-4 md:hidden">Our Website is<br/>Coming Soon</h1>
+      <p class="hero-subtitle font-body-lg text-base sm:text-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+        We're building a modern digital experience to better serve our clients.
       </p>
     </div>
 
     <!-- Contact Details -->
     <div class="w-full max-w-3xl border-t border-secondary/30 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left mt-auto mb-8 sm:mb-14">
-      <div class="flex flex-col items-center md:items-start gap-1">
-        <span class="material-symbols-outlined text-secondary text-[22px] mb-1">call</span>
-        <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Phone</h3>
-        <p class="font-body-md text-sm text-on-surface-variant">+32 487 136 150</p>
+      <div class="contact-item contact-item--phone flex items-center justify-center md:justify-start gap-3 ">
+        <span class="material-symbols-outlined text-secondary text-[22px]">call</span>
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Phone</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">+32 487 136 150</p>
+        </div>
       </div>
 
       <div class="hidden md:block w-px h-10 bg-secondary/30"></div>
       <div class="md:hidden w-12 h-px bg-secondary/30"></div>
 
-      <div class="flex flex-col items-center md:items-start gap-1">
-        <span class="material-symbols-outlined text-secondary text-[22px] mb-1">mail</span>
-        <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Email</h3>
-        <p class="font-body-md text-sm text-on-surface-variant">akhil.rilc@gmail.com</p>
+      <div class="contact-item contact-item--email flex items-center justify-center md:justify-start gap-3">
+        <span class="material-symbols-outlined text-secondary text-[22px]">mail</span>
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Email</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">akhilrilc@gmail.com</p>
+        </div>
       </div>
 
       <div class="hidden md:block w-px h-10 bg-secondary/30"></div>
       <div class="md:hidden w-12 h-px bg-secondary/30"></div>
 
-      <div class="flex flex-col items-center md:items-start gap-1">
-        <span class="material-symbols-outlined text-secondary text-[22px] mb-1">location_on</span>
-        <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Offices</h3>
-        <p class="font-body-md text-sm text-on-surface-variant">Brussels, New Delhi</p>
+      <div class="contact-item contact-item--office flex items-center justify-center md:justify-start gap-3 ">
+        <span class="material-symbols-outlined text-secondary text-[22px]">location_on</span>
+        <div class="flex flex-col items-center md:items-start">
+          <h3 class="font-label-caps text-xs text-primary uppercase font-bold tracking-wider">Offices</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">Brussels, New Delhi</p>
+        </div>
       </div>
     </div>
   </main>
