@@ -1,25 +1,10 @@
 import Link from "next/link";
+import AnimatedStat from "@/components/AnimatedStat";
 
 export const dynamic = "force-static";
 
-const BookOpen = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-);
-
-const GraduationCap = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-);
-
-const Globe = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-);
-
 const ArrowRight = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-);
-
-const Award = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
 );
 
 const Library = ({ className }: { className?: string }) => (
@@ -27,7 +12,7 @@ const Library = ({ className }: { className?: string }) => (
 );
 
 export const metadata = {
-  title: "Academic & Thought Leadership | AR Legal",
+  title: "Academic | AR Legal",
   description: "Dr. Akhil Raina's academic endeavours, teaching at KU Leuven & ELPO Athens, research, and selected publications in international trade law.",
 };
 
@@ -133,31 +118,26 @@ export default function AcademicPage() {
   return (
     <div className="w-full bg-[var(--brand-light)] text-[var(--brand-maroon-dark)] pb-24">
       {/* Hero Section */}
-      <section className="relative w-full py-20 md:py-28 bg-gradient-to-b from-[var(--brand-peach)]/30 to-[var(--brand-light)] border-b border-[var(--brand-peach)]/40 overflow-hidden">
+      <section className="relative w-full py-8 md:py-10 bg-gradient-to-b from-[var(--brand-peach)]/30 to-[var(--brand-light)] border-b border-[var(--brand-peach)]/40 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--brand-maroon)]/10 text-[var(--brand-maroon)] text-xs font-bold uppercase tracking-widest mb-6">
-              <GraduationCap className="w-4 h-4" />
-              Practice-Integrated Academia
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold font-serif text-[var(--brand-maroon-dark)] tracking-tight mb-6">
-              Academic & Thought Leadership
+            <h1 className="text-4xl md:text-6xl font-bold font-serif text-[var(--brand-maroon-dark)] tracking-tight mb-4">
+              Academic
             </h1>
-            <p className="text-xl md:text-2xl text-[var(--brand-maroon-light)] font-light leading-relaxed">
-              Teaching, research, and publication — seamlessly integrated with legal practice.
+            <p className="text-lg md:text-xl text-[var(--brand-maroon-light)] font-light leading-[1.15]">
+              Teaching, research, and publication - seamlessly integrated with legal practice.
             </p>
           </div>
         </div>
       </section>
 
       {/* Main Overview & Teaching Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 pt-8 pb-10 md:pt-10 md:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           {/* Main Statement */}
           <div className="lg:col-span-7 flex flex-col justify-between bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
             <div>
               <div className="flex items-center gap-3 text-[var(--brand-maroon)] font-bold text-sm uppercase tracking-wider mb-4">
-                <BookOpen className="w-5 h-5 text-[var(--brand-maroon)]" />
                 <span>Dr. Akhil Raina's Academic Work</span>
               </div>
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-[var(--brand-maroon-dark)] mb-6 leading-snug">
@@ -173,18 +153,9 @@ export default function AcademicPage() {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-[var(--brand-peach)]/40">
-              <div>
-                <div className="text-3xl font-serif font-bold text-[var(--brand-maroon)]">4</div>
-                <div className="text-xs uppercase tracking-wider text-[var(--brand-maroon-light)] font-semibold mt-1">Continents Trained</div>
-              </div>
-              <div>
-                <div className="text-3xl font-serif font-bold text-[var(--brand-maroon)]">10+</div>
-                <div className="text-xs uppercase tracking-wider text-[var(--brand-maroon-light)] font-semibold mt-1">Major Publications</div>
-              </div>
-              <div>
-                <div className="text-3xl font-serif font-bold text-[var(--brand-maroon)]">3</div>
-                <div className="text-xs uppercase tracking-wider text-[var(--brand-maroon-light)] font-semibold mt-1">Global Institutions</div>
-              </div>
+              <AnimatedStat value={4} label="Continents Trained" />
+              <AnimatedStat value={10} suffix="+" label="Major Publications" />
+              <AnimatedStat value={3} label="Global Institutions" />
             </div>
           </div>
 
@@ -192,11 +163,22 @@ export default function AcademicPage() {
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="bg-[var(--brand-maroon)] text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between">
               <div>
-                <Globe className="w-8 h-8 text-[var(--brand-peach)] mb-4" />
-                <h3 className="text-xl font-serif font-bold mb-2">Global Training & Supervision</h3>
-                <p className="text-sm text-white/80 leading-relaxed">
-                  Direct engagement in capacity building for state officials, diplomats, and trade negotiators across Europe, Asia, Africa, and South America.
+                <h3 className="text-xl font-serif font-bold mb-4 leading-snug">
+                  Coming Soon: Practitioner-Led International Trade Law Course
+                </h3>
+                <p className="text-sm text-white/85 leading-relaxed mb-4">
+                  AR Legal was established to help governments and businesses navigate the increasingly complex landscape of international trade law and policy.
                 </p>
+                <p className="text-sm text-white/85 leading-relaxed mb-6">
+                  Our practice combines specialist expertise, direct partner involvement, and an international network of trusted professionals.
+                </p>
+                <Link 
+                  href="/contact" 
+                  className="inline-flex items-center justify-center px-5 py-3 bg-white text-[var(--brand-maroon)] hover:bg-[var(--brand-peach)] font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-lg"
+                >
+                  Get In Touch
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </div>
             </div>
 
@@ -262,35 +244,6 @@ export default function AcademicPage() {
               )}
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Firm Practice & Closing Commitment Banner */}
-      <section className="max-w-7xl mx-auto px-6 mt-12">
-        <div className="bg-gradient-to-r from-[var(--brand-maroon-dark)] to-[var(--brand-maroon)] text-white rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
-          <div className="max-w-3xl relative z-10">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--brand-peach)] mb-4">
-              <Award className="w-4 h-4" />
-              <span>Our Practice & Commitment</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 leading-tight">
-              Bridging academic excellence and practical legal execution.
-            </h2>
-            <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6 font-light">
-              AR Legal was established to help governments and businesses navigate the increasingly complex landscape of international trade law and policy. 
-            </p>
-            <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 font-light">
-              Our practice combines specialist expertise, direct partner involvement, and an international network of trusted professionals. We aim to deliver clear, effective, and commercially-oriented advice across jurisdictions. We look forward to working with you.
-            </p>
-            
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--brand-maroon)] hover:bg-[var(--brand-peach)] font-bold text-sm uppercase tracking-wider rounded-xl transition-colors shadow-lg"
-            >
-              Get In Touch With Us
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-          </div>
         </div>
       </section>
     </div>
