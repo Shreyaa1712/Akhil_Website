@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   keywords: ["International Trade Law", "Trade Defence", "WTO Litigation", "Customs", "ESG", "AR Legal", "Akhil Raina"],
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png" },
+      { url: "/apple-icon.png", type: "image/png" },
       { url: "/favicon.ico" },
     ],
-    shortcut: "/icon.png",
+    shortcut: "/apple-icon.png",
     apple: "/apple-icon.png",
   },
   openGraph: {

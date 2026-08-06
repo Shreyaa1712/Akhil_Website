@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="flex flex-col items-center bg-[var(--brand-light)] min-h-screen text-[var(--brand-maroon-dark)]">
-      
+
       {/* Hero Section */}
       <section className="relative w-full px-6 py-24 md:py-32 flex flex-col items-center text-center overflow-hidden">
         {/* Subtle Background Elements */}
@@ -22,19 +22,19 @@ export default function AboutPage() {
             <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-            A boutique practice, dedicated to <br className="hidden md:block" /> 
-            <span className="text-[var(--brand-maroon)]">international trade.</span>
+            A Boutique Practice, Dedicated To <br className="hidden md:block" />
+            <span className="text-[var(--brand-maroon)]">International Trade.</span>
           </h1>
         </div>
       </section>
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 pb-20 -mt-10">
-        
+
         {/* Founder Section */}
         <section className="mb-20">
           <h2 className="text-3xl font-bold mb-10 text-[var(--brand-maroon-dark)] border-b-2 border-[var(--brand-peach)] pb-4">Dr. Akhil Raina</h2>
-          
+
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-start gap-12 border border-[var(--brand-peach)]/50">
             <div className="w-full md:w-5/12 flex-shrink-0">
               <div className="relative group">
@@ -45,13 +45,13 @@ export default function AboutPage() {
                 <span className="font-bold uppercase tracking-widest text-xs text-[var(--brand-maroon-light)]">Founder</span>
               </div>
             </div>
-            
+
             <div className="w-full md:w-7/12 flex flex-col">
               <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry.</p>
               <p className="text-lg leading-relaxed mb-8 text-[var(--brand-maroon-light)]">
                 Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience.
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Core Expertise</h3>
@@ -129,7 +129,7 @@ export default function AboutPage() {
             </ul>
           </div>
         </section>
-        
+
       </div>
     </div>
   );
