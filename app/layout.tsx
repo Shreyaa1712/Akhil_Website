@@ -3,6 +3,7 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import DisclaimerModal from "@/components/DisclaimerModal";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} antialiased min-h-screen flex flex-col`}>
+        <DisclaimerModal />
         <Navbar />
         <main className="flex-grow">
           {children}

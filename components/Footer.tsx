@@ -44,8 +44,6 @@ export default function Footer() {
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-[var(--brand-maroon)] transition-colors">Privacy</Link>
             <span className="opacity-50">|</span>
-            <Link href="/disclaimer" className="hover:text-[var(--brand-maroon)] transition-colors">Disclaimer</Link>
-            <span className="opacity-50">|</span>
             <Link href="/cookie-policy" className="hover:text-[var(--brand-maroon)] transition-colors">Cookies</Link>
           </div>
         </div>

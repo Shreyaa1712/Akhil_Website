@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/academic',
     '/contact',
     '/privacy-policy',
-    '/disclaimer',
     '/cookie-policy',
   ];
 
