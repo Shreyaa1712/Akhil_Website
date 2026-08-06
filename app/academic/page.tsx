@@ -3,27 +3,27 @@ import Link from "next/link";
 export const dynamic = "force-static";
 
 const BookOpen = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
 );
 
 const GraduationCap = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></svg>
 );
 
 const Globe = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
 );
 
 const ArrowRight = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
 );
 
 const Award = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>
 );
 
 const Library = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m16 6 4 14" /><path d="M12 6v14" /><path d="M8 8v12" /><path d="M4 4v16" /></svg>
 );
 
 export const metadata = {
@@ -164,7 +164,7 @@ export default function AcademicPage() {
                 Advancing trade law discourse through rigor, research, and global education.
               </h2>
               <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-6">
-                Dr. Raina's academic endeavours run alongside his legal work as an integrated part of the practice. 
+                Dr. Raina's academic endeavours run alongside his legal work as an integrated part of the practice.
                 He teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>.
               </p>
               <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-8">
@@ -232,8 +232,8 @@ export default function AcademicPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {publications.map((pub, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-white rounded-2xl p-7 shadow-lg shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/40 hover:border-[var(--brand-maroon)]/40 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
@@ -277,14 +277,14 @@ export default function AcademicPage() {
               Bridging academic excellence and practical legal execution.
             </h2>
             <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6 font-light">
-              AR Legal was established to help governments and businesses navigate the increasingly complex landscape of international trade law and policy. 
+              AR Legal was established to help governments and businesses navigate the increasingly complex landscape of international trade law and policy.
             </p>
             <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 font-light">
               Our practice combines specialist expertise, direct partner involvement, and an international network of trusted professionals. We aim to deliver clear, effective, and commercially-oriented advice across jurisdictions. We look forward to working with you.
             </p>
-            
-            <Link 
-              href="/contact" 
+
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--brand-maroon)] hover:bg-[var(--brand-peach)] font-bold text-sm uppercase tracking-wider rounded-xl transition-colors shadow-lg"
             >
               Get In Touch With Us

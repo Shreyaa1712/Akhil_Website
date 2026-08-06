@@ -1,23 +1,23 @@
 import Link from "next/link";
 import WorldMap from "@/components/WorldMap";
 const ArrowRight = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
 );
 
 const ChevronRight = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m9 18 6-6-6-6"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m9 18 6-6-6-6" /></svg>
 );
 
 const Info = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></svg>
 );
 
 const Scale = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="M7 21h10" /><path d="M12 3v18" /><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" /></svg>
 );
 
 const Shield = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 7 2a1 1 0 0 1 1 1z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 7 2a1 1 0 0 1 1 1z" /></svg>
 );
 
 
@@ -29,7 +29,7 @@ export default function Home() {
         <p className="flex items-center justify-center gap-2 flex-wrap">
           <Info className="w-4 h-4 text-[var(--brand-peach)]" />
           <span className="font-bold uppercase tracking-wider text-[var(--brand-peach)]">Legal Disclaimer:</span>
-          The information on this website is for general informational purposes only and does not constitute legal advice. 
+          The information on this website is for general informational purposes only and does not constitute legal advice.
           <Link href="/disclaimer" className="ml-1 underline hover:text-white transition-colors duration-200">
             Read our full disclaimer.
           </Link>
@@ -44,12 +44,13 @@ export default function Home() {
         <div className="absolute top-1/2 -right-24 w-[30rem] h-[30rem] bg-[var(--brand-peach-dark)] rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
 
         <div className="max-w-7xl mx-auto z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)] drop-shadow-sm">
-            Clarity in Complex <br className="hidden md:block" /> 
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-[1.1] text-[var(--brand-maroon)] drop-shadow-sm">
+            Navigating <br className="hidden md:block" />
             <span className="text-[var(--brand-maroon)]">International Trade</span>
           </h1>
-          <p className="text-lg md:text-2xl max-w-3xl mx-auto mb-12 text-[var(--brand-maroon-light)] leading-relaxed font-medium">
-            AR Legal helps governments and businesses navigate the increasingly complex landscape of international trade law, trade defence, and regulatory policy.
+          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-[var(--brand-maroon-dark)] leading-relaxed font-medium text-center">
+            We advise governments, exporters, importers, and industry associations on<br className="hidden md:block" />
+            international trade law, trade remedies, customs, and regulatory compliance.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/services" className="group inline-flex items-center justify-center px-8 py-4 bg-[var(--brand-maroon)] text-[var(--brand-light)] rounded-full text-lg font-bold hover:bg-[var(--brand-maroon-dark)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -68,26 +69,26 @@ export default function Home() {
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-center gap-12 md:gap-16 relative overflow-hidden border border-[var(--brand-peach)]/50">
           {/* Decorative Accent */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--brand-peach-dark)]/20 rounded-bl-full -z-0" />
-          
+
           <div className="w-full md:w-5/12 flex-shrink-0 relative z-10">
             <div className="relative group">
               <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300 -z-10 opacity-20"></div>
               <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
             </div>
           </div>
-          
+
           <div className="w-full md:w-7/12 flex flex-col relative z-10">
             <div className="mb-2 inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm">
               <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
               Our Founder
             </div>
-            
+
             <h3 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)] mb-6 leading-tight">Dr. Akhil Raina</h3>
-            
+
             <p className="text-xl leading-relaxed mb-6 text-[var(--brand-maroon-light)] font-medium">
               Counsel to governments and industry. Licensed to practice in India and registered at the Brussels Bar.
             </p>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-start gap-3">
                 <div className="mt-1 bg-[var(--brand-peach)] p-2 rounded-full text-[var(--brand-maroon)]">
@@ -132,17 +133,17 @@ export default function Home() {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold font-serif">Our Services</h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
+
             {[
               { id: '01', title: 'ITD', full: 'International Trade Law', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement' },
               { id: '02', title: 'TD', full: 'Trade Defence', icon: '/images/icon-td.png', slug: 'trade-defence' },
               { id: '03', title: 'C&I', full: 'Customs & Internal Market', icon: '/images/icon-ci.png', slug: 'customs-and-importation' },
               { id: '04', title: 'ESG & RA', full: 'Trade-related ESG', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory' },
             ].map((service) => (
-              <Link 
-                key={service.id} 
+              <Link
+                key={service.id}
                 href={`/services/${service.slug}`}
                 className="group bg-white/5 border border-white/10 hover:border-[var(--brand-peach)]/60 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 flex flex-col justify-between items-center text-center relative overflow-hidden backdrop-blur-md hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[var(--brand-peach)]/20 cursor-pointer min-h-[300px]"
               >
@@ -157,11 +158,11 @@ export default function Home() {
                 <div className="flex flex-col items-center z-10 w-full pt-4">
                   {/* Icon Badge */}
                   <div className="h-20 w-20 bg-[var(--brand-peach)] rounded-2xl flex items-center justify-center mb-6 p-4 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                    <img 
-                      src={service.icon} 
-                      alt={service.title} 
-                      className="w-full h-full object-contain filter drop-shadow-md" 
-                      style={{filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)'}} 
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-full h-full object-contain filter drop-shadow-md"
+                      style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)' }}
                     />
                   </div>
 
@@ -202,11 +203,11 @@ export default function Home() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)]">Representative Matters</h2>
         </div>
-        
+
         <div className="w-full max-w-7xl mx-auto flex justify-center items-center bg-white rounded-2xl sm:rounded-3xl shadow-xl shadow-[var(--brand-maroon)]/5 p-3 sm:p-6 md:p-8 border border-[var(--brand-peach)]/50 hover:shadow-2xl transition-shadow duration-500">
           <WorldMap />
         </div>
-        
+
         <div className="mt-12 text-center">
           <Link href="/work" className="inline-flex items-center justify-center text-[var(--brand-maroon)] font-bold text-lg group">
             <span className="border-b-2 border-[var(--brand-maroon)] pb-1">See Our Track Record</span>
@@ -222,7 +223,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)]">The Way We Work</h2>
             <p className="text-lg text-[var(--brand-maroon-light)] max-w-2xl">A structured, strategic approach to delivering excellence in every mandate.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             {/* Connecting Line (Desktop) */}
             <div className="hidden md:block absolute top-12 left-12 right-12 h-1 bg-gradient-to-r from-[var(--brand-maroon)]/20 via-[var(--brand-maroon)]/40 to-[var(--brand-maroon)]/20 rounded-full z-0"></div>
@@ -252,7 +253,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-gradient-to-br from-[var(--brand-peach)]/20 via-white to-[var(--brand-peach)]/10 rounded-3xl p-8 md:p-14 border border-[var(--brand-peach)]/60 shadow-xl shadow-[var(--brand-maroon)]/5">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
+
               <div className="lg:col-span-8 flex flex-col gap-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--brand-maroon)]/10 text-[var(--brand-maroon)] text-xs font-bold uppercase tracking-widest rounded-full w-fit">
                   Practice-Integrated Research & Teaching
@@ -280,8 +281,8 @@ export default function Home() {
               </div>
 
               <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
-                <Link 
-                  href="/academic" 
+                <Link
+                  href="/academic"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-5 bg-[var(--brand-maroon)] hover:bg-[var(--brand-maroon-dark)] text-white font-bold text-sm uppercase tracking-wider rounded-2xl transition-all duration-300 shadow-xl shadow-[var(--brand-maroon)]/20 hover:scale-105 group text-center"
                 >
                   <span>Explore Academic Work</span>
