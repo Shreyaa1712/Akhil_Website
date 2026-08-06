@@ -270,7 +270,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6: Academic & Thought Leadership */}
+      {/* Section 6: Academic */}
       <section className="w-full bg-white py-24 border-t border-[var(--brand-peach)]/50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-gradient-to-br from-[var(--brand-peach)]/20 via-white to-[var(--brand-peach)]/10 rounded-3xl p-8 md:p-14 border border-[var(--brand-peach)]/60 shadow-xl shadow-[var(--brand-maroon)]/5">
@@ -282,7 +282,7 @@ export default function Home() {
                 </div>
 
                 <h2 className="text-3xl md:text-5xl font-bold font-serif text-[var(--brand-maroon-dark)] leading-tight">
-                  Academic & Thought Leadership
+                  Academic
                 </h2>
 
                 <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
