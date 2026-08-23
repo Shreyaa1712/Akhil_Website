@@ -27,13 +27,13 @@ export default function DisclaimerModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
       {/* Blurred background overlay */}
       <div className="absolute inset-0 bg-white/60 backdrop-blur-md"></div>
       
       {/* Modal Content */}
-      <div className="relative bg-white shadow-2xl border border-gray-100 max-w-4xl w-full p-8 md:p-12 z-10">
-        <h2 className="text-3xl md:text-4xl font-medium text-[var(--brand-maroon-dark)] mb-6 tracking-wide">
+      <div className="relative bg-white shadow-2xl border border-gray-100 max-w-4xl w-full max-h-full overflow-y-auto p-6 md:p-12 z-10 flex flex-col">
+        <h2 className="text-3xl md:text-4xl font-medium text-[var(--brand-maroon-dark)] mb-6 tracking-wide shrink-0">
           Disclaimer
         </h2>
         
@@ -43,11 +43,11 @@ export default function DisclaimerModal() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-6">
-          <label className="flex items-center gap-3 cursor-pointer select-none">
+        <div className="flex flex-col gap-6 mt-auto shrink-0">
+          <label className="flex items-start sm:items-center gap-3 cursor-pointer select-none">
             <input
               type="checkbox"
-              className="w-5 h-5 border-2 border-gray-300 rounded-sm text-[var(--brand-maroon)] focus:ring-[var(--brand-maroon)] cursor-pointer"
+              className="w-5 h-5 mt-0.5 sm:mt-0 shrink-0 border-2 border-gray-300 rounded-sm text-[var(--brand-maroon)] focus:ring-[var(--brand-maroon)] cursor-pointer"
               checked={isAccepted}
               onChange={(e) => setIsAccepted(e.target.checked)}
             />
@@ -59,7 +59,7 @@ export default function DisclaimerModal() {
           <button
             onClick={handleProceed}
             disabled={!isAccepted}
-            className={`self-start px-8 py-3 text-sm font-semibold tracking-widest uppercase transition-all duration-300 border ${
+            className={`w-full sm:w-auto self-start px-8 py-3 text-sm font-semibold tracking-widest uppercase transition-all duration-300 border ${
               isAccepted
                 ? "border-[var(--brand-maroon)] text-[var(--brand-maroon)] hover:bg-[var(--brand-maroon)] hover:text-white cursor-pointer"
                 : "border-gray-300 text-gray-400 cursor-not-allowed"

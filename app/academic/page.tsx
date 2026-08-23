@@ -3,32 +3,10 @@ import AnimatedStat from "@/components/AnimatedStat";
 
 export const dynamic = "force-static";
 
-<<<<<<< HEAD
-=======
-const BookOpen = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
-);
-
-const GraduationCap = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></svg>
-);
-
-const Globe = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
-);
-
->>>>>>> origin/bisnu2.0
 const ArrowRight = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
 );
 
-<<<<<<< HEAD
-=======
-const Award = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>
-);
-
->>>>>>> origin/bisnu2.0
 const Library = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m16 6 4 14" /><path d="M12 6v14" /><path d="M8 8v12" /><path d="M4 4v16" /></svg>
 );
@@ -194,8 +172,8 @@ export default function AcademicPage() {
                 <p className="text-sm text-white/85 leading-relaxed mb-6">
                   Our practice combines specialist expertise, direct partner involvement, and an international network of trusted professionals.
                 </p>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="inline-flex items-center justify-center px-5 py-3 bg-white text-[var(--brand-maroon)] hover:bg-[var(--brand-peach)] font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-lg"
                 >
                   Get In Touch
@@ -268,38 +246,6 @@ export default function AcademicPage() {
           ))}
         </div>
       </section>
-<<<<<<< HEAD
-=======
-
-      {/* Firm Practice & Closing Commitment Banner */}
-      <section className="max-w-7xl mx-auto px-6 mt-12">
-        <div className="bg-gradient-to-r from-[var(--brand-maroon-dark)] to-[var(--brand-maroon)] text-white rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
-          <div className="max-w-3xl relative z-10">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--brand-peach)] mb-4">
-              <Award className="w-4 h-4" />
-              <span>Our Practice & Commitment</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 leading-tight">
-              Bridging academic excellence and practical legal execution.
-            </h2>
-            <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6 font-light">
-              AR Legal was established to help governments and businesses navigate the increasingly complex landscape of international trade law and policy.
-            </p>
-            <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 font-light">
-              Our practice combines specialist expertise, direct partner involvement, and an international network of trusted professionals. We aim to deliver clear, effective, and commercially-oriented advice across jurisdictions. We look forward to working with you.
-            </p>
-
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[var(--brand-maroon)] hover:bg-[var(--brand-peach)] font-bold text-sm uppercase tracking-wider rounded-xl transition-colors shadow-lg"
-            >
-              Get In Touch With Us
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
->>>>>>> origin/bisnu2.0
     </div>
   );
 }

@@ -38,13 +38,27 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright and Policy Links */}
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-[var(--brand-maroon-light)]/80 uppercase tracking-wider">
-          <div>
+          <div className="text-center md:text-left">
             &copy; {new Date().getFullYear()} AR Legal. All rights reserved.
           </div>
-          <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-[var(--brand-maroon)] transition-colors">Privacy</Link>
-            <span className="opacity-50">|</span>
-            <Link href="/cookie-policy" className="hover:text-[var(--brand-maroon)] transition-colors">Cookies</Link>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="flex gap-4">
+              <Link href="/privacy-policy" className="hover:text-[var(--brand-maroon)] transition-colors">Privacy</Link>
+              <span className="opacity-50">|</span>
+              <Link href="/cookie-policy" className="hover:text-[var(--brand-maroon)] transition-colors">Cookies</Link>
+            </div>
+            <span className="hidden md:inline opacity-50">|</span>
+            <div className="text-center">
+              Website made by{" "}
+              <a
+                href="https://in.linkedin.com/company/vds-sphere"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--brand-maroon)] transition-colors underline decoration-[var(--brand-maroon-light)]/50 underline-offset-4"
+              >
+                VDS Sphere
+              </a>
+            </div>
           </div>
         </div>
 

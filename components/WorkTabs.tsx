@@ -129,12 +129,12 @@ export default function WorkTabs() {
   const renderCard = (item: any, idx: number) => (
     <div key={idx} className="bg-white rounded-2xl p-6 md:p-8 border border-[var(--brand-peach)]/50 hover:border-[var(--brand-peach-dark)] hover:shadow-lg transition-all duration-300 h-full flex flex-col">
       {item.caseNumber && (
-        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-[var(--brand-maroon-dark)] tracking-tight">
+        <h3 className="text-xl md:text-2xl font-bold mb-2 text-[var(--brand-maroon-dark)] tracking-tight">
           {item.caseNumber}
         </h3>
       )}
       {item.title && (
-        <h4 className="text-lg md:text-xl font-semibold mb-4 text-[var(--brand-maroon)]">
+        <h4 className="text-xl md:text-2xl font-bold mb-4 text-[var(--brand-maroon)] tracking-tight">
           {item.title}
         </h4>
       )}
