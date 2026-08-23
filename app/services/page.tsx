@@ -25,11 +25,11 @@ const services = [
   },
   {
     id: "03",
-    title: "Customs",
+    title: "Customs, Sanctions and Export Controls",
     slug: "customs-and-importation",
     image: "/images/customs.png",
     icon: "/images/icon-ci.png",
-    description: "Helping companies navigate complex customs frameworks and mitigate supply chain disruptions.",
+    description: "Advising companies on customs matters, tariff classification, valuation, rules of origin, sanctions, export controls, and supply chain risks.",
   },
   {
     id: "04",
@@ -37,7 +37,7 @@ const services = [
     slug: "esg-and-regulatory-advisory",
     image: "/images/esg-regulatory.png",
     icon: "/images/icon-esg.png",
-    description: "Advising companies on the intersection of international trade, sustainability, and regulatory compliance.",
+    description: "Advising companies on sustainability and ESG frameworks, CBAM, EUDR, CSDDD, forced labor laws, and supply chain due diligence.",
   },
 ];
 
@@ -57,8 +57,8 @@ export default function ServicesPage() {
             Practice Areas
             <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon)]">
-            Our Services
+          <h1 className="text-5xl md:text-6xl font-bold font-serif mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon)]">
+            Our Practices
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-black leading-relaxed font-medium">
             Expert advisory and litigation services across the full spectrum of international trade law.

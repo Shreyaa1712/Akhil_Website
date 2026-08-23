@@ -1,5 +1,7 @@
 import Link from "next/link";
 import WorldMap from "@/components/WorldMap";
+import GlareHover from "@/components/GlareHover";
+import FadeContent from "@/components/FadeContent";
 const ArrowRight = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
 );
@@ -20,42 +22,79 @@ const Shield = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 7 2a1 1 0 0 1 1 1z" /></svg>
 );
 
+const Package = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m7.5 4.27 9 5.15" /><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /><path d="m3.3 7 8.7 5 8.7-5" /><path d="M12 22V12" /></svg>
+);
+
+const Leaf = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" /><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" /></svg>
+);
+
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center bg-[var(--brand-light)] min-h-screen text-[var(--brand-maroon-dark)]">
 
       {/* Hero Section */}
-      <section className="relative w-full px-6 py-24 md:py-36 flex flex-col items-center text-center overflow-hidden">
+      <section className="relative w-full px-6 py-12 md:py-16 flex flex-col items-center text-center overflow-hidden">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-peach)]/40 to-[var(--brand-light)] -z-10" />
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-[var(--brand-peach)] rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10" />
         <div className="absolute top-1/2 -right-24 w-[30rem] h-[30rem] bg-[var(--brand-peach-dark)] rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10" />
 
-        <div className="max-w-7xl mx-auto z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-[1.1] text-[var(--brand-maroon)] drop-shadow-sm">
+        <div className="max-w-4xl mx-auto z-10 flex flex-col items-center">
+
+          <h1 className="font-serif font-bold text-5xl md:text-7xl mb-4 tracking-tight leading-[1.1] text-[var(--brand-maroon)] text-center">
             Navigating <br className="hidden md:block" />
-            <span className="text-[var(--brand-maroon)]">International Trade</span>
+            International Trade
           </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-12 text-[var(--brand-maroon-dark)] leading-relaxed font-medium text-center">
-            We advise governments, exporters, importers, and industry associations on<br className="hidden md:block" />
-            international trade law, trade remedies, customs, and regulatory compliance.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/services" className="group inline-flex items-center justify-center px-8 py-4 bg-[var(--brand-maroon)] text-[var(--brand-light)] rounded-full text-lg font-bold hover:bg-[var(--brand-maroon-dark)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              Explore Our Expertise
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[var(--brand-maroon)] text-[var(--brand-maroon)] rounded-full text-lg font-bold hover:bg-[var(--brand-maroon)]/5 transition-all duration-300">
-              Get in Touch
-            </Link>
+
+          {/* Decorative divider below heading */}
+          <span className="w-10 h-[1.5px] bg-[var(--brand-maroon)] opacity-50 block mb-8"></span>
+
+          {/* Paragraph constrained to heading's visual width (≈ "International Trade" at text-7xl) */}
+          <div className="w-full max-w-[660px]">
+            <p className="text-base md:text-lg mb-12 text-[#1a1a1a] leading-relaxed text-left">
+              We advise governments, manufacturers, exporters, importers, as well as industry associations on WTO law, trade remedies, customs, and regulatory compliance and emerging ESG-related requirements.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <GlareHover
+              glareColor="#ffffff"
+              glareOpacity={0.35}
+              glareAngle={-30}
+              glareSize={300}
+              transitionDuration={800}
+              playOnce={false}
+            >
+              <Link href="/services" className="group inline-flex items-center justify-center px-8 py-4 bg-[var(--brand-maroon)] text-[var(--brand-light)] rounded-full text-lg font-bold hover:bg-[var(--brand-maroon-dark)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                Explore Our Expertise
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </GlareHover>
+            <FadeContent duration={1000} blur={true} delay={100}>
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-[var(--brand-maroon)] text-[var(--brand-maroon)] rounded-full text-lg font-bold hover:bg-[var(--brand-maroon)]/5 transition-all duration-300">
+                Get in Touch
+              </Link>
+            </FadeContent>
+          </div>
+
+          {/* Keyword tags row */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            {["WTO", "Trade Remedies", "Customs", "ESG", "Trade & Regulatory Compliance"].map((tag, i, arr) => (
+              <span key={tag} className="flex items-center gap-4">
+                <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[var(--brand-maroon)] opacity-60">{tag}</span>
+                {i < arr.length - 1 && <span className="text-[var(--brand-maroon)] opacity-30 text-xs">·</span>}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Section 2: About Us Preview */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-20">
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-center gap-12 md:gap-16 relative overflow-hidden border border-[var(--brand-peach)]/50">
+      <section className="w-full max-w-7xl mx-auto px-6 py-10 md:py-14">
+        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-center gap-8 md:gap-12 relative overflow-hidden border border-[var(--brand-peach)]/50">
           {/* Decorative Accent */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--brand-peach-dark)]/20 rounded-bl-full -z-0" />
 
@@ -80,21 +119,39 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-start gap-3">
-                <div className="mt-1 bg-[var(--brand-peach)] p-2 rounded-full text-[var(--brand-maroon)]">
+                <div className="mt-1 bg-[var(--brand-peach)] p-2 rounded-full text-[var(--brand-maroon)] flex-shrink-0">
                   <Scale className="w-[18px] h-[18px]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--brand-maroon-dark)]">WTO Litigation</h4>
+                  <h4 className="font-bold text-[var(--brand-maroon-dark)]">International Trade Disputes</h4>
                   <p className="text-sm text-[var(--brand-maroon-light)]">Expert representation in complex disputes.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="mt-1 bg-[var(--brand-peach)] p-2 rounded-full text-[var(--brand-maroon)]">
+                <div className="mt-1 bg-[var(--brand-peach)] p-2 rounded-full text-[var(--brand-maroon)] flex-shrink-0">
                   <Shield className="w-[18px] h-[18px]" />
                 </div>
                 <div>
                   <h4 className="font-bold text-[var(--brand-maroon-dark)]">Trade Defence</h4>
                   <p className="text-sm text-[var(--brand-maroon-light)]">Strategic counsel for market protection.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="mt-1 bg-[var(--brand-peach)] p-2 rounded-full text-[var(--brand-maroon)] flex-shrink-0">
+                  <Package className="w-[18px] h-[18px]" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-[var(--brand-maroon-dark)]">Customs & Importation</h4>
+                  <p className="text-sm text-[var(--brand-maroon-light)]">Tariffs, valuation & supply chain compliance.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="mt-1 bg-[var(--brand-peach)] p-2 rounded-full text-[var(--brand-maroon)] flex-shrink-0">
+                  <Leaf className="w-[18px] h-[18px]" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-[var(--brand-maroon-dark)]">ESG & Regulatory Advisory</h4>
+                  <p className="text-sm text-[var(--brand-maroon-light)]">CBAM, EUDR & sustainability policy.</p>
                 </div>
               </div>
             </div>

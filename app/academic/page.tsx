@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AnimatedStat from "@/components/AnimatedStat";
+import AnimatedContent from "@/components/AnimatedContent";
 
 export const dynamic = "force-static";
 
@@ -18,81 +19,67 @@ export const metadata = {
 
 const publications = [
   {
-    title: "Benefit Analysis in EU-CVDs on Biodiesel (Indonesia)",
-    journal: "Indian Journal of International Economic Law",
-    year: "2026",
-    coAuthors: "with P. Mavroidis and Neeraj RS",
-    type: "Journal Article"
-  },
-  {
+    id: 1,
     title: "Evolution of EU Trade Law through the Prism of Competence",
     journal: "Journal of World Trade",
     year: "2019",
     coAuthors: "with M. Ovadek",
-    type: "Journal Article"
+    type: "Journal Article",
+    shortView: "A data-driven study of EU trade law using a dataset of over 6,000 legal acts, revealing that expanding EU trade competence has not led to a corresponding increase in trade legislation."
   },
   {
-    title: "European Union",
-    journal: "International Trade Law Review (LBR)",
-    year: "2022–2024",
-    coAuthors: "with N. Kuplewatzky",
-    type: "Book Chapter / Review"
-  },
-  {
-    title: "EU and Global Economic Governance",
-    journal: "60 Years of European Integration (Hart Publishing)",
-    year: "2020",
-    coAuthors: null,
-    type: "Book Chapter"
-  },
-  {
-    title: "Is the Rules-Based Multilateral Trade Order in Decline?",
-    journal: "Cambridge International Law Journal",
-    year: "2021",
-    coAuthors: null,
-    type: "Journal Article"
-  },
-  {
-    title: "Compliance with WTO Rulings and MAS",
-    journal: "Presentation at the 8th Biennial Conference, Asian Society of International Law",
-    year: "2021",
-    coAuthors: null,
-    type: "Conference Paper"
-  },
-  {
+    id: 2,
     title: "What is a Safeguard Measure under WTO Law?",
     journal: "Trade Law & Development",
     year: "2018",
     coAuthors: null,
-    type: "Journal Article"
+    type: "Journal Article",
+    shortView: "A clarifying analysis of safeguard measures under WTO law, addressing questions that have resurfaced amid US-China trade tensions."
   },
   {
+    id: 3,
     title: "Good Faith in WTO Dispute Settlement",
     journal: "Global Trade and Customs Journal",
     year: "2016",
     coAuthors: null,
-    type: "Journal Article"
+    type: "Journal Article",
+    shortView: "An analysis of how good faith principles shape the authority and credibility of the WTO's dispute settlement system."
   },
   {
+    id: 4,
     title: "AB Deadlock - What It Is, Why It's a Problem, and What to Do About It",
     journal: "Global Trade and Customs Journal",
     year: "2018",
     coAuthors: null,
-    type: "Journal Article"
+    type: "Journal Article",
+    shortView: "An examination of the US blockade on WTO Appellate Body appointments and a proposed path forward for global trade dispute resolution."
   },
   {
-    title: "Case Notes",
-    journal: "Oxford Reports on International Law & Elgar Encyclopedia of Environmental Law",
-    year: "2018, 2021",
-    coAuthors: null,
-    type: "Case Notes & Encyclopedia"
-  },
-  {
+    id: 5,
     title: "Legal Problems with Data Localization Requirements",
     journal: "Global Trade and Customs Journal",
     year: "2020",
     coAuthors: "with S. Hernández Serrano",
-    type: "Journal Article"
+    type: "Journal Article",
+    shortView: "A legal analysis of Russia's data localization laws, concluding they violate WTO market access obligations with no valid justification under existing exceptions."
+  },
+  {
+    id: 6,
+    title: "Benefit Analysis in EU-CVDs on Biodiesel (Indonesia)",
+    journal: "Indian Journal of International Economic Law",
+    year: "2026",
+    coAuthors: "with P. Mavroidis and Neeraj RS",
+    type: "Journal Article",
+    shortView: "A legal analysis of the WTO dispute EU - CVDs on Biodiesel (Indonesia), focusing on whether export levies paid by Indonesian biodiesel producers should have been considered when assessing the benefit received from government grants."
+  },
+  {
+    id: 7,
+    title: "European Union",
+    journal: "International Trade Law Review (LBR)",
+    year: "2022–2024",
+    coAuthors: "with N. Kuplewatzky",
+    type: "Book Chapter / Review",
+    shortView: "This chapter examines the EU’s role in global economic governance, particularly its engagement with institutions such as the WTO, G7, G20, IMF and World Bank. It highlights that although the EU strongly promotes multilateralism, its influence is weakened by the absence of a clear and coordinated strategy with its Member States."
   }
 ];
 
@@ -118,10 +105,10 @@ export default function AcademicPage() {
   return (
     <div className="w-full bg-[var(--brand-light)] text-[var(--brand-maroon-dark)] pb-24">
       {/* Hero Section */}
-      <section className="relative w-full py-8 md:py-10 bg-gradient-to-b from-[var(--brand-peach)]/30 to-[var(--brand-light)] border-b border-[var(--brand-peach)]/40 overflow-hidden">
+      <section className="relative w-full py-4 md:py-5 bg-gradient-to-b from-[var(--brand-peach)]/30 to-[var(--brand-light)] border-b border-[var(--brand-peach)]/40 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold font-serif text-[var(--brand-maroon-dark)] tracking-tight mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold font-serif text-[var(--brand-maroon-dark)] tracking-tight mb-2">
               Academic
             </h1>
             <p className="text-lg md:text-xl text-[var(--brand-maroon-light)] font-light leading-[1.15]">
@@ -132,7 +119,7 @@ export default function AcademicPage() {
       </section>
 
       {/* Main Overview & Teaching Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-8 pb-10 md:pt-10 md:pb-12">
+      <section className="max-w-7xl mx-auto px-6 pt-3 pb-10 md:pt-4 md:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           {/* Main Statement */}
           <div className="lg:col-span-7 flex flex-col justify-between bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
@@ -183,13 +170,26 @@ export default function AcademicPage() {
             </div>
 
             {teachingNodes.map((item, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-6 shadow-md border border-[var(--brand-peach)]/40 hover:border-[var(--brand-maroon)]/40 transition-colors">
-                <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-bold text-lg text-[var(--brand-maroon-dark)]">{item.institution}</h4>
-                  <span className="text-xs font-semibold px-2.5 py-1 bg-[var(--brand-peach)]/40 text-[var(--brand-maroon)] rounded-full">{item.role}</span>
+              <AnimatedContent
+                key={idx}
+                distance={60}
+                direction="vertical"
+                reverse={false}
+                duration={0.8}
+                initialOpacity={0}
+                animateOpacity
+                scale={0.95}
+                threshold={0.1}
+                delay={idx * 0.25}
+              >
+                <div className="bg-white rounded-2xl p-6 shadow-md border border-[var(--brand-peach)]/40 hover:border-[var(--brand-maroon)]/40 transition-colors">
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="font-bold text-lg text-[var(--brand-maroon-dark)]">{item.institution}</h4>
+                    <span className="text-xs font-semibold px-2.5 py-1 bg-[var(--brand-peach)]/40 text-[var(--brand-maroon)] rounded-full">{item.role}</span>
+                  </div>
+                  <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed">{item.desc}</p>
                 </div>
-                <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed">{item.desc}</p>
-              </div>
+              </AnimatedContent>
             ))}
           </div>
         </div>
@@ -228,13 +228,19 @@ export default function AcademicPage() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-serif font-bold text-[var(--brand-maroon-dark)] group-hover:text-[var(--brand-maroon)] transition-colors mb-3 leading-snug">
+                <h3 className="text-xl font-serif font-bold text-[var(--brand-maroon-dark)] group-hover:text-[var(--brand-maroon)] transition-colors mb-2 leading-snug">
                   "{pub.title}"
                 </h3>
 
-                <p className="text-sm font-medium text-[var(--brand-maroon)] italic mb-2">
+                <p className="text-sm font-semibold text-[var(--brand-maroon)] italic mb-3">
                   {pub.journal}
                 </p>
+
+                {pub.shortView && (
+                  <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed mb-4">
+                    {pub.shortView}
+                  </p>
+                )}
               </div>
 
               {pub.coAuthors && (

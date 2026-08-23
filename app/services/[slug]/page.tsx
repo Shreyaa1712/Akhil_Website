@@ -13,19 +13,19 @@ const servicesData = {
     title: "Trade Defence",
     image: "/images/trade-defence.png",
     icon: "/images/icon-td.png",
-    content: `We advise governments and businesses on all aspects of trade remedy law, from pre-initiation strategy through investigations, definitive measures, reviews, and judicial challenges. Our experience spans across anti-dumping, anti-subsidy, foreign subsidy, and safeguard proceedings before investigating authorities in the EU, the UK, India, and other key jurisdictions. We have advised clients across a broad range of industrial, consumer, and high-technology sectors.\n\nWe also advise on litigation before the EU General Court arising from trade remedy proceedings. Working alongside leading EU litigators, we develop litigation strategies and coordinate representation to protect our clients' commercial and regulatory interests.`
+    content: `We advise governments and businesses on all aspects of trade remedy law, from pre-initiation strategy through investigations, definitive measures, reviews, and judicial challenges. Our experience spans across anti-dumping, anti-subsidy, foreign subsidy, and safeguard proceedings before investigating authorities in the EU, the UK, India, and other key jurisdictions.\n\nAnti-Dumping Investigations\nAdvised governments, exporters, and industry in anti-dumping investigations concerning TiO2, PVC, corrosion-resistant steel, cold-rolled steel, ceramic tiles, biodiesel, fatty acids, and hot-rolled flat products.\n\nAnti-Subsidy Investigations\nAdvised clients in countervailing duty investigations involving battery electric vehicles, optical fibre cables, and electric bicycles.\n\nSafeguard Investigations\nAdvised on safeguard investigations concerning EU Steel Safeguards I & II and ferro-alloys.\n\nForeign Subsidies Regulation\nAdvised clients on proceedings under the EU Foreign Subsidies Regulation, including strategic advice and submissions before the European Commission.\n\nEU General Court Litigation\nSupported foreign exporters seeking annulment of an EU anti-dumping regulation before the General Court of the European Union.\n\nAdditional Advisory Experience\nAdvised industry on litigation and regulatory issues before the EU Courts, including the principle of non-discrimination, selection of the representative country, rules of origin, and adjustments in anti-dumping investigations.`
   },
   "customs-and-importation": {
-    title: "Customs",
+    title: "Customs, Sanctions and Export Controls",
     image: "/images/customs.png",
     icon: "/images/icon-ci.png",
-    content: `We advise businesses on the customs aspects of cross-border trade. Our practice covers tariff classification, customs valuation, rules of origin, import licensing, and trade embargoes, helping clients navigate complex customs frameworks across jurisdictions. We also advise on broader border measures and supply chain risks, enabling businesses to manage regulatory obligations, mitigate disruption, and facilitate the efficient movement of goods.`
+    content: `We advise businesses on the customs matters, including tariff classification, valuation, rules of origin, import licensing, as well as sanctions and export controls. We also advise on supply chain risks, enabling businesses to manage their regulatory obligations, mitigate disruption, and facilitate the efficient movement of goods and services.`
   },
   "esg-and-regulatory-advisory": {
     title: "ESG & Regulatory Advisory",
     image: "/images/esg-regulatory.png",
     icon: "/images/icon-esg.png",
-    content: `We advise businesses on the trade and regulatory implications of emerging sustainability and ESG frameworks. Our expertise includes the EU Carbon Border Adjustment Mechanism (CBAM), the EU Deforestation Regulation (EUDR), the Corporate Sustainability Due Diligence Directive (CSDDD), and US forced labour legislation. We support clients with compliance planning, regulatory engagement, supply chain due diligence, and strategic risk management in an increasingly complex regulatory environment. We also advise on other trade-related regulatory measures, including those arising from national security, economic security, and industrial policy initiatives.`
+    content: `We advise businesses on the implications of emerging sustainability and ESG frameworks. Our expertise includes the EU’s Carbon Border Adjustment Mechanism (CBAM), Deforestation Regulation (EUDR), and Corporate Sustainability Due Diligence Directive (CSDDD), as well as the US’ Uyghur Forced Labor Prevention Act. We support clients with planning, supply chain due diligence, and engagement with regulators around the world.`
   }
 };
 
@@ -72,12 +72,12 @@ export default async function ServicePage({ params }: Params) {
         
         <div className="text-[1.25rem] md:text-[1.35rem] text-black max-w-none space-y-6 font-medium leading-[1.7]">
           {service.content.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="leading-relaxed">{paragraph}</p>
+            <p key={index} className="leading-relaxed whitespace-pre-line">{paragraph}</p>
           ))}
         </div>
 
         <div className="mt-16 pt-8 border-t-2 border-[var(--brand-maroon)]/20 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-serif text-[var(--brand-maroon-dark)] mb-6">Require assistance with {service.title}?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-[var(--brand-maroon)] mb-6">Require assistance with {service.title}?</h2>
           <Link 
             href="/contact" 
             className="inline-block px-10 py-5 bg-[var(--brand-maroon)] text-white font-bold tracking-wider uppercase text-sm rounded-full hover:bg-[var(--brand-maroon-dark)] hover:shadow-xl transition-all hover:-translate-y-1"

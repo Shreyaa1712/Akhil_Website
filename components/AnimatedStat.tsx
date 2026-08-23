@@ -15,7 +15,7 @@ export default function AnimatedStat({
   suffix = "",
   prefix = "",
   label,
-  duration = 1400,
+  duration = 2500,
 }: AnimatedStatProps) {
   const [displayValue, setDisplayValue] = useState(0);
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -34,11 +34,13 @@ export default function AnimatedStat({
 
         if (entry?.isIntersecting) {
           setShouldAnimate(true);
-          observer.disconnect();
+        } else {
+          setShouldAnimate(false);
+          setDisplayValue(0);
         }
       },
       {
-        threshold: 0.35,
+        threshold: 0.3,
       }
     );
 
@@ -57,7 +59,8 @@ export default function AnimatedStat({
 
     const animate = (currentTime: number) => {
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
+      // Gentle ease-out curve for smooth pacing on small values
+      const eased = 1 - Math.pow(1 - progress, 2);
       setDisplayValue(Math.round(value * eased));
 
       if (progress < 1) {
