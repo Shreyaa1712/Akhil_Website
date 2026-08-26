@@ -1,34 +1,187 @@
 @import "tailwindcss";
 
+/* ─── Neue Montreal ──────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-lightitalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-mediumitalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/neue-montreal/neuemontreal-bolditalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ─── Helvetica Neue ─────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueRoman.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueLightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueMediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeueBoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ─── Design Tokens ──────────────────────────────────────────────────────── */
 :root {
   --background: #fde9d9;
   --foreground: #491316;
-  --font-primary: var(--font-playfair);
-  
-  --brand-light: #fff5eb;
-  --brand-peach: #fde9d9;
-  --brand-peach-dark: #e8cca6;
-  
+
+  /* Typography */
+  --font-heading:    "Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-subheading: "Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:       "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Brand colours */
+  --brand-light:       #fff5eb;
+  --brand-peach:       #fde9d9;
+  --brand-peach-dark:  #e8cca6;
   --brand-maroon-light: #7a2228;
-  --brand-maroon: #491316;
+  --brand-maroon:      #491316;
   --brand-maroon-dark: #260a0b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-brand-light: var(--brand-light);
-  --color-brand-peach: var(--brand-peach);
-  --color-brand-peach-dark: var(--brand-peach-dark);
+  --color-background:        var(--background);
+  --color-foreground:        var(--foreground);
+  --color-brand-light:       var(--brand-light);
+  --color-brand-peach:       var(--brand-peach);
+  --color-brand-peach-dark:  var(--brand-peach-dark);
   --color-brand-maroon-light: var(--brand-maroon-light);
-  --color-brand-maroon: var(--brand-maroon);
+  --color-brand-maroon:      var(--brand-maroon);
   --color-brand-maroon-dark: var(--brand-maroon-dark);
-  --font-sans: var(--font-primary);
-  --font-serif: var(--font-primary);
+  --font-sans:  var(--font-body);
+  --font-serif: var(--font-heading);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-primary), serif;
+  background:  var(--background);
+  color:       var(--foreground);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* H1 – Neue Montreal (bold for impact) */
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-variant-caps: small-caps;
+}
+
+/* H2, H3 – Neue Montreal Medium (subheadings) */
+h2,
+h3 {
+  font-family: var(--font-subheading);
+  font-weight: 500;
+  font-variant-caps: small-caps;
+}
+
+/* H4–H6 – Helvetica Neue Medium */
+h4,
+h5,
+h6 {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }

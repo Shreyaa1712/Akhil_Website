@@ -1,9 +1,8 @@
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About Us | AR Legal",
-  description: "Learn about AR Legal and Dr. Raina. We provide specialist expertise in international trade law.",
-};
+import { motion } from "motion/react";
+
+const animEnabled = process.env.NEXT_PUBLIC_ENABLE_ANIMATIONS === "true";
 
 export default function AboutPage() {
   return (
@@ -16,15 +15,35 @@ export default function AboutPage() {
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[var(--brand-peach)] rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10" />
 
         <div className="max-w-6xl mx-auto z-10">
-          <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-3">
-            <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-            About Us
-            <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-            A Boutique Practice, Dedicated To <br className="hidden md:block" />
-            <span className="text-[var(--brand-maroon)]">International Trade</span>
-          </h1>
+          {animEnabled ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-3">
+                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
+                About Us
+                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
+                A Boutique Practice, Dedicated To <br className="hidden md:block" />
+                <span className="text-[var(--brand-maroon)]">International Trade</span>
+              </h1>
+            </motion.div>
+          ) : (
+            <div>
+              <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-3">
+                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
+                About Us
+                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
+                A Boutique Practice, Dedicated To <br className="hidden md:block" />
+                <span className="text-[var(--brand-maroon)]">International Trade</span>
+              </h1>
+            </div>
+          )}
         </div>
       </section>
 
@@ -35,71 +54,154 @@ export default function AboutPage() {
         <section className="mb-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[var(--brand-maroon-dark)] border-b-2 border-[var(--brand-peach)] pb-3">Dr. Akhil Raina</h2>
 
-          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-start gap-8 md:gap-10 border border-[var(--brand-peach)]/50">
-            <div className="w-full md:w-5/12 flex-shrink-0">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20"></div>
-                <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
-              </div>
-            </div>
-
-            <div className="w-full md:w-7/12 flex flex-col">
-              <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry.</p>
-              <p className="text-lg leading-relaxed mb-8 text-[var(--brand-maroon-light)]">
-                Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience litigating trade disputes.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Core Expertise</h3>
-                  <ul className="text-[var(--brand-maroon-light)] space-y-2">
-                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> WTO Law</li>
-                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Trade Defence</li>
-                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Customs</li>
-                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Trade-related ESG</li>
-                  </ul>
+          {animEnabled ? (
+            <motion.div
+              className="bg-white rounded-3xl p-6 md:p-8 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-start gap-8 md:gap-10 border border-[var(--brand-peach)]/50"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <motion.div
+                className="w-full md:w-5/12 flex-shrink-0"
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+              >
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20"></div>
+                  <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
                 </div>
-                <div>
-                  <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Education</h3>
-                  <ul className="text-[var(--brand-maroon-light)] space-y-2">
-                    <li><strong className="text-[var(--brand-maroon-dark)]">PhD</strong> (Belgium; Marie Curie Fellow)</li>
-                    <li><strong className="text-[var(--brand-maroon-dark)]">LLM</strong> (Spain; ELSA Scholar)</li>
-                    <li><strong className="text-[var(--brand-maroon-dark)]">BSc, LLB</strong> (India; Trade & Inv. Law Honours)</li>
-                  </ul>
-                </div>
-              </div>
+              </motion.div>
 
-              <div>
-                <h3 className="text-sm font-bold mb-3 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Academia</h3>
-                <p className="text-sm leading-relaxed text-[var(--brand-maroon-light)]">
-                  Dr. Raina’s academic work runs alongside his legal practice and forms an integral part of his professional work. His research has been published by Oxford University Press and Cambridge University Press, and he has taught at institutions including KU Leuven in Belgium and the World Trade Institute in Switzerland, with teaching engagements in Greece and India as well. He has also trained students and government officials across Europe, Asia, Africa, and South America.
+              <motion.div
+                className="w-full md:w-7/12 flex flex-col"
+                initial={{ opacity: 0, x: 16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
+              >
+                <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry.</p>
+                <p className="text-lg leading-relaxed mb-8 text-[var(--brand-maroon-light)]">
+                  Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience litigating trade disputes.
                 </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Core Expertise</h3>
+                    <ul className="text-[var(--brand-maroon-light)] space-y-2">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> WTO Law</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Trade Defence</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Customs</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Trade-related ESG</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Education</h3>
+                    <ul className="text-[var(--brand-maroon-light)] space-y-2">
+                      <li><strong className="text-[var(--brand-maroon-dark)]">PhD</strong> (Belgium; Marie Curie Fellow)</li>
+                      <li><strong className="text-[var(--brand-maroon-dark)]">LLM</strong> (Spain; ELSA Scholar)</li>
+                      <li><strong className="text-[var(--brand-maroon-dark)]">BSc, LLB</strong> (India; Trade & Inv. Law Honours)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-bold mb-3 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Academia</h3>
+                  <p className="text-sm leading-relaxed text-[var(--brand-maroon-light)]">
+                    Dr. Raina&apos;s academic work runs alongside his legal practice and forms an integral part of his professional work. His research has been published by Oxford University Press and Cambridge University Press, and he has taught at institutions including KU Leuven in Belgium and the World Trade Institute in Switzerland, with teaching engagements in Greece and India as well. He has also trained students and government officials across Europe, Asia, Africa, and South America.
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+          ) : (
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col md:flex-row items-start gap-8 md:gap-10 border border-[var(--brand-peach)]/50">
+              <div className="w-full md:w-5/12 flex-shrink-0">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20"></div>
+                  <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                </div>
+              </div>
+
+              <div className="w-full md:w-7/12 flex flex-col">
+                <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry.</p>
+                <p className="text-lg leading-relaxed mb-8 text-[var(--brand-maroon-light)]">
+                  Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience litigating trade disputes.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Core Expertise</h3>
+                    <ul className="text-[var(--brand-maroon-light)] space-y-2">
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> WTO Law</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Trade Defence</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Customs</li>
+                      <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-peach-dark)]"></span> Trade-related ESG</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Education</h3>
+                    <ul className="text-[var(--brand-maroon-light)] space-y-2">
+                      <li><strong className="text-[var(--brand-maroon-dark)]">PhD</strong> (Belgium; Marie Curie Fellow)</li>
+                      <li><strong className="text-[var(--brand-maroon-dark)]">LLM</strong> (Spain; ELSA Scholar)</li>
+                      <li><strong className="text-[var(--brand-maroon-dark)]">BSc, LLB</strong> (India; Trade & Inv. Law Honours)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-bold mb-3 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Academia</h3>
+                  <p className="text-sm leading-relaxed text-[var(--brand-maroon-light)]">
+                    Dr. Raina&apos;s academic work runs alongside his legal practice and forms an integral part of his professional work. His research has been published by Oxford University Press and Cambridge University Press, and he has taught at institutions including KU Leuven in Belgium and the World Trade Institute in Switzerland, with teaching engagements in Greece and India as well. He has also trained students and government officials across Europe, Asia, Africa, and South America.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </section>
 
         {/* Intro Section */}
         <section className="mb-20">
           <div className="space-y-6 text-lg leading-relaxed text-[var(--brand-maroon-light)] font-medium text-justify">
-            <p>
-              AR Legal is a Brussels and New Delhi-based boutique law practice dedicated to international trade. Our practice advises governments and multinational companies on the full range of trade law and policy – whether in dispute settlement proceedings before the WTO, in trade remedy investigations before authorities in Europe and Asia, or in navigating an expanding body of trade-related regulatory compliance obligations, as well as complex customs procedures and import controls.
-            </p>
-            <p>
-              We assist clients through the full life cycle of the matter. In disputes, we assist governments from developing strategy to consultations with the opposing government, and onwards to litigation and ensuring implementation of the legal result. For industry, our work includes advising on the interpretation and implementation of new regulations, assessing compliance obligations and associated commercial risks, and assisting clients in responding to regulatory developments. We also advise domestic industries and exporters on trade defence and trade remedy matters, including anti-dumping, countervailing duty and safeguard investigations, from assessing the viability of proceedings and preparing submissions to representation before investigating authorities, reviews and subsequent litigation. Where required, we further assist clients with advocacy for legislative or regulatory change and with legal challenges to measures at the national, regional and international level. Few practices cover such a wide spectrum.
-            </p>
-            <p>
-              Our practice is built on a simple but deliberate model: senior professionals working in a network of experts, calibrated to each specific mandate. Every matter is handled directly by Dr. Raina. For each assignment, a carefully assembled team of specialists is put together – experienced trade lawyers in the relevant jurisdictions, economists and quantitative analysts where required, and policy or subject-matter experts where depth in a particular sector or regulatory framework is required.
-            </p>
-            <p>
-              Our work covers global (WTO) and regional (FTA) rules; and we work with authorities in the EU (DG Trade), the UK (TRA), India (DGTR), as well as those in the US, Canada, China, and across Asia and Latin America.
-            </p>
+            {[
+              "AR Legal is a Brussels and New Delhi-based boutique law practice dedicated to international trade. Our practice advises governments and multinational companies on the full range of trade law and policy – whether in dispute settlement proceedings before the WTO, in trade remedy investigations before authorities in Europe and Asia, or in navigating an expanding body of trade-related regulatory compliance obligations, as well as complex customs procedures and import controls.",
+              "We assist clients through the full life cycle of the matter. In disputes, we assist governments from developing strategy to consultations with the opposing government, and onwards to litigation and ensuring implementation of the legal result. For industry, our work includes advising on the interpretation and implementation of new regulations, assessing compliance obligations and associated commercial risks, and assisting clients in responding to regulatory developments. We also advise domestic industries and exporters on trade defence and trade remedy matters, including anti-dumping, countervailing duty and safeguard investigations, from assessing the viability of proceedings and preparing submissions to representation before investigating authorities, reviews and subsequent litigation. Where required, we further assist clients with advocacy for legislative or regulatory change and with legal challenges to measures at the national, regional and international level. Few practices cover such a wide spectrum.",
+              "Our practice is built on a simple but deliberate model: senior professionals working in a network of experts, calibrated to each specific mandate. Every matter is handled directly by Dr. Raina. For each assignment, a carefully assembled team of specialists is put together – experienced trade lawyers in the relevant jurisdictions, economists and quantitative analysts where required, and policy or subject-matter experts where depth in a particular sector or regulatory framework is required.",
+              "Our work covers global (WTO) and regional (FTA) rules; and we work with authorities in the EU (DG Trade), the UK (TRA), India (DGTR), as well as those in the US, Canada, China, and across Asia and Latin America.",
+            ].map((text, index) =>
+              animEnabled ? (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+                >
+                  {text}
+                </motion.p>
+              ) : (
+                <p key={index}>{text}</p>
+              )
+            )}
           </div>
         </section>
 
         {/* Publications Section */}
         <section>
-          <h2 className="text-3xl font-bold mb-10 text-[var(--brand-maroon-dark)] border-b-2 border-[var(--brand-peach)] pb-4">Selected Publications</h2>
+          {animEnabled ? (
+            <motion.h2
+              className="text-3xl font-bold mb-10 text-[var(--brand-maroon-dark)] border-b-2 border-[var(--brand-peach)] pb-4"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              Selected Publications
+            </motion.h2>
+          ) : (
+            <h2 className="text-3xl font-bold mb-10 text-[var(--brand-maroon-dark)] border-b-2 border-[var(--brand-peach)] pb-4">Selected Publications</h2>
+          )}
           <div className="bg-white rounded-3xl p-8 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
             <ul className="space-y-6 text-[var(--brand-maroon-light)]">
               {[
@@ -112,17 +214,36 @@ export default function AboutPage() {
                 { title: "What is a Safeguard Measure under WTO Law?", source: "Trade Law & Development (2018)" },
                 { title: "Good Faith in WTO Dispute Settlement", source: "Global Trade and Customs Journal (2016)" },
                 { title: "Legal Problems with Data Localization Requirements", source: "Global Trade and Customs Journal (2020)" },
-              ].map((pub, idx) => (
-                <li key={idx} className="flex gap-4">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-[var(--brand-peach-dark)]"></div>
-                  </div>
-                  <div>
-                    <strong className="text-[var(--brand-maroon-dark)] block mb-1">{pub.title}</strong>
-                    <span className="text-sm">{pub.source}</span>
-                  </div>
-                </li>
-              ))}
+              ].map((pub, idx) =>
+                animEnabled ? (
+                  <motion.li
+                    key={idx}
+                    className="flex gap-4"
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay: idx * 0.07 }}
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 rounded-full bg-[var(--brand-peach-dark)]"></div>
+                    </div>
+                    <div>
+                      <strong className="text-[var(--brand-maroon-dark)] block mb-1">{pub.title}</strong>
+                      <span className="text-sm">{pub.source}</span>
+                    </div>
+                  </motion.li>
+                ) : (
+                  <li key={idx} className="flex gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 rounded-full bg-[var(--brand-peach-dark)]"></div>
+                    </div>
+                    <div>
+                      <strong className="text-[var(--brand-maroon-dark)] block mb-1">{pub.title}</strong>
+                      <span className="text-sm">{pub.source}</span>
+                    </div>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </section>

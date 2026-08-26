@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DisclaimerModal from "@/components/DisclaimerModal";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.arlegal.eu"),
@@ -17,11 +12,10 @@ export const metadata: Metadata = {
   keywords: ["International Trade Law", "Trade Defence", "WTO Litigation", "Customs", "ESG", "AR Legal", "Akhil Raina"],
   icons: {
     icon: [
-      { url: "/apple-icon.png", type: "image/png" },
-      { url: "/favicon.ico" },
+      { url: "/images/logo.png", type: "image/png" },
     ],
-    shortcut: "/apple-icon.png",
-    apple: "/apple-icon.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
   },
   openGraph: {
     title: "AR Legal | International Trade Law & Policy",
@@ -45,13 +39,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} antialiased min-h-screen flex flex-col`}>
-        <DisclaimerModal />
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+      <body className="antialiased min-h-screen flex flex-col">
+        <SmoothScrollProvider>
+          <DisclaimerModal />
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

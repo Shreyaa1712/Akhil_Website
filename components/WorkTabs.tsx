@@ -2,207 +2,340 @@
 
 import React, { useState } from "react";
 
-type TabId = "wto" | "trade" | "gov" | "industry";
-
-interface Tab {
-  id: TabId;
-  title: string;
+interface MatterItem {
+  caseNumber?: string;
+  title?: string;
+  desc: string;
 }
 
-const tabs: Tab[] = [
-  { id: "wto", title: "WTO Dispute Settlement" },
-  { id: "trade", title: "Trade Defence" },
-  { id: "gov", title: "Government Advisory" },
-  { id: "industry", title: "Industry Advisory" },
+interface DomainSection {
+  id: string;
+  title: string;
+  subtitle: string;
+  summary: string;
+  items: MatterItem[];
+}
+
+const domains: DomainSection[] = [
+  {
+    id: "wto",
+    title: "WTO Dispute Settlement",
+    subtitle: "State-to-State & Multilateral Litigation",
+    summary: "Advised and represented governments in high-stakes WTO dispute settlement proceedings and trade law matters.",
+    items: [
+      {
+        caseNumber: "DS630",
+        title: "EU – Definitive Countervailing Duties on Battery Electric Vehicles",
+        desc: "Represented China in the WTO dispute concerning the EU's countervailing duties on battery electric vehicles. Proceedings ongoing."
+      },
+      {
+        caseNumber: "DS616",
+        title: "EU – Countervailing and Anti-Dumping Duties on Stainless Steel Cold-Rolled Flat Products",
+        desc: "Represented Indonesia in the WTO case challenging the EU's anti-dumping and countervailing duties on stainless steel cold-rolled flat products. The dispute resulted in the first WTO ruling on transnational subsidies, in favour of Indonesia."
+      },
+      {
+        caseNumber: "DS602",
+        title: "China – Anti- Dumping and Countervailing Measures on Wine",
+        desc: "Represented China in WTO dispute settlement proceedings concerning Australia's challenge to MOFCOM’s anti-dumping and countervailing measures on wine. Secured a mutually agreed solution, no panel report issued."
+      },
+      {
+        caseNumber: "SACU",
+        title: "Safeguard Measure on Frozen Bone-In Chicken Cuts",
+        desc: "Represented the EU in bilateral FTA proceedings challenging SACU's safeguard measure on frozen bone-in chicken cuts. Secured a favorable outcome on both substantive and procedural issues."
+      },
+      {
+        caseNumber: "Additional Advisory Experience",
+        title: "",
+        desc: "We have also advised governments on a broad range of WTO law issues, SPS measures, national security, anti-suit injunctions, local content requirements, import duties, and intellectual property, including patent-related matters."
+      }
+    ]
+  },
+  {
+    id: "trade",
+    title: "Trade Defense",
+    subtitle: "Anti-Dumping, Anti-Subsidy & Safeguards",
+    summary: "Advised governments, foreign exporters, and industry across complex trade remedy investigations and EU litigation.",
+    items: [
+      {
+        caseNumber: "Anti-Dumping Investigations",
+        title: "",
+        desc: "Advised governments, exporters, and industry in anti-dumping investigations concerning TiO2, PVC, corrosion-resistant steel, cold-rolled steel, ceramic tiles, biodiesel, fatty acids, and hot-rolled flat products."
+      },
+      {
+        caseNumber: "Anti-Subsidy Investigations",
+        title: "",
+        desc: "Advised clients in countervailing duty investigations involving battery electric vehicles, optical fibre cables, and electric bicycles."
+      },
+      {
+        caseNumber: "Safeguard Investigations",
+        title: "",
+        desc: "Advised on safeguard investigations concerning EU Steel Safeguards I & II and ferro-alloys."
+      },
+      {
+        caseNumber: "Foreign Subsidies Regulation",
+        title: "",
+        desc: "Advised clients on proceedings under the EU Foreign Subsidies Regulation, including strategic advice and submissions before the European Commission."
+      },
+      {
+        caseNumber: "EU General Court Litigation",
+        title: "",
+        desc: "Supported foreign exporters seeking annulment of an EU anti-dumping regulation before the General Court of the European Union."
+      },
+      {
+        caseNumber: "Additional Advisory Experience",
+        title: "",
+        desc: "Advised industry on litigation and regulatory issues before the EU Courts, including the principle of non-discrimination, selection of the representative country, rules of origin, and adjustments in anti-dumping investigations."
+      }
+    ]
+  },
+  {
+    id: "gov",
+    title: "Government Advisory",
+    subtitle: "Sovereign Trade Strategy & Regulations",
+    summary: "Regular advisory counsel to sovereign governments on WTO law, trade remedy conduct, and sustainability rules.",
+    items: [
+      {
+        caseNumber: "WTO & EU Trade Strategy",
+        desc: "Advised an Asian government on WTO dispute settlement, substantive WTO law, and strategic responses to EU trade measures."
+      },
+      {
+        caseNumber: "Trade Remedy Proceedings",
+        desc: "Advised an Asian government on the conduct of trade remedy investigations, including substantive and procedural aspects of anti-dumping, anti-subsidy, and safeguard proceedings."
+      },
+      {
+        caseNumber: "Sustainability & Environmental Rules",
+        desc: "Advised an Asian government on the implications of EU sustainability and environmental regulations affecting exports, including the Carbon Border Adjustment Mechanism (CBAM) and the EU Deforestation Regulation (EUDR)."
+      },
+      {
+        caseNumber: "Transnational Subsidies",
+        desc: "Advised a European government on transnational subsidies, and international negotiations on subsidy disciplines and reform."
+      },
+      {
+        caseNumber: "Technical Barriers to Trade",
+        desc: "Advised a European governmental agency on technical barriers to trade (TBT) issues arising in a Latin American jurisdiction."
+      },
+      {
+        caseNumber: "WTO Accession",
+        desc: "Advised a Central Asian government on WTO accession."
+      },
+      {
+        caseNumber: "Third-Country Proceedings",
+        desc: "Advised an Asian government on complex legal and strategic issues arising in third-country trade remedy proceedings."
+      }
+    ]
+  },
+  {
+    id: "industry",
+    title: "Industry Advisory",
+    subtitle: "Corporate Legal & Regulatory Solutions",
+    summary: "Strategic advice for leading corporations on CBAM compliance, state aid, digital trade rules, and market access.",
+    items: [
+      {
+        caseNumber: "Technology",
+        title: "",
+        desc: "Advised technology companies on EU State aid and government procurement matters, as well as WTO compatibility of emerging digital trade regulations."
+      },
+      {
+        caseNumber: "Industrial & Manufacturing",
+        title: "",
+        desc: "Advised manufacturers on CBAM compliance, verification of emissions data, and strategic engagement with EU institutions on sustainability regulations."
+      },
+      {
+        caseNumber: "Agriculture & Food Products",
+        title: "",
+        desc: "Advised producers and exporters on compliance with the EU Deforestation Regulation (EUDR), market access, and EU customs and tariff-refund mechanisms."
+      }
+    ]
+  }
 ];
 
 export default function WorkTabs() {
-  const [activeTab, setActiveTab] = useState<TabId>("wto");
+  const [activeDomainId, setActiveDomainId] = useState<string>("wto");
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
-  // --- Data Arrays ---
+  const activeDomain = domains.find((d) => d.id === activeDomainId) || domains[0];
+  const remainingDomains = domains.filter((d) => d.id !== activeDomainId);
 
-  const wtoData = [
-    {
-      caseNumber: "DS630",
-      title: "EU – Definitive Countervailing Duties on Battery Electric Vehicles",
-      desc: "Advised and represented China in WTO dispute settlement proceedings concerning the EU's definitive countervailing duties on battery electric vehicles. Proceedings are ongoing."
-    },
-    {
-      caseNumber: "DS616",
-      title: "EU – Countervailing and Anti-Dumping Duties on Stainless Steel Cold-Rolled Flat Products",
-      desc: "Advised and represented Indonesia in WTO proceedings challenging the EU's anti-dumping and countervailing duties on stainless steel cold-rolled flat products. The dispute resulted in the first WTO ruling on transnational subsidies."
-    },
-    {
-      caseNumber: "DS602",
-      title: "China – Anti-Dumping and Countervailing Measures on Wine",
-      desc: "Counsel to China in WTO dispute settlement proceedings concerning Australia's challenge to China's anti-dumping and countervailing measures on wine. The dispute concluded through a mutually agreed solution, with no panel report issued."
-    },
-    {
-      caseNumber: "SACU",
-      title: "Safeguard Measure on Frozen Bone-In Chicken Cuts",
-      desc: "Counsel to the European Union in bilateral FTA proceedings challenging SACU's safeguard measure on frozen bone-in chicken cuts. Secured a favorable outcome on both substantive and procedural issues."
-    },
-    {
-      caseNumber: "Additional Advisory Experience",
-      title: "",
-      desc: "We also advise governments on a broad range of WTO law issues, including sanitary and phytosanitary (SPS) measures, national security, anti-suit injunctions, local content requirements, import duties, and intellectual property, including patent-related matters."
+  const visibleItems = isExpanded ? activeDomain.items : activeDomain.items.slice(0, 2);
+  const hasMore = activeDomain.items.length > 2;
+
+  const handleSelectDomain = (domainId: string) => {
+    setActiveDomainId(domainId);
+    setIsExpanded(false);
+    const element = document.getElementById("work-section-top");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  ];
+  };
 
-  const tradeData = [
-    {
-      caseNumber: "Anti-Dumping Investigations",
-      title: "",
-      desc: "Advised governments, exporters, and industry in anti-dumping investigations concerning titanium dioxide, PVC, corrosion-resistant steel, cold-rolled steel, ceramic tiles, biodiesel, fatty acids, and hot-rolled flat products."
-    },
-    {
-      caseNumber: "Anti-Subsidy Investigations",
-      title: "",
-      desc: "Advised clients in countervailing duty investigations involving battery electric vehicles, optical fibre cables, and electric bicycles."
-    },
-    {
-      caseNumber: "Safeguard Investigations",
-      title: "",
-      desc: "Advised on safeguard investigations concerning EU Steel Safeguards I & II and ferro-alloys."
-    },
-    {
-      caseNumber: "Foreign Subsidies Regulation",
-      title: "",
-      desc: "Advised clients on proceedings under the EU Foreign Subsidies Regulation (Regulation (EU) 2022/2560), including strategic advice and submissions before the European Commission."
-    },
-    {
-      caseNumber: "EU General Court Litigation",
-      title: "",
-      desc: "Advised foreign exporters in Case T-220/25, supporting proceedings seeking the annulment of an EU anti-dumping regulation before the General Court of the European Union."
-    },
-    {
-      caseNumber: "Additional Advisory Experience",
-      title: "",
-      desc: "Advised industry on litigation and regulatory issues before the EU Courts, including the principle of non-discrimination, selection of the representative country, rules of origin, and fair comparison adjustments in anti-dumping investigations."
+  const handleToggleExpand = () => {
+    if (isExpanded) {
+      setIsExpanded(false);
+      const element = document.getElementById("work-section-top");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      setIsExpanded(true);
     }
-  ];
+  };
 
-  const govData = [
-    {
-      desc: "Regularly advise an Asian government on WTO dispute settlement, substantive WTO law, and strategic responses to EU trade measures."
-    },
-    {
-      desc: "Regularly advise an Asian government on the conduct of trade remedy investigations, including substantive and procedural aspects of anti-dumping, anti-subsidy, and safeguard proceedings."
-    },
-    {
-      desc: "Advise an Asian government on the implications of EU sustainability and environmental regulations affecting exports, including the Carbon Border Adjustment Mechanism (CBAM) and the EU Deforestation Regulation (EUDR)."
-    },
-    {
-      desc: "Advise a European government on transnational subsidies, countervailing duty issues, and international negotiations on subsidy disciplines and reform."
-    },
-    {
-      desc: "Advise a European government agency on technical barriers to trade (TBT) arising in a Latin American jurisdiction."
-    },
-    {
-      desc: "Advise a Central Asian government on WTO accession, including compliance with WTO Agreements and accession negotiations."
-    },
-    {
-      desc: "Advise an Asian government on complex legal and strategic issues arising in third-country trade remedy proceedings."
-    }
-  ];
-
-  const industryData = [
-    {
-      caseNumber: "Technology",
-      title: "",
-      desc: "Advise technology companies on EU State aid, government procurement, and the WTO compatibility of emerging digital trade regulations, including the EU Cybersecurity Act."
-    },
-    {
-      caseNumber: "Industrial & Manufacturing",
-      title: "",
-      desc: "Advise manufacturers on CBAM compliance, emissions data verification, and strategic engagement with EU institutions on evolving sustainability regulations."
-    },
-    {
-      caseNumber: "Agriculture & Food Products",
-      title: "",
-      desc: "Advise producers and exporters on compliance with the EU Deforestation Regulation (EUDR), market access, bilateral safeguard proceedings, and EU customs and tariff-refund mechanisms."
-    }
-  ];
-
-  // --- Render Helpers ---
-
-  const renderCard = (item: any, idx: number) => (
-    <div key={idx} className="bg-white rounded-2xl p-6 md:p-8 border border-[var(--brand-peach)]/50 hover:border-[var(--brand-peach-dark)] hover:shadow-lg transition-all duration-300 h-full flex flex-col">
-      {item.caseNumber && (
-        <h3 className="text-xl md:text-2xl font-bold mb-2 text-[var(--brand-maroon-dark)] tracking-tight">
-          {item.caseNumber}
-        </h3>
-      )}
-      {item.title && (
-        <h4 className="text-xl md:text-2xl font-bold mb-4 text-[var(--brand-maroon)] tracking-tight">
-          {item.title}
-        </h4>
-      )}
-      <p className="text-[var(--brand-maroon-light)] leading-relaxed text-base md:text-lg">
-        {item.desc}
-      </p>
+  const renderCard = (item: MatterItem, idx: number) => (
+    <div
+      key={idx}
+      className="bg-white rounded-2xl p-6 md:p-8 border border-[var(--brand-peach)]/60 hover:border-[var(--brand-peach-dark)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+    >
+      <div>
+        {item.caseNumber && (
+          <h3 className="text-2xl md:text-3xl font-serif font-bold mb-3 text-[var(--brand-maroon-dark)] tracking-tight leading-snug">
+            {item.caseNumber}
+          </h3>
+        )}
+        {item.title && (
+          <h4 className="text-lg md:text-xl font-bold mb-3 text-[var(--brand-maroon)] tracking-tight leading-snug">
+            {item.title}
+          </h4>
+        )}
+        <p className="text-[var(--brand-maroon-light)] leading-relaxed text-base md:text-lg font-medium">
+          {item.desc}
+        </p>
+      </div>
     </div>
   );
 
   return (
-    <div className="w-full">
-      {/* Tabs Navigation */}
-      <div className="grid grid-cols-2 md:flex gap-2 md:gap-4 mb-12 bg-white/50 p-2 rounded-2xl md:rounded-full border border-[var(--brand-peach)]/50 shadow-sm">
-        {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 flex items-center justify-center text-center px-2 py-3 md:px-6 md:py-4 rounded-xl md:rounded-full font-bold text-[11px] sm:text-xs md:text-base transition-all duration-300 ${isActive
-                ? "bg-[var(--brand-maroon)] text-[var(--brand-peach)] shadow-md"
-                : "text-[var(--brand-maroon-dark)] hover:bg-[var(--brand-peach)]/50"
+    <div id="work-section-top" className="w-full scroll-mt-28">
+      {/* Active Domain Section */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-14 border-b border-[var(--brand-peach-dark)]/40">
+        {/* Left Side: Active Domain Title */}
+        <div className="md:col-span-4">
+          <div className="md:sticky md:top-28">
+            <div className="inline-block text-xs font-bold tracking-widest uppercase text-[var(--brand-maroon-light)] mb-2">
+              Practice Area
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[var(--brand-maroon-dark)] tracking-tight leading-tight">
+              {activeDomain.title}
+            </h2>
+            <div className="w-12 h-[2px] bg-[var(--brand-maroon)]/80 mt-4 mb-3" />
+            <p className="text-sm md:text-base text-[var(--brand-maroon-light)] leading-relaxed hidden md:block">
+              {activeDomain.summary}
+            </p>
+          </div>
+        </div>
+
+        {/* Right Side: Active Domain White Cards with Connected Progress Line */}
+        <div className="md:col-span-8">
+          <div className="relative pl-6 md:pl-8">
+            {/* Vertical Progress Bar Track Line (Runs directly into More/Less button) */}
+            <div className="absolute left-0 top-6 bottom-3 w-[2px] bg-[var(--brand-peach-dark)]/50 rounded-full overflow-hidden">
+              {/* Animated Progress Filler */}
+              <div
+                className={`w-full bg-[var(--brand-maroon)] rounded-full transition-all duration-700 ease-in-out ${
+                  isExpanded ? "h-full" : "h-[45%]"
                 }`}
-            >
-              {tab.title}
-            </button>
-          );
-        })}
+              />
+            </div>
+
+            {/* Cards List */}
+            <div className="grid grid-cols-1 gap-6">
+              {visibleItems.map((item, idx) => (
+                <div key={idx} className="relative group">
+                  {/* Card Left Dot Indicator on Progress Line */}
+                  <div
+                    className={`absolute -left-[30px] md:-left-[38px] top-8 w-3.5 h-3.5 rounded-full border-2 border-white transition-all duration-500 z-10 ${
+                      idx < visibleItems.length
+                        ? "bg-[var(--brand-maroon)] shadow-xs scale-100 group-hover:scale-125"
+                        : "bg-[var(--brand-peach-dark)]"
+                    }`}
+                  />
+                  {renderCard(item, idx)}
+                </div>
+              ))}
+            </div>
+
+            {/* View More / Less Expander (Connected Node on Line with Capital Text & Smooth Scroll) */}
+            {hasMore && (
+              <div className="relative mt-8 pt-1">
+                <button
+                  onClick={handleToggleExpand}
+                  className="cursor-pointer group flex items-center gap-3 py-1 relative z-10"
+                  aria-label={isExpanded ? "Show Less" : "Show More"}
+                >
+                  <span className="absolute -left-[35px] md:-left-[43px] w-6 h-6 rounded-full border-2 border-white bg-[var(--brand-maroon)] text-[var(--brand-peach)] flex items-center justify-center shadow-md group-hover:scale-125 group-hover:bg-[var(--brand-maroon-dark)] transition-all duration-300">
+                    {isExpanded ? (
+                      <svg
+                        className="w-3.5 h-3.5 stroke-[2.5]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
+                      </svg>
+                    ) : (
+                      <svg
+                        className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-90"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                      </svg>
+                    )}
+                  </span>
+                  <span className="text-sm md:text-base font-bold font-serif tracking-wide text-[var(--brand-maroon-dark)] group-hover:text-[var(--brand-maroon)] transition-colors cursor-pointer">
+                    {isExpanded ? "Less" : "More"}
+                  </span>
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
-      {/* Tab Content */}
-      <div className="min-h-[400px]">
-        {activeTab === "wto" && (
-          <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="sr-only">WTO Dispute Settlement</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {wtoData.map(renderCard)}
-            </div>
-          </section>
-        )}
+      {/* Explore Further Section (Displays the remaining 3 domains) */}
+      <div className="pt-14">
+        <h3 className="text-2xl md:text-3xl font-serif font-bold text-[var(--brand-maroon-dark)] mb-8 tracking-tight">
+          Explore Further
+        </h3>
 
-        {activeTab === "trade" && (
-          <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="sr-only">Trade Defence</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {tradeData.map(renderCard)}
-            </div>
-          </section>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {remainingDomains.map((domain) => (
+            <div
+              key={domain.id}
+              onClick={() => handleSelectDomain(domain.id)}
+              className="group bg-white rounded-2xl p-6 md:p-8 border border-[var(--brand-peach)]/70 hover:border-[var(--brand-maroon)]/50 hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            >
+              <div>
+                <h4 className="text-xl font-bold font-serif text-[var(--brand-maroon-dark)] group-hover:text-[var(--brand-maroon)] transition-colors leading-snug mb-3">
+                  {domain.title}
+                </h4>
+                <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed">
+                  {domain.summary}
+                </p>
+              </div>
 
-        {activeTab === "gov" && (
-          <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="sr-only">Government Advisory</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {govData.map(renderCard)}
+              <div className="mt-8 pt-4 border-t border-[var(--brand-peach)]/40 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[var(--brand-maroon)] group-hover:text-[var(--brand-maroon-dark)]">
+                <span>Explore Domain</span>
+                <span className="w-7 h-7 rounded-full bg-[var(--brand-peach)]/60 text-[var(--brand-maroon)] flex items-center justify-center group-hover:bg-[var(--brand-maroon)] group-hover:text-[var(--brand-peach)] transition-all duration-300 transform group-hover:translate-x-1">
+                  <svg
+                    className="w-4 h-4 stroke-[2.5]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </div>
             </div>
-          </section>
-        )}
-
-        {activeTab === "industry" && (
-          <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="sr-only">Industry Advisory</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {industryData.map(renderCard)}
-            </div>
-          </section>
-        )}
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+
+
+
+
+
