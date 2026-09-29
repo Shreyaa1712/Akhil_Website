@@ -24,7 +24,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative w-full px-6 py-16 md:py-24 flex flex-col items-center text-center overflow-hidden flex-grow">
         {/* Subtle Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-maroon)] via-[var(--brand-maroon-dark)] to-[#1a0607] -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-maroon)] via-[var(--brand-maroon-dark)] to-[#2d0d0f] -z-10" />
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[var(--brand-maroon)] rounded-full filter blur-3xl opacity-30 -z-10" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[var(--brand-maroon-light)] rounded-full filter blur-3xl opacity-20 -z-10" />
 

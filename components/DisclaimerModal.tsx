@@ -32,7 +32,7 @@ export default function DisclaimerModal() {
       {/* Modal Content */}
       <div className="relative bg-white shadow-2xl rounded-2xl max-w-3xl w-full max-h-full overflow-y-auto p-8 md:p-12 z-10 flex flex-col items-center text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon)] mb-8 tracking-wide shrink-0">
-          Disclaimer
+          disclaimer
         </h2>
         
         <div className="text-gray-700 text-sm md:text-base space-y-6 mb-10 leading-relaxed font-medium">

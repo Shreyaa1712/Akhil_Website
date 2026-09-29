@@ -103,7 +103,7 @@ export default function Home() {
                 <p className="text-base md:text-lg mb-8 text-[#1a1a1a] leading-relaxed text-center mx-auto max-w-[700px]">
                   We advise governments, manufacturers, exporters, importers, as well <br className="hidden md:block" />
                   as industry associations on WTO law, trade remedies, customs, and <br className="hidden md:block" />
-                  regulatory compliance and emerging ESG-related requirements.
+                  regulatory compliance, including ESG-related requirements.
                 </p>
               )}
             </div>
@@ -243,7 +243,7 @@ export default function Home() {
             >
               <div className="mb-2 inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm">
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-                Our Founder
+                Managing Partner
               </div>
 
               <h3 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)] mb-6 leading-tight">Dr. Akhil Raina</h3>

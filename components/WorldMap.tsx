@@ -44,7 +44,10 @@ const highlightedCountries: Record<string, string> = {
   "Belgium": "European Union (DG trade)",
   "Sweden": "European Union (DG trade)",
   "Denmark": "European Union (DG trade)",
-  "Austria": "European Union (DG trade)"
+  "Austria": "European Union (DG trade)",
+  "Japan": "Asia",
+  "Australia": "Australia",
+  "Ukraine": "Eurasia"
 };
 
 const annotations = [
@@ -101,16 +104,24 @@ const annotations = [
     align: "middle" as const,
     xOffset: 0,
     yOffset: 16,
+  },
+  {
+    subject: [133, -25] as [number, number], // Australia
+    dx: 50,
+    dy: -20,
+    label: "Australia",
   }
 ];
 
 export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
+  const [isMounted, setIsMounted] = useState(false);
   const [tooltipContent, setTooltipContent] = useState("");
   const [compassVisible, setCompassVisible] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const compassContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setIsMounted(true);
     const centerScroll = () => {
       if (scrollContainerRef.current) {
         const { scrollWidth, clientWidth } = scrollContainerRef.current;
@@ -165,7 +176,9 @@ export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
 
   const showWavyBorder = process.env.NEXT_PUBLIC_SHOW_WAVY_MAP_BORDER === "true";
 
-  const renderMapContent = () => (
+  const renderMapContent = () => {
+    if (!isMounted) return <div className="w-full h-auto max-h-[70vh]" style={{ aspectRatio: "1100 / 550" }} />;
+    return (
     <>
       <ComposableMap
         projection="geoMercator"
@@ -189,7 +202,7 @@ export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
                   geography={geo}
                   onMouseEnter={() => {
                     if (isHighlighted) {
-                      setTooltipContent(`${geo.properties.name}\n${countryData}`);
+                      setTooltipContent(geo.properties.name);
                     }
                   }}
                   onMouseLeave={() => {
@@ -258,7 +271,7 @@ export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
         id="world-map-tooltip"
         className="z-50 shadow-2xl max-w-xs text-center border border-[#7a2228]/20"
         style={{
-          backgroundColor: "#260a0b", // brand-maroon-dark
+          backgroundColor: "#3b1114", // brand-maroon-dark
           color: "#fde9d9", // brand-peach
           borderRadius: "12px",
           padding: "8px 16px",
@@ -293,6 +306,7 @@ export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
       {children}
     </>
   );
+  };
 
   return (
     <div className="w-full mx-auto px-2 sm:px-4" ref={compassContainerRef}>
@@ -304,15 +318,12 @@ export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
           <img
             src="/images/compass.png"
             alt="Vintage Compass"
-            className="absolute -top-14 -left-8 sm:-top-20 sm:-left-12 md:-top-24 md:-left-16 w-44 sm:w-64 md:w-80 h-auto z-40 pointer-events-none"
+            className={`absolute -top-14 -left-8 sm:-top-20 sm:-left-12 md:-top-24 md:-left-16 w-44 sm:w-64 md:w-80 h-auto z-40 pointer-events-none transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${compassVisible ? 'opacity-50 group-hover:opacity-10' : 'opacity-0'}`}
             style={{
-              opacity: compassVisible ? 1 : 0,
               filter: compassVisible ? "blur(0px)" : "blur(12px)",
               transform: compassVisible
                 ? "scale(1) translateY(0px) rotate(0deg)"
                 : "scale(0.82) translateY(-28px) rotate(-8deg)",
-              transition:
-                "opacity 1.2s cubic-bezier(0.22,1,0.36,1), filter 1.2s cubic-bezier(0.22,1,0.36,1), transform 1.2s cubic-bezier(0.22,1,0.36,1)",
             }}
           />
 
