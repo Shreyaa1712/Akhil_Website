@@ -87,19 +87,15 @@ const domains: DomainSection[] = [
     id: "gov",
     title: "Government Advisory",
     subtitle: "Sovereign Trade Strategy & Regulations",
-    summary: "Regular advisory counsel to sovereign governments on WTO law, trade remedy conduct, and sustainability rules.",
+    summary: "Regular advisory to governments on WTO law, trade remedy investigations, and sustainability rules.",
     items: [
       {
-        caseNumber: "WTO & EU Trade Strategy",
-        desc: "Advised an Asian government on WTO dispute settlement, substantive WTO law, and strategic responses to EU trade measures."
-      },
-      {
         caseNumber: "Trade Remedy Proceedings",
-        desc: "Advised an Asian government on the conduct of trade remedy investigations, including substantive and procedural aspects of anti-dumping, anti-subsidy, and safeguard proceedings."
+        desc: "Regularly advised an Asian government on the conduct of trade remedy investigations, including substantive and procedural aspects of anti-dumping, anti-subsidy, and safeguard proceedings."
       },
       {
         caseNumber: "Sustainability & Environmental Rules",
-        desc: "Advised an Asian government on the implications of EU sustainability and environmental regulations affecting exports, including the Carbon Border Adjustment Mechanism (CBAM) and the EU Deforestation Regulation (EUDR)."
+        desc: "Advised Asian governments on the implications of EU sustainability and environmental regulations affecting exports, including the Carbon Border Adjustment Mechanism (CBAM) and the EU Deforestation Regulation (EUDR)."
       },
       {
         caseNumber: "Transnational Subsidies",
@@ -123,22 +119,22 @@ const domains: DomainSection[] = [
     id: "industry",
     title: "Industry Advisory",
     subtitle: "Corporate Legal & Regulatory Solutions",
-    summary: "Strategic advice for leading corporations on CBAM compliance, state aid, digital trade rules, and market access.",
+    summary: "Strategic advice for corporations on CBAM compliance, state aid, digital trade rules, and market access.",
     items: [
       {
         caseNumber: "Technology",
         title: "",
-        desc: "Advised technology companies on EU State aid and government procurement matters, as well as WTO compatibility of emerging digital trade regulations."
+        desc: "Advised technology companies on EU State aid rules and government procurement matters, as well as WTO-compatibility of emerging digital trade regulations."
       },
       {
         caseNumber: "Industrial & Manufacturing",
         title: "",
-        desc: "Advised manufacturers on CBAM compliance, verification of emissions data, and strategic engagement with EU institutions on sustainability regulations."
+        desc: "Advised manufacturers on CBAM compliance, verification of emissions data, and assisted companies in strategic engagement with global institutions on sustainability regulations."
       },
       {
         caseNumber: "Agriculture & Food Products",
         title: "",
-        desc: "Advised producers and exporters on compliance with the EU Deforestation Regulation (EUDR), market access, and EU customs and tariff-refund mechanisms."
+        desc: "Advised producers and exporters on compliance with the EU Deforestation Regulation (EUDR), and EU customs and tariff-refund mechanisms."
       }
     ]
   }
