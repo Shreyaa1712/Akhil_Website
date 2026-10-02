@@ -21,13 +21,13 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-8 text-sm font-bold tracking-widest uppercase text-[var(--brand-maroon)]">
-          {['About', 'Services', 'Work', 'Academic', 'Contact'].map((item) => (
+          {([{label:'About',href:'/about'},{label:'Services',href:'/services'},{label:'Work',href:'/work'},{label:'Academics',href:'/academic'},{label:'Contact',href:'/contact'}]).map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               className="relative group py-2"
             >
-              <span className="hover:text-[var(--brand-maroon-dark)] transition-colors">{item}</span>
+              <span className="hover:text-[var(--brand-maroon-dark)] transition-colors">{item.label}</span>
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--brand-maroon)] transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
@@ -52,14 +52,14 @@ export default function Navbar() {
       {/* Mobile Links Dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-[var(--brand-light)] border-t border-[var(--brand-peach)]/50 px-6 py-4 flex flex-col gap-4 shadow-lg absolute w-full animate-in slide-in-from-top-2">
-          {['About', 'Services', 'Work', 'Academic', 'Contact'].map((item) => (
+          {([{label:'About',href:'/about'},{label:'Services',href:'/services'},{label:'Work',href:'/work'},{label:'Academics',href:'/academic'},{label:'Contact',href:'/contact'}]).map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               className="text-base font-bold tracking-widest uppercase text-[var(--brand-maroon)] py-2 border-b border-[var(--brand-peach)]/30 hover:text-[var(--brand-maroon-dark)] transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </div>

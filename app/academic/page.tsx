@@ -1,6 +1,6 @@
 import Link from "next/link";
 import AnimatedStat from "@/components/AnimatedStat";
-import AnimatedContent from "@/components/AnimatedContent";
+import AcademicPublications from "@/components/AcademicPublications";
 
 export const dynamic = "force-static";
 
@@ -8,12 +8,8 @@ const ArrowRight = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
 );
 
-const Library = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m16 6 4 14" /><path d="M12 6v14" /><path d="M8 8v12" /><path d="M4 4v16" /></svg>
-);
-
 export const metadata = {
-  title: "Academic | AR Legal",
+  title: "Academics | AR Legal",
   description: "Dr. Akhil Raina's academic endeavours, teaching at KU Leuven & ELPO Athens, research, and selected publications in international trade law.",
 };
 
@@ -83,24 +79,6 @@ const publications = [
   }
 ];
 
-const teachingNodes = [
-  {
-    institution: "KU Leuven",
-    role: "Faculty / Lecturer",
-    desc: "Delivering specialized lectures in international trade law and economic integration."
-  },
-  {
-    institution: "ELPO Athens",
-    role: "Visiting Academic",
-    desc: "Teaching advanced courses on global trade policy and regulatory frameworks."
-  },
-  {
-    institution: "World Trade Institute (Bern)",
-    role: "Former Lecturer",
-    desc: "Taught international economic law and WTO dispute resolution at the University of Bern."
-  }
-];
-
 export default function AcademicPage() {
   return (
     <div className="w-full bg-[var(--brand-light)] text-[var(--brand-maroon-dark)] pb-24">
@@ -109,7 +87,7 @@ export default function AcademicPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold font-serif text-[var(--brand-maroon-dark)] tracking-tight mb-2">
-              Academic
+              Academics
             </h1>
             <p className="text-lg md:text-xl text-[var(--brand-maroon-light)] font-light leading-[1.15]">
               Teaching, research, and publication - seamlessly integrated with legal practice.
@@ -118,11 +96,11 @@ export default function AcademicPage() {
         </div>
       </section>
 
-      {/* Main Overview & Teaching Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-3 pb-10 md:pt-4 md:pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-          {/* Main Statement */}
-          <div className="lg:col-span-7 flex flex-col justify-between bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
+      {/* Main Grid Section: Overview & Selected Publications */}
+      <section id="academic-section-top" className="max-w-7xl mx-auto px-6 pt-6 pb-12 scroll-mt-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+          {/* Left Side: Main Statement & Stats */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28 bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
             <div>
               <div className="flex items-center gap-3 text-[var(--brand-maroon)] font-bold text-sm uppercase tracking-wider mb-4">
                 <span>Dr. Akhil Raina's Academic Work</span>
@@ -130,12 +108,11 @@ export default function AcademicPage() {
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-[var(--brand-maroon-dark)] mb-6 leading-snug">
                 Advancing trade law discourse through rigor, research, and global education.
               </h2>
-              <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-6">
-                Dr. Raina's academic endeavours run alongside his legal work as an integrated part of the practice.
-                He teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>.
+              <p className="text-base md:text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-6">
+                Dr. Raina's academic work runs alongside his legal practice. He teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>.
               </p>
-              <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-8">
-                He supervises master's dissertations and regularly publishes with leading academic presses. Through his academic roles, he teaches university students and trains government officials across <strong className="text-[var(--brand-maroon-dark)]">Europe, Asia, Africa, and South America</strong>.
+              <p className="text-base md:text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-8">
+                He supervises master's dissertations and regularly publishes with leading academic presses. He teaches university students and trains government officials across <strong className="text-[var(--brand-maroon-dark)]">Europe, Asia, Africa, and South America</strong>.
               </p>
             </div>
 
@@ -146,110 +123,10 @@ export default function AcademicPage() {
             </div>
           </div>
 
-          {/* Academic Institutions Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="bg-[var(--brand-maroon)] text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between">
-              <div>
-                <h3 className="text-xl font-serif font-bold mb-4 leading-snug">
-                  Coming Soon: Practitioner-Led International Trade Law Course
-                </h3>
-                <p className="text-sm text-white/85 leading-relaxed mb-4">
-                  AR Legal was established to help governments and businesses navigate the increasingly complex landscape of international trade law and policy.
-                </p>
-                <p className="text-sm text-white/85 leading-relaxed mb-6">
-                  Our practice combines specialist expertise, direct partner involvement, and an international network of trusted professionals.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-5 py-3 bg-white text-[var(--brand-maroon)] hover:bg-[var(--brand-peach)] font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-lg"
-                >
-                  Get In Touch
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            {teachingNodes.map((item, idx) => (
-              <AnimatedContent
-                key={idx}
-                distance={60}
-                direction="vertical"
-                reverse={false}
-                duration={0.8}
-                initialOpacity={0}
-                animateOpacity
-                scale={0.95}
-                threshold={0.1}
-                delay={idx * 0.25}
-              >
-                <div className="bg-white rounded-2xl p-6 shadow-md border border-[var(--brand-peach)]/40 hover:border-[var(--brand-maroon)]/40 transition-colors">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg text-[var(--brand-maroon-dark)]">{item.institution}</h4>
-                    <span className="text-xs font-semibold px-2.5 py-1 bg-[var(--brand-peach)]/40 text-[var(--brand-maroon)] rounded-full">{item.role}</span>
-                  </div>
-                  <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed">{item.desc}</p>
-                </div>
-              </AnimatedContent>
-            ))}
+          {/* Right Side: Selected Publications with Timeline and More/Less Expander */}
+          <div className="lg:col-span-7">
+            <AcademicPublications publications={publications} initialCount={2} />
           </div>
-        </div>
-      </section>
-
-      {/* Selected Publications Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16 border-t border-[var(--brand-peach)]/40">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div>
-            <div className="flex items-center gap-2 text-[var(--brand-maroon)] font-bold text-sm uppercase tracking-wider mb-3">
-              <Library className="w-5 h-5" />
-              <span>Scholarship</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[var(--brand-maroon-dark)]">
-              Selected Publications
-            </h2>
-          </div>
-          <p className="text-sm text-[var(--brand-maroon-light)] max-w-md">
-            Peer-reviewed articles, books, chapters, and case notes in top international economic law journals and academic presses.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {publications.map((pub, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-7 shadow-lg shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/40 hover:border-[var(--brand-maroon)]/40 transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-[var(--brand-peach)]/30 text-[var(--brand-maroon)] rounded-full">
-                    {pub.type}
-                  </span>
-                  <span className="text-sm font-semibold text-[var(--brand-maroon-light)]">
-                    {pub.year}
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-serif font-bold text-[var(--brand-maroon-dark)] group-hover:text-[var(--brand-maroon)] transition-colors mb-2 leading-snug">
-                  "{pub.title}"
-                </h3>
-
-                <p className="text-sm font-semibold text-[var(--brand-maroon)] italic mb-3">
-                  {pub.journal}
-                </p>
-
-                {pub.shortView && (
-                  <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed mb-4">
-                    {pub.shortView}
-                  </p>
-                )}
-              </div>
-
-              {pub.coAuthors && (
-                <div className="pt-4 mt-4 border-t border-[var(--brand-peach)]/30 text-xs text-[var(--brand-maroon-light)] font-medium">
-                  {pub.coAuthors}
-                </div>
-              )}
-            </div>
-          ))}
         </div>
       </section>
     </div>

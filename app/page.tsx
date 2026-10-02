@@ -704,7 +704,7 @@ export default function Home() {
                   </div>
 
                   <h2 className="text-3xl md:text-5xl font-bold font-serif text-[var(--brand-maroon-dark)] leading-tight">
-                    Academic
+                    Academics
                   </h2>
 
                   <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
@@ -746,7 +746,7 @@ export default function Home() {
                   </div>
 
                   <h2 className="text-3xl md:text-5xl font-bold font-serif text-[var(--brand-maroon-dark)] leading-tight">
-                    Academic
+                    Academics
                   </h2>
 
                   <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
