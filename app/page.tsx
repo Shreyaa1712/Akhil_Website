@@ -545,11 +545,6 @@ export default function Home() {
           </motion.div>
         ) : (
           <div className="relative z-[41] flex flex-col text-center items-center mb-10 gap-4">
-            <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm">
-              <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-              Global Reach
-              <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)]">Representative Matters</h2>
           </div>
         )}

@@ -28,16 +28,9 @@ export default function WorkPage() {
               </h1>
             </motion.div>
           ) : (
-            <div>
-              <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
-                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-                Our Work
-                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-                Representative Matters
-              </h1>
-            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
+              Representative Matters
+            </h1>
           )}
           {animEnabled ? (
             <motion.p

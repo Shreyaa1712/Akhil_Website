@@ -21,80 +21,103 @@ interface WorldMapProps {
 
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json"; // We will use a dot pattern to mask borders
 
-// Use markers for key regions instead of highlighting specific countries to avoid drawing borders
+// Region markers placed centrally on each continent/region
 const regionMarkers = [
-  { name: "North America", coordinates: [-100, 38] as [number, number] },
-  { name: "Latin America", coordinates: [-55, -10] as [number, number] },
-  { name: "European Union (DG Trade)", coordinates: [10, 50] as [number, number] },
-  { name: "United Kingdom (TRA)", coordinates: [-3, 54] as [number, number] },
-  { name: "Eurasia", coordinates: [64, 41] as [number, number] },
-  { name: "Africa (SACU)", coordinates: [20, -10] as [number, number] },
-  { name: "Asia", coordinates: [104, 35] as [number, number] },
-  { name: "India (DGTR)", coordinates: [80, 20] as [number, number] },
-  { name: "Australia", coordinates: [133, -25] as [number, number] }
+  {
+    name: "North America\n(US, Mexico)",
+    coordinates: [-100, 36] as [number, number],
+  },
+  {
+    name: "South America\n(Colombia, Ecuador, Brazil)",
+    coordinates: [-60, -15] as [number, number],
+  },
+  {
+    name: "Europe\n(EU, UK, Ukraine)",
+    coordinates: [15, 52] as [number, number],
+  },
+  {
+    name: "Eurasia\n(Georgia)",
+    coordinates: [43.5, 42.0] as [number, number],
+  },
+  {
+    name: "Africa\n(Kenya, SACU/South Africa)",
+    coordinates: [22, 2] as [number, number],
+  },
+  {
+    name: "Asia\n(India, China, Japan, South Korea, Thailand, Indonesia)",
+    coordinates: [96, 26] as [number, number],
+  },
+  {
+    name: "Australia",
+    coordinates: [133, -25] as [number, number],
+  },
 ];
 
-const annotations = [
+interface AnnotationItem {
+  subject: [number, number];
+  dx: number;
+  dy: number;
+  label: string;
+  sublabel?: string | string[];
+  align?: "start" | "middle" | "end";
+  xOffset?: number;
+  yOffset?: number;
+}
+
+const annotations: AnnotationItem[] = [
   {
-    subject: [-100, 38] as [number, number], // US
-    dx: -110,
-    dy: -50,
+    subject: [-100, 36], // North America (middle of continent)
+    dx: -95,
+    dy: -45,
     label: "NORTH AMERICA",
+    sublabel: "(US, Mexico)",
   },
   {
-    subject: [-55, -10] as [number, number], // Brazil
-    dx: -110, // Point left towards the Pacific
-    dy: 55,
-    label: "LATIN AMERICA",
+    subject: [-60, -15], // South America (Colombia, Ecuador, Brazil)
+    dx: -95,
+    dy: 45,
+    label: "SOUTH AMERICA",
+    sublabel: "(Colombia, Ecuador, Brazil)",
   },
   {
-    subject: [10, 50] as [number, number], // Germany (EU)
-    dx: -60, // Pushed far left into North Atlantic
-    dy: 40,   // A little bit lower
-    label: "EUROPEAN UNION",
-  },
-  {
-    subject: [-3, 55] as [number, number], // UK
-    dx: -70,
+    subject: [15, 52], // Europe (middle of continent: EU, UK, Ukraine)
+    dx: -95,
     dy: -30,
-    label: "UK",
+    label: "EUROPE",
+    sublabel: "(EU, UK, Ukraine)",
   },
   {
-    subject: [64, 41] as [number, number], // Uzbekistan (Eurasia)
-    dx: 55,
-    dy: -70,
+    subject: [43.5, 42.0], // Eurasia (Georgia)
+    dx: 45,
+    dy: -65,
     label: "EURASIA",
+    sublabel: "(Georgia)",
   },
   {
-    subject: [20, -10] as [number, number], // Africa (Central/Kenya)
-    dx: 50,
-    dy: 70,
+    subject: [22, 2], // Africa (arrow in middle)
+    dx: 0,
+    dy: 120,
     label: "AFRICA",
-    align: "middle" as const,
-    xOffset: 0,
-    yOffset: 16,
+    sublabel: "(Kenya, SACU/South Africa)",
+    align: "middle",
+    yOffset: 12,
   },
   {
-    subject: [104, 35] as [number, number], // China (Asia)
-    dx: 150,
-    dy: -50,
+    subject: [96, 26], // Asia (arrow in middle: India, China, Japan, South Korea, Thailand, Indonesia)
+    dx: 90,
+    dy: 10,
     label: "ASIA",
+    sublabel: [
+      "(India, China, Japan, South Korea,",
+      "Thailand, Indonesia)",
+    ],
   },
   {
-    subject: [80, 20] as [number, number], // India
-    dx: 0, // Straight down into the ocean
-    dy: 90,
-    label: "INDIA",
-    align: "middle" as const,
-    xOffset: 0,
-    yOffset: 16,
-  },
-  {
-    subject: [133, -25] as [number, number], // Australia
-    dx: 50,
+    subject: [133, -25], // Australia
+    dx: 45,
     dy: -20,
-    label: "Australia",
-  }
+    label: "AUSTRALIA",
+  },
 ];
 
 export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
@@ -163,135 +186,176 @@ export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
   const renderMapContent = () => {
     if (!isMounted) return <div className="w-full h-auto max-h-[70vh]" style={{ aspectRatio: "1100 / 550" }} />;
     return (
-    <>
-      <ComposableMap
-        projection="geoMercator"
-        projectionConfig={{
-          scale: 159,
-          center: [0, 28],
-        }}
-        width={1100}
-        height={550}
-        className="w-full h-auto max-h-[70vh] object-contain bg-transparent drop-shadow-[0_10px_20px_rgba(73,19,22,0.15)] relative z-20"
-      >
-        <defs>
-          <pattern id="dotPattern" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" fill="#b89675" />
-          </pattern>
-        </defs>
-        
-        <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map((geo) => (
-              <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                style={{
-                  default: {
-                    fill: "url(#dotPattern)", // Dotted landmass
-                    stroke: "transparent", // No borders!
-                    strokeWidth: 0,
-                    outline: "none",
-                  },
-                  hover: {
-                    fill: "url(#dotPattern)", 
-                    stroke: "transparent",
-                    outline: "none",
-                  },
-                  pressed: {
-                    fill: "url(#dotPattern)",
-                    outline: "none",
-                  },
+      <>
+        <ComposableMap
+          projection="geoMercator"
+          projectionConfig={{
+            scale: 159,
+            center: [0, 28],
+          }}
+          width={1100}
+          height={550}
+          className="w-full h-auto max-h-[70vh] object-contain bg-transparent drop-shadow-[0_10px_20px_rgba(73,19,22,0.15)] relative z-20"
+        >
+          <defs>
+            <pattern id="dotPattern" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.5" fill="#b89675" />
+            </pattern>
+          </defs>
+
+          <Geographies geography={geoUrl}>
+            {({ geographies }) =>
+              geographies.map((geo) => (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  style={{
+                    default: {
+                      fill: "url(#dotPattern)", // Dotted landmass
+                      stroke: "transparent", // No borders!
+                      strokeWidth: 0,
+                      outline: "none",
+                    },
+                    hover: {
+                      fill: "url(#dotPattern)",
+                      stroke: "transparent",
+                      outline: "none",
+                    },
+                    pressed: {
+                      fill: "url(#dotPattern)",
+                      outline: "none",
+                    },
+                  }}
+                  className="transition-all duration-300 pointer-events-none"
+                />
+              ))
+            }
+          </Geographies>
+
+          {/* Region Markers (Dots) */}
+          {regionMarkers.map((marker, idx) => (
+            <Marker
+              key={idx}
+              coordinates={marker.coordinates}
+              onMouseEnter={() => setTooltipContent(marker.name)}
+              onMouseLeave={() => setTooltipContent("")}
+              data-tooltip-id="world-map-tooltip"
+              className="cursor-pointer"
+            >
+              <circle r={8} fill="#7a2228" className="drop-shadow-md hover:scale-125 transition-transform duration-300" />
+              <circle r={3} fill="#fde9d9" className="pointer-events-none" />
+            </Marker>
+          ))}
+
+          {annotations.map((ann, idx) => {
+            const isRight = ann.dx > 0;
+            const isLeft = ann.dx < 0;
+            const defaultAnchor = isRight ? "start" : isLeft ? "end" : "middle";
+            const anchor = ann.align || defaultAnchor;
+            const xPos =
+              ann.xOffset !== undefined
+                ? ann.xOffset
+                : isRight
+                  ? 12
+                  : isLeft
+                    ? -12
+                    : 0;
+            const sublines = ann.sublabel
+              ? Array.isArray(ann.sublabel)
+                ? ann.sublabel
+                : [ann.sublabel]
+              : [];
+
+            return (
+              <Annotation
+                key={idx}
+                subject={ann.subject}
+                dx={ann.dx}
+                dy={ann.dy}
+                connectorProps={{
+                  stroke: "#7a2228",
+                  strokeWidth: 2,
+                  strokeLinecap: "round",
+                  strokeDasharray: "4 4", // Creates the dotted line
+                  pointerEvents: "none",
                 }}
-                className="transition-all duration-300 pointer-events-none"
-              />
-            ))
-          }
-        </Geographies>
+                style={{ pointerEvents: "none" }}
+              >
+                <text
+                  x={xPos}
+                  y={ann.yOffset !== undefined ? ann.yOffset : 0}
+                  textAnchor={anchor}
+                  className="pointer-events-none drop-shadow-sm select-none"
+                >
+                  <tspan
+                    x={xPos}
+                    dy={
+                      sublines.length === 0
+                        ? "4"
+                        : sublines.length === 1
+                          ? "-5"
+                          : "-11"
+                    }
+                    className="text-[10px] sm:text-xs font-bold fill-[#491316] tracking-widest"
+                  >
+                    {ann.label}
+                  </tspan>
+                  {sublines.map((line, lIdx) => (
+                    <tspan
+                      key={lIdx}
+                      x={xPos}
+                      dy={lIdx === 0 ? "13" : "11"}
+                      className="text-[8.5px] sm:text-[9.5px] font-semibold fill-[#7a2228]/90 tracking-normal"
+                    >
+                      {line}
+                    </tspan>
+                  ))}
+                </text>
+              </Annotation>
+            );
+          })}
+        </ComposableMap>
 
-        {/* Region Markers (Dots) */}
-        {regionMarkers.map((marker, idx) => (
-          <Marker
-            key={idx}
-            coordinates={marker.coordinates}
-            onMouseEnter={() => setTooltipContent(marker.name)}
-            onMouseLeave={() => setTooltipContent("")}
-            data-tooltip-id="world-map-tooltip"
-            className="cursor-pointer"
-          >
-            <circle r={8} fill="#7a2228" className="drop-shadow-md hover:scale-125 transition-transform duration-300" />
-            <circle r={3} fill="#fde9d9" className="pointer-events-none" />
-          </Marker>
-        ))}
+        {/* Tooltip component for hover interactions */}
+        <Tooltip
+          id="world-map-tooltip"
+          className="z-50 shadow-2xl max-w-xs text-center border border-[#7a2228]/20"
+          style={{
+            backgroundColor: "#3b1114", // brand-maroon-dark
+            color: "#fde9d9", // brand-peach
+            borderRadius: "12px",
+            padding: "8px 16px",
+            fontWeight: "bold",
+            letterSpacing: "0.05em",
+            whiteSpace: "pre-line",
+            fontSize: "14px",
+          }}
+        >
+          {tooltipContent}
+        </Tooltip>
 
-        {annotations.map((ann, idx) => (
-          <Annotation
-            key={idx}
-            subject={ann.subject}
-            dx={ann.dx}
-            dy={ann.dy}
-            connectorProps={{
-              stroke: "#7a2228",
-              strokeWidth: 2,
-              strokeLinecap: "round",
-              strokeDasharray: "4 4", // Creates the dotted line
-              pointerEvents: "none"
-            }}
-            style={{ pointerEvents: "none" }}
-          >
-            <text
-              x={ann.xOffset !== undefined ? ann.xOffset : (ann.dx > 0 ? 12 : -12)}
-              y={ann.yOffset !== undefined ? ann.yOffset : 0}
-              textAnchor={ann.align || (ann.dx > 0 ? "start" : "end")}
-              alignmentBaseline="middle"
-              className="text-[10px] sm:text-xs font-bold fill-[#491316] tracking-widest pointer-events-none drop-shadow-sm"
+        {/* Action link button if passed */}
+        {actionLink && (
+          <div className="flex justify-center mt-4 sm:mt-6 relative z-30">
+            <Link
+              href={actionLink.href}
+              className="group inline-flex items-center justify-center px-6 py-3 bg-[#7a2228] text-[#fde9d9] rounded-full text-sm sm:text-base font-bold shadow-lg hover:bg-[#8a262e] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 border border-[#e8cca6]/40"
             >
-              {ann.label}
-            </text>
-          </Annotation>
-        ))}
-      </ComposableMap>
-
-      {/* Tooltip component for hover interactions */}
-      <Tooltip
-        id="world-map-tooltip"
-        className="z-50 shadow-2xl max-w-xs text-center border border-[#7a2228]/20"
-        style={{
-          backgroundColor: "#3b1114", // brand-maroon-dark
-          color: "#fde9d9", // brand-peach
-          borderRadius: "12px",
-          padding: "8px 16px",
-          fontWeight: "bold",
-          letterSpacing: "0.05em",
-          whiteSpace: "pre-line",
-          fontSize: "14px",
-        }}
-      >
-        {tooltipContent}
-      </Tooltip>
-
-      {/* Action link button if passed */}
-      {actionLink && (
-        <div className="flex justify-center mt-4 sm:mt-6 relative z-30">
-          <Link
-            href={actionLink.href}
-            className="group inline-flex items-center justify-center px-6 py-3 bg-[#7a2228] text-[#fde9d9] rounded-full text-sm sm:text-base font-bold shadow-lg hover:bg-[#8a262e] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 border border-[#e8cca6]/40"
-          >
-            <span>{actionLink.label}</span>
-            <svg
-              className="ml-2 w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5] group-hover:translate-x-1 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
-        </div>
-      )}
-      {children}
-    </>
-  );
+              <span>{actionLink.label}</span>
+              <svg
+                className="ml-2 w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5] group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
+        )}
+        {children}
+      </>
+    );
   };
 
   return (

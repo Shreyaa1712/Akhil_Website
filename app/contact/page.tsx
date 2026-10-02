@@ -29,13 +29,8 @@ export default function ContactPage() {
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[var(--brand-peach)] rounded-full filter blur-3xl opacity-40 -z-10" />
 
         <div className="max-w-6xl mx-auto z-10 w-full">
-          <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-4">
-            <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-            Get In Touch
-            <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-          </div>
           <h1 className="text-4xl md:text-6xl font-bold font-serif mb-12 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-            Contact <span className="text-[var(--brand-maroon)]">Us</span>
+            Contact Us
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
