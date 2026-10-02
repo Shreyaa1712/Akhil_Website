@@ -52,39 +52,34 @@ const domains: DomainSection[] = [
   },
   {
     id: "trade",
-    title: "Trade Defense",
+    title: "Trade Defence",
     subtitle: "Anti-Dumping, Anti-Subsidy & Safeguards",
-    summary: "Advised governments, foreign exporters, and industry across complex trade remedy investigations and EU litigation.",
+    summary: "Advised and represented governments and companies across the full life-cycle of complex trade remedy investigations and litigation.",
     items: [
       {
         caseNumber: "Anti-Dumping Investigations",
         title: "",
-        desc: "Advised governments, exporters, and industry in anti-dumping investigations concerning TiO2, PVC, corrosion-resistant steel, cold-rolled steel, ceramic tiles, biodiesel, fatty acids, and hot-rolled flat products."
+        desc: "Advised and represented governments and companies in anti-dumping investigations such as those concerning TiO2, PVC, corrosion-resistant steel, cold-rolled steel, ceramic tiles, biodiesel, fatty acids, and hot-rolled flat products."
       },
       {
         caseNumber: "Anti-Subsidy Investigations",
         title: "",
-        desc: "Advised clients in countervailing duty investigations involving battery electric vehicles, optical fibre cables, and electric bicycles."
+        desc: "Advised and represented clients in countervailing duty investigations such as those concerning battery electric vehicles, optical fibre cables, and electric bicycles."
       },
       {
         caseNumber: "Safeguard Investigations",
         title: "",
-        desc: "Advised on safeguard investigations concerning EU Steel Safeguards I & II and ferro-alloys."
-      },
-      {
-        caseNumber: "Foreign Subsidies Regulation",
-        title: "",
-        desc: "Advised clients on proceedings under the EU Foreign Subsidies Regulation, including strategic advice and submissions before the European Commission."
+        desc: "Advised and represented clients on safeguard investigations such as those concerning steel and ferro-alloys."
       },
       {
         caseNumber: "EU General Court Litigation",
         title: "",
-        desc: "Supported foreign exporters seeking annulment of an EU anti-dumping regulation before the General Court of the European Union."
+        desc: "Supported foreign exporters seeking annulment of EU trade defence regulation before the General Court of the European Union."
       },
       {
         caseNumber: "Additional Advisory Experience",
         title: "",
-        desc: "Advised industry on litigation and regulatory issues before the EU Courts, including the principle of non-discrimination, selection of the representative country, rules of origin, and adjustments in anti-dumping investigations."
+        desc: "Advised industry on litigation and regulatory issues before the EU Courts, including cases concerning the principle of non-discrimination, selection of the representative country, rules of origin, and adjustments in anti-dumping investigations."
       }
     ]
   },
