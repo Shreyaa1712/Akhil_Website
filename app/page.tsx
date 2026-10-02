@@ -230,7 +230,7 @@ export default function Home() {
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300 -z-10 opacity-20"></div>
-                <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
               </div>
             </motion.div>
 
@@ -310,7 +310,7 @@ export default function Home() {
             <div className="w-full md:w-5/12 flex-shrink-0 relative z-10">
               <div className="relative group">
                 <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300 -z-10 opacity-20"></div>
-                <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
               </div>
             </div>
 
@@ -575,6 +575,7 @@ export default function Home() {
       </section>
 
       {/* Section 5: The Way We Work */}
+      {false && (
       <section className="w-full bg-[var(--brand-maroon-dark)] text-[var(--brand-light)] py-24 relative overflow-hidden">
         {/* Ambient background glows */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)]/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -678,6 +679,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Section 6: Academic */}
       <section className="w-full bg-white py-24 border-t border-[var(--brand-peach)]/50 relative overflow-hidden">

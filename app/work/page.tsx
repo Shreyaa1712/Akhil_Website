@@ -29,7 +29,7 @@ export default function WorkPage() {
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-                Representative <span className="text-[var(--brand-maroon)]">Matters</span>
+                Representative Matters
               </h1>
             </motion.div>
           ) : (
@@ -40,7 +40,7 @@ export default function WorkPage() {
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-                Representative <span className="text-[var(--brand-maroon)]">Matters</span>
+                Representative Matters
               </h1>
             </div>
           )}

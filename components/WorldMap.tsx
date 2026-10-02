@@ -19,36 +19,20 @@ interface WorldMapProps {
   children?: React.ReactNode;
 }
 
-const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json"; // We will use a dot pattern to mask borders
 
-// Map countries to their tooltip data based on user specifications
-const highlightedCountries: Record<string, string> = {
-  "China": "Asia",
-  "India": "Asia (DGTR)",
-  "Thailand": "Asia",
-  "Indonesia": "Asia",
-  "South Korea": "Asia",
-  "Kenya": "Africa",
-  "South Africa": "Africa (SACU)",
-  "Georgia": "Eurasia",
-  "Uzbekistan": "Eurasia",
-  "United Kingdom": "United Kingdom (TRA)",
-  "United States of America": "North America",
-  "Mexico": "North America",
-  "Colombia": "Latin America",
-  "Ecuador": "Latin America",
-  "Brazil": "Latin America",
-  // EU Countries (European Union - DG trade)
-  "France": "European Union (DG trade)",
-  "Germany": "European Union (DG trade)",
-  "Belgium": "European Union (DG trade)",
-  "Sweden": "European Union (DG trade)",
-  "Denmark": "European Union (DG trade)",
-  "Austria": "European Union (DG trade)",
-  "Japan": "Asia",
-  "Australia": "Australia",
-  "Ukraine": "Eurasia"
-};
+// Use markers for key regions instead of highlighting specific countries to avoid drawing borders
+const regionMarkers = [
+  { name: "North America", coordinates: [-100, 38] as [number, number] },
+  { name: "Latin America", coordinates: [-55, -10] as [number, number] },
+  { name: "European Union (DG Trade)", coordinates: [10, 50] as [number, number] },
+  { name: "United Kingdom (TRA)", coordinates: [-3, 54] as [number, number] },
+  { name: "Eurasia", coordinates: [64, 41] as [number, number] },
+  { name: "Africa (SACU)", coordinates: [20, -10] as [number, number] },
+  { name: "Asia", coordinates: [104, 35] as [number, number] },
+  { name: "India (DGTR)", coordinates: [80, 20] as [number, number] },
+  { name: "Australia", coordinates: [133, -25] as [number, number] }
+];
 
 const annotations = [
   {
@@ -190,53 +174,55 @@ export default function WorldMap({ actionLink, children }: WorldMapProps = {}) {
         height={550}
         className="w-full h-auto max-h-[70vh] object-contain bg-transparent drop-shadow-[0_10px_20px_rgba(73,19,22,0.15)] relative z-20"
       >
+        <defs>
+          <pattern id="dotPattern" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="#b89675" />
+          </pattern>
+        </defs>
+        
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
-            geographies.map((geo) => {
-              const countryData = highlightedCountries[geo.properties.name];
-              const isHighlighted = !!countryData;
-
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => {
-                    if (isHighlighted) {
-                      setTooltipContent(geo.properties.name);
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    setTooltipContent("");
-                  }}
-                  style={{
-                    default: {
-                      fill: isHighlighted ? "#7a2228" : "#e8cca6", // brand-peach-dark
-                      stroke: "#000000",
-                      strokeWidth: 0.5,
-                      outline: "none",
-                    },
-                    hover: {
-                      fill: isHighlighted ? "#8a262e" : "#d9bca1", // slightly darker peach
-                      stroke: isHighlighted ? "#8a262e" : "#000000",
-                      strokeWidth: isHighlighted ? 2.5 : 0.5,
-                      outline: "none",
-                    },
-                    pressed: {
-                      fill: isHighlighted ? "#7a2228" : "#e8cca6",
-                      outline: "none",
-                    },
-                  }}
-                  className={
-                    isHighlighted
-                      ? "cursor-pointer transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(122,34,40,0.8)]"
-                      : "cursor-default transition-all duration-300"
-                  }
-                  data-tooltip-id={isHighlighted ? "world-map-tooltip" : undefined}
-                />
-              );
-            })
+            geographies.map((geo) => (
+              <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                style={{
+                  default: {
+                    fill: "url(#dotPattern)", // Dotted landmass
+                    stroke: "transparent", // No borders!
+                    strokeWidth: 0,
+                    outline: "none",
+                  },
+                  hover: {
+                    fill: "url(#dotPattern)", 
+                    stroke: "transparent",
+                    outline: "none",
+                  },
+                  pressed: {
+                    fill: "url(#dotPattern)",
+                    outline: "none",
+                  },
+                }}
+                className="transition-all duration-300 pointer-events-none"
+              />
+            ))
           }
         </Geographies>
+
+        {/* Region Markers (Dots) */}
+        {regionMarkers.map((marker, idx) => (
+          <Marker
+            key={idx}
+            coordinates={marker.coordinates}
+            onMouseEnter={() => setTooltipContent(marker.name)}
+            onMouseLeave={() => setTooltipContent("")}
+            data-tooltip-id="world-map-tooltip"
+            className="cursor-pointer"
+          >
+            <circle r={8} fill="#7a2228" className="drop-shadow-md hover:scale-125 transition-transform duration-300" />
+            <circle r={3} fill="#fde9d9" className="pointer-events-none" />
+          </Marker>
+        ))}
 
         {annotations.map((ann, idx) => (
           <Annotation

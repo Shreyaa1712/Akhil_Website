@@ -71,7 +71,7 @@ export default function AboutPage() {
               >
                 <div className="relative group">
                   <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20"></div>
-                  <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                  <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
                 </div>
               </motion.div>
 
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <div className="w-full md:w-5/12 flex-shrink-0">
                 <div className="relative group">
                   <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20"></div>
-                  <img src="/images/dr-raina.png" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                  <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
                 </div>
               </div>
 
