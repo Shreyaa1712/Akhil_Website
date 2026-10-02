@@ -29,10 +29,6 @@ export default function ContactPage() {
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[var(--brand-peach)] rounded-full filter blur-3xl opacity-40 -z-10" />
 
         <div className="max-w-6xl mx-auto z-10 w-full">
-<<<<<<< Updated upstream
-=======
-          
->>>>>>> Stashed changes
           <h1 className="text-4xl md:text-6xl font-bold font-serif mb-12 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
             Contact Us
           </h1>
