@@ -7,25 +7,25 @@ const servicesData = {
     title: "WTO Dispute Settlement",
     image: "/images/wto-dispute.png",
     icon: "/images/icon-itd.png",
-    content: `We advise governments on complex issues arising under WTO law and represent them in State-to-State trade disputes. Our practice covers trade in goods, sanitary and phytosanitary measures, technical barriers to trade, local content requirements, intellectual property, and national security. We also advise trade ministries on treaty interpretation, WTO negotiations, institutional reform, and broader international trade policy.`
+    content: `We advise governments on complex issues arising under WTO law and represent governments in State-to-State trade disputes. Our practice covers trade in goods, sanitary and phytosanitary measures, technical barriers to trade, local content requirements, intellectual property, and national security. We also advise governments on treaty interpretation, WTO negotiations, institutional reform, and broader international trade policy.`
   },
   "trade-defence": {
     title: "Trade Defence",
     image: "/images/trade-defence.png",
     icon: "/images/icon-td.png",
-    content: `We advise governments and businesses on all aspects of trade remedy law, from pre-initiation strategy through investigations, definitive measures, reviews, and judicial challenges. Our experience spans across anti-dumping, anti-subsidy, foreign subsidy, and safeguard proceedings before investigating authorities in the EU, the UK, India, and other key jurisdictions.\n\nAnti-Dumping Investigations\nAdvised governments, exporters, and industry in anti-dumping investigations concerning TiO2, PVC, corrosion-resistant steel, cold-rolled steel, ceramic tiles, biodiesel, fatty acids, and hot-rolled flat products.\n\nAnti-Subsidy Investigations\nAdvised clients in countervailing duty investigations involving battery electric vehicles, optical fibre cables, and electric bicycles.\n\nSafeguard Investigations\nAdvised on safeguard investigations concerning EU Steel Safeguards I & II and ferro-alloys.\n\nForeign Subsidies Regulation\nAdvised clients on proceedings under the EU Foreign Subsidies Regulation, including strategic advice and submissions before the European Commission.\n\nEU General Court Litigation\nSupported foreign exporters seeking annulment of an EU anti-dumping regulation before the General Court of the European Union.\n\nAdditional Advisory Experience\nAdvised industry on litigation and regulatory issues before the EU Courts, including the principle of non-discrimination, selection of the representative country, rules of origin, and adjustments in anti-dumping investigations.`
+    content: `We advise governments and businesses on all aspects of trade remedy law, including pre-initiation strategy. We represent our clients through the entire life-cycle of the investigation, and assist them with reviews and judicial challenges. Our experience spans anti-dumping, anti-subsidy, foreign subsidy, and safeguard proceedings before investigating authorities in the EU, the UK, India, the US, and other key jurisdictions.`
   },
   "customs-and-importation": {
     title: "Customs, Sanctions and Export Controls",
     image: "/images/customs.png",
     icon: "/images/icon-ci.png",
-    content: `We advise businesses on the customs matters, including tariff classification, valuation, rules of origin, import licensing, as well as sanctions and export controls. We also advise on supply chain risks, enabling businesses to manage their regulatory obligations, mitigate disruption, and facilitate the efficient movement of goods and services.`
+    content: `We advise businesses on customs matters, including tariff classification, valuation, rules of origin, import licensing, as well as sanctions and export controls. We also advise companies on supply chain risks, enabling businesses to manage their regulatory obligations, mitigate disruption, and facilitate the efficient movement of goods and services.`
   },
   "esg-and-regulatory-advisory": {
     title: "ESG & Regulatory Advisory",
     image: "/images/esg-regulatory.png",
     icon: "/images/icon-esg.png",
-    content: `We advise businesses on the implications of emerging sustainability and ESG frameworks. Our expertise includes the EU’s Carbon Border Adjustment Mechanism (CBAM), Deforestation Regulation (EUDR), and Corporate Sustainability Due Diligence Directive (CSDDD), as well as the US’ Uyghur Forced Labor Prevention Act. We support clients with planning, supply chain due diligence, and engagement with regulators around the world.`
+    content: `We advise companies on the implications for their businesses of emerging sustainability and ESG frameworks. We have experience with the EU’s Carbon Border Adjustment Mechanism (CBAM), Deforestation Regulation (EUDR), and Corporate Sustainability Due Diligence Directive (CSDDD), as well as global foreced labour regulations. We support clients with planning, supply chain due diligence, and engagement with regulators around the world.`
   }
 };
 

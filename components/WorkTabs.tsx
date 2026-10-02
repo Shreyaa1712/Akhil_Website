@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface MatterItem {
   caseNumber?: string;
@@ -153,6 +153,17 @@ export default function WorkTabs() {
   const [activeDomainId, setActiveDomainId] = useState<string>("wto");
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
+  // Scroll to the top of the work section whenever the active domain changes
+  useEffect(() => {
+    const element = document.getElementById("work-section-top");
+    if (element) {
+      const topPos = element.getBoundingClientRect().top + window.scrollY - 110;
+      window.scrollTo({ top: topPos, behavior: "smooth" });
+    }
+  }, [activeDomainId]);
+
+
+
   const activeDomain = domains.find((d) => d.id === activeDomainId) || domains[0];
   const remainingDomains = domains.filter((d) => d.id !== activeDomainId);
 
@@ -162,19 +173,18 @@ export default function WorkTabs() {
   const handleSelectDomain = (domainId: string) => {
     setActiveDomainId(domainId);
     setIsExpanded(false);
-    const element = document.getElementById("work-section-top");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   const handleToggleExpand = () => {
     if (isExpanded) {
       setIsExpanded(false);
-      const element = document.getElementById("work-section-top");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      setTimeout(() => {
+        const element = document.getElementById("work-section-top");
+        if (element) {
+          const topPos = element.getBoundingClientRect().top + window.scrollY - 110;
+          window.scrollTo({ top: topPos, behavior: "smooth" });
+        }
+      }, 150);
     } else {
       setIsExpanded(true);
     }

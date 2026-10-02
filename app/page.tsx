@@ -396,7 +396,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 text-[var(--brand-peach)] font-bold tracking-widest uppercase text-sm">
                 <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
-                Practice Areas
+                What We Do
                 <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold font-serif">Our Services</h2>
@@ -405,7 +405,7 @@ export default function Home() {
             <div className="flex flex-col items-center text-center mb-16 gap-4">
               <div className="inline-flex items-center gap-2 text-[var(--brand-peach)] font-bold tracking-widest uppercase text-sm">
                 <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
-                Practice Areas
+                What We Do
                 <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold font-serif">Our Services</h2>
@@ -415,10 +415,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
             {[
-              { id: '01', title: 'International Trade Disputes', full: 'Representation in complex disputes.', image: '/images/wto-dispute.png', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement', details: 'Navigating complex WTO disputes, bilateral agreements, and international trade regulations.' },
-              { id: '02', title: 'Trade Defence', full: 'Strategic counsel for protection of market access.', image: '/images/trade-defence.png', icon: '/images/icon-td.png', slug: 'trade-defence', details: 'Protecting domestic industries through anti-dumping, anti-subsidy, and safeguard investigations.' },
-              { id: '03', title: 'Customs & Importation', full: 'Tariffs, valuation & supply chain compliance.', image: '/images/customs.png', icon: '/images/icon-ci.png', slug: 'customs-and-importation', details: 'Optimizing supply chains, customs classifications, rules of origin, and import/export compliance.' },
-              { id: '04', title: 'ESG & Regulatory Advisory', full: 'CBAM, EUDR & similar sustainability policy.', image: '/images/esg-regulatory.png', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory', details: 'Advising on CBAM, supply chain due diligence, and international sustainability compliance.' },
+              { id: '01', title: 'WTO Dispute Settlement', full: 'Representation in complex disputes.', image: '/images/wto-dispute.png', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement', details: 'Advising and representing governments in complex WTO disputes at the State-to-State level.' },
+              { id: '02', title: 'Trade Defence', full: 'Strategic counsel for protection of market access.', image: '/images/trade-defence.png', icon: '/images/icon-td.png', slug: 'trade-defence', details: 'Handling anti-dumping, anti-subsidy and safeguard investigations across their full life-cycle, acting for both governments and industry.' },
+              { id: '03', title: 'Customs, Sanctions and Export Controls', full: 'Tariffs, valuation & supply chain compliance.', image: '/images/customs.png', icon: '/images/icon-ci.png', slug: 'customs-and-importation', details: 'Advising companies on importation issues, tariff classification, valuation, rules of origin, sanctions, export controls, and supply chain risks.' },
+              { id: '04', title: 'ESG & Regulatory Advisory', full: 'CBAM, EUDR & similar sustainability policy.', image: '/images/esg-regulatory.png', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory', details: 'Advising companies and governments on sustainability and ESG frameworks, including CBAM, EUDR, CSDDD, forced labor laws, and supply chain due diligence.' },
             ].map((service, index) => (
               animEnabled ? (
                 <motion.div
@@ -442,7 +442,6 @@ export default function Home() {
                         </div>
                         <div className="w-full h-full p-8 flex flex-col justify-end items-center text-center relative z-10">
                           <h3 className="text-4xl font-bold font-serif mb-2 text-white drop-shadow-md">{service.title}</h3>
-                          <p className="text-[0.8rem] text-[var(--brand-peach)] font-bold uppercase tracking-widest drop-shadow-md">{service.full}</p>
                         </div>
                       </div>
                     ) : (
@@ -456,7 +455,6 @@ export default function Home() {
                               <img src={service.icon} alt={service.title} className="w-full h-full object-contain filter drop-shadow-md" style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)' }} />
                             </div>
                             <h3 className="text-2xl font-bold font-serif mb-2 text-[var(--brand-peach)]">{service.title}</h3>
-                            <p className="text-sm text-white/80 leading-relaxed">{service.full}</p>
                           </div>
                         </div>
                       </div>
@@ -466,7 +464,6 @@ export default function Home() {
                     <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-[var(--brand-peach)]/60 rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-2xl shadow-[var(--brand-peach)]/20 z-0">
                       <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                         <div className="flex flex-col items-center justify-center h-full z-10 w-full gap-4">
-                          <h3 className="text-2xl font-bold font-serif text-white mb-2">{service.full}</h3>
                           <p className="text-sm text-white/90 leading-relaxed">{service.details}</p>
                         </div>
                         <div className="mt-6 pt-4 border-t border-white/20 w-full flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[var(--brand-peach)] z-10">
@@ -491,7 +488,6 @@ export default function Home() {
                         </div>
                         <div className="w-full h-full p-8 flex flex-col justify-end items-center text-center relative z-10">
                           <h3 className="text-4xl font-bold font-serif mb-2 text-white drop-shadow-md">{service.title}</h3>
-                          <p className="text-[0.8rem] text-[var(--brand-peach)] font-bold uppercase tracking-widest drop-shadow-md">{service.full}</p>
                         </div>
                       </div>
                     ) : (
@@ -505,7 +501,6 @@ export default function Home() {
                               <img src={service.icon} alt={service.title} className="w-full h-full object-contain filter drop-shadow-md" style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)' }} />
                             </div>
                             <h3 className="text-2xl font-bold font-serif mb-2 text-[var(--brand-peach)]">{service.title}</h3>
-                            <p className="text-sm text-white/80 leading-relaxed">{service.full}</p>
                           </div>
                         </div>
                       </div>
@@ -514,7 +509,6 @@ export default function Home() {
                     <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-[var(--brand-peach)]/60 rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-2xl shadow-[var(--brand-peach)]/20 z-0">
                       <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                         <div className="flex flex-col items-center justify-center h-full z-10 w-full gap-4">
-                          <h3 className="text-2xl font-bold font-serif text-white mb-2">{service.full}</h3>
                           <p className="text-sm text-white/90 leading-relaxed">{service.details}</p>
                         </div>
                         <div className="mt-6 pt-4 border-t border-white/20 w-full flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[var(--brand-peach)] z-10">

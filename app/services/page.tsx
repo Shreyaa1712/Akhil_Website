@@ -20,7 +20,7 @@ const services = [
     slug: "trade-defence",
     image: "/images/trade-defence.png",
     icon: "/images/icon-td.png",
-    description: "Handling trade remedy investigations across their full life-cycle, acting for both governments and industry.",
+    description: "Handling anti-dumping, anti-subsidy and safeguard investigations across their full life-cycle, acting for both governments and industry.",
   },
   {
     id: "03",
@@ -28,7 +28,7 @@ const services = [
     slug: "customs-and-importation",
     image: "/images/customs.png",
     icon: "/images/icon-ci.png",
-    description: "Advising companies on customs matters, tariff classification, valuation, rules of origin, sanctions, export controls, and supply chain risks.",
+    description: "Advising companies on importation issues, tariff classification, valuation, rules of origin, sanctions, export controls, and supply chain risks.",
   },
   {
     id: "04",
@@ -36,7 +36,7 @@ const services = [
     slug: "esg-and-regulatory-advisory",
     image: "/images/esg-regulatory.png",
     icon: "/images/icon-esg.png",
-    description: "Advising companies on sustainability and ESG frameworks, CBAM, EUDR, CSDDD, forced labor laws, and supply chain due diligence.",
+    description: "Advising companies and governments on sustainability and ESG frameworks, including CBAM, EUDR, CSDDD, forced labor laws, and supply chain due diligence.",
   },
 ];
 
@@ -59,28 +59,28 @@ export default function ServicesPage() {
             >
               <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-                Practice Areas
+                What We Do
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold font-serif mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon)]">
                 Our Practices
               </h1>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-black leading-relaxed font-medium">
-                Expert advisory and litigation services across the full spectrum of international trade law.
+                Advisory and litigation services across the full spectrum of international trade law matters.
               </p>
             </motion.div>
           ) : (
             <div>
               <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-                Practice Areas
+                What We Do
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold font-serif mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon)]">
                 Our Practices
               </h1>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-black leading-relaxed font-medium">
-                Expert advisory and litigation services across the full spectrum of international trade law.
+                Advisory and litigation services across the full spectrum of international trade law matters.
               </p>
             </div>
           )}

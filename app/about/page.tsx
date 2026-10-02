@@ -100,9 +100,9 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Education</h3>
                     <ul className="text-[var(--brand-maroon-light)] space-y-2">
-                      <li><strong className="text-[var(--brand-maroon-dark)]">PhD</strong> (Belgium; Marie Curie Fellow)</li>
-                      <li><strong className="text-[var(--brand-maroon-dark)]">LLM</strong> (Spain; ELSA Scholar)</li>
-                      <li><strong className="text-[var(--brand-maroon-dark)]">BSc, LLB</strong> (India; Trade & Inv. Law Honours)</li>
+                      <li><span className="text-[var(--brand-maroon-dark)]">PhD</span> (Belgium; Marie Curie Fellow)</li>
+                      <li><span className="text-[var(--brand-maroon-dark)]">LLM</span> (Spain; ELSA Scholar)</li>
+                      <li><span className="text-[var(--brand-maroon-dark)]">BSc, LLB</span> (India; Trade & Inv. Law Honours)</li>
                     </ul>
                   </div>
                 </div>
@@ -143,9 +143,9 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Education</h3>
                     <ul className="text-[var(--brand-maroon-light)] space-y-2">
-                      <li><strong className="text-[var(--brand-maroon-dark)]">PhD</strong> (Belgium; Marie Curie Fellow)</li>
-                      <li><strong className="text-[var(--brand-maroon-dark)]">LLM</strong> (Spain; ELSA Scholar)</li>
-                      <li><strong className="text-[var(--brand-maroon-dark)]">BSc, LLB</strong> (India; Trade & Inv. Law Honours)</li>
+                      <li><span className="text-[var(--brand-maroon-dark)]">PhD</span> (Belgium; Marie Curie Fellow)</li>
+                      <li><span className="text-[var(--brand-maroon-dark)]">LLM</span> (Spain; ELSA Scholar)</li>
+                      <li><span className="text-[var(--brand-maroon-dark)]">BSc, LLB</span> (India; Trade & Inv. Law Honours)</li>
                     </ul>
                   </div>
                 </div>
@@ -165,9 +165,8 @@ export default function AboutPage() {
         <section className="mb-20">
           <div className="space-y-6 text-lg leading-relaxed text-[var(--brand-maroon-light)] font-medium text-justify">
             {[
-              "AR Legal is a Brussels and New Delhi-based boutique law practice dedicated to international trade. Our practice advises governments and multinational companies on the full range of trade law and policy – whether in dispute settlement proceedings before the WTO, in trade remedy investigations before authorities in Europe and Asia, or in navigating an expanding body of trade-related regulatory compliance obligations, as well as complex customs procedures and import controls.",
-              "We assist clients through the full life cycle of the matter. In disputes, we assist governments from developing strategy to consultations with the opposing government, and onwards to litigation and ensuring implementation of the legal result. For industry, our work includes advising on the interpretation and implementation of new regulations, assessing compliance obligations and associated commercial risks, and assisting clients in responding to regulatory developments. We also advise domestic industries and exporters on trade defence and trade remedy matters, including anti-dumping, countervailing duty and safeguard investigations, from assessing the viability of proceedings and preparing submissions to representation before investigating authorities, reviews and subsequent litigation. Where required, we further assist clients with advocacy for legislative or regulatory change and with legal challenges to measures at the national, regional and international level. Few practices cover such a wide spectrum.",
-              "Our practice is built on a simple but deliberate model: senior professionals working in a network of experts, calibrated to each specific mandate. Every matter is handled directly by Dr. Raina. For each assignment, a carefully assembled team of specialists is put together – experienced trade lawyers in the relevant jurisdictions, economists and quantitative analysts where required, and policy or subject-matter experts where depth in a particular sector or regulatory framework is required.",
+              "AR Legal is a Brussels and New Delhi-based boutique law practice dedicated to international trade. Our practice advises governments and multinational companies on the full range of trade law and policy – in WTO disputes, trade remedy investigations and customs matters, as well as in the expanding body of trade-related regulatory compliance obligations.",
+              "Our practice is built on a simple but deliberate model: senior professionals working in a network of experts, with teams calibrated to each specific mandate. Every matter is handled directly by Dr. Raina. For each assignment, a carefully assembled group of specialists is put together – experienced trade lawyers in the relevant jurisdictions, economists and quantitative analysts where required, and policy or subject-matter experts where depth in a particular sector or regulatory framework is needed.",
               "Our work covers global (WTO) and regional (FTA) rules; and we work with authorities in the EU (DG Trade), the UK (TRA), India (DGTR), as well as those in the US, Canada, China, and across Asia and Latin America.",
             ].map((text, index) =>
               animEnabled ? (
