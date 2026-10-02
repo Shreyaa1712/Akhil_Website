@@ -57,11 +57,6 @@ export default function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-6">
-                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-                What We Do
-                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-              </div>
               <h1 className="text-5xl md:text-6xl font-bold font-serif mb-6 tracking-tight leading-[1.1] text-[var(--brand-maroon)]">
                 Our Practices
               </h1>

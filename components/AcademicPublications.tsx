@@ -10,6 +10,7 @@ export interface Publication {
   coAuthors: string | null;
   type: string;
   shortView?: string;
+  links?: { label: string; url: string }[];
 }
 
 const Library = ({ className }: { className?: string }) => (
@@ -53,9 +54,8 @@ export default function AcademicPublications({
         <div className="absolute left-0 top-3 bottom-3 w-[2px] bg-[var(--brand-peach-dark)]/50 rounded-full overflow-hidden">
           {/* Animated Progress Filler */}
           <div
-            className={`w-full bg-[var(--brand-maroon)] rounded-full transition-all duration-700 ease-in-out ${
-              isExpanded ? "h-full" : "h-[35%]"
-            }`}
+            className={`w-full bg-[var(--brand-maroon)] rounded-full transition-all duration-700 ease-in-out ${isExpanded ? "h-full" : "h-[35%]"
+              }`}
           />
         </div>
 
@@ -65,19 +65,15 @@ export default function AcademicPublications({
             <div key={pub.id} className="relative group">
               {/* Dot Indicator */}
               <div
-                className={`absolute -left-[30px] md:-left-[38px] top-7 w-3.5 h-3.5 rounded-full border-2 border-white transition-all duration-500 z-10 ${
-                  idx < visibleItems.length
+                className={`absolute -left-[30px] md:-left-[38px] top-7 w-3.5 h-3.5 rounded-full border-2 border-white transition-all duration-500 z-10 ${idx < visibleItems.length
                     ? "bg-[var(--brand-maroon)] shadow-xs scale-100 group-hover:scale-125"
                     : "bg-[var(--brand-peach-dark)]"
-                }`}
+                  }`}
               />
 
               <div className="bg-white rounded-2xl p-6 md:p-7 shadow-md shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/60 hover:border-[var(--brand-maroon)]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-[var(--brand-peach)]/30 text-[var(--brand-maroon)] rounded-full">
-                      {pub.type}
-                    </span>
                     <span className="text-sm font-semibold text-[var(--brand-maroon-light)]">
                       {pub.year}
                     </span>
@@ -92,9 +88,28 @@ export default function AcademicPublications({
                   </p>
 
                   {pub.shortView && (
-                    <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed">
+                    <p className="text-sm text-[var(--brand-maroon-light)] leading-relaxed mb-3">
                       {pub.shortView}
                     </p>
+                  )}
+
+                  {pub.links && pub.links.length > 0 && (
+                    <div className="flex flex-wrap gap-3 mt-1">
+                      {pub.links.map((link, linkIdx) => (
+                        <a
+                          key={linkIdx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-[var(--brand-peach-dark)] hover:text-[var(--brand-maroon)] transition-colors group"
+                        >
+                          <span className="mr-1">{link.label}</span>
+                          <svg className="w-3.5 h-3.5 stroke-[2.5] transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      ))}
+                    </div>
                   )}
                 </div>
 

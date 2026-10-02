@@ -16,66 +16,81 @@ export const metadata = {
 const publications = [
   {
     id: 1,
-    title: "Evolution of EU Trade Law through the Prism of Competence",
-    journal: "Journal of World Trade",
+    title: "The Evolution of EU Trade Law Through the Prism of Competence: A Quantitative, Longitudinal Perspective",
+    journal: "Journal of World Trade, Volume 53, Issue 3",
     year: "2019",
-    coAuthors: "with M. Ovadek",
+    coAuthors: "with Michal Ovádek",
     type: "Journal Article",
-    shortView: "A data-driven study of EU trade law using a dataset of over 6,000 legal acts, revealing that expanding EU trade competence has not led to a corresponding increase in trade legislation."
+    shortView: "A data-driven study of EU trade law using a dataset of over 6,000 legal acts, revealing that expanding EU trade competence has not led to a corresponding increase in trade legislation.",
+    links: [
+      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Journal+of+World+Trade/53.3/TRAD2019022" },
+      { label: "DOI", url: "https://doi.org/10.54648/trad2019022" }
+    ]
   },
   {
     id: 2,
     title: "What is a Safeguard Measure under WTO Law?",
-    journal: "Trade Law & Development",
-    year: "2018",
+    journal: "10(2) TRADE L. & DEV. 463",
+    year: "2019",
     coAuthors: null,
     type: "Journal Article",
-    shortView: "A clarifying analysis of safeguard measures under WTO law, addressing questions that have resurfaced amid US-China trade tensions."
+    shortView: "A clarifying analysis of safeguard measures under WTO law, addressing questions that have resurfaced amid US-China trade tensions.",
+    links: [
+      { label: "PDF", url: "https://www.tradelawdevelopment.com/_files/ugd/9e8518_3e6c3009c4194d0cb6f53f81daa1660a.pdf" },
+      { label: "Journal Issue", url: "https://www.tradelawdevelopment.com/10-2" }
+    ]
   },
   {
     id: 3,
-    title: "Good Faith in WTO Dispute Settlement",
-    journal: "Global Trade and Customs Journal",
-    year: "2016",
-    coAuthors: null,
-    type: "Journal Article",
-    shortView: "An analysis of how good faith principles shape the authority and credibility of the WTO's dispute settlement system."
-  },
-  {
-    id: 4,
-    title: "AB Deadlock - What It Is, Why It's a Problem, and What to Do About It",
-    journal: "Global Trade and Customs Journal",
+    title: "Meditations in an Emergency: The Appellate Body Deadlock – What It Is, Why It Is a Problem, and What to Do About It",
+    journal: "Global Trade and Customs Journal, Volume 13, Issue 9",
     year: "2018",
     coAuthors: null,
     type: "Journal Article",
-    shortView: "An examination of the US blockade on WTO Appellate Body appointments and a proposed path forward for global trade dispute resolution."
+    shortView: "An examination of the US blockade on WTO Appellate Body appointments and a proposed path forward for global trade dispute resolution.",
+    links: [
+      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Global+Trade+and+Customs+Journal/13.9/GTCJ2018043" },
+      { label: "DOI", url: "https://doi.org/10.54648/gtcj2018043" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Legal Problems with Data Localization Requirements: The Case of the Russian Federation",
+    journal: "Global Trade and Customs Journal, Volume 15, Issue 9",
+    year: "2020",
+    coAuthors: "with Simón Hernández",
+    type: "Journal Article",
+    shortView: "A legal analysis of Russia's data localization laws, concluding they violate WTO market access obligations with no valid justification under existing exceptions.",
+    links: [
+      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Global+Trade+and+Customs+Journal/15.9/GTCJ2020084" },
+      { label: "DOI", url: "https://doi.org/10.54648/gtcj2020084" }
+    ]
   },
   {
     id: 5,
-    title: "Legal Problems with Data Localization Requirements",
-    journal: "Global Trade and Customs Journal",
-    year: "2020",
-    coAuthors: "with S. Hernández Serrano",
+    title: "The Benefit Analysis in EU – CVDs on Biodiesel (Indonesia): E Uno Plura",
+    journal: "16(1) Indian Journal of International Economic Law",
+    year: "2025",
+    coAuthors: "with Neeraj Rajan Sabitha and Petros C. Mavroidis",
     type: "Journal Article",
-    shortView: "A legal analysis of Russia's data localization laws, concluding they violate WTO market access obligations with no valid justification under existing exceptions."
+    shortView: "A legal analysis of the WTO dispute EU - CVDs on Biodiesel (Indonesia), focusing on whether export levies paid by Indonesian biodiesel producers should have been considered when assessing the benefit received from government grants.",
+    links: [
+      { label: "DOI", url: "https://doi.org/10.55496/KSWQ2659" },
+      { label: "Repository", url: "https://repository.nls.ac.in/ijiel/vol16/iss1/2" }
+    ]
   },
   {
     id: 6,
-    title: "Benefit Analysis in EU-CVDs on Biodiesel (Indonesia)",
-    journal: "Indian Journal of International Economic Law",
-    year: "2026",
-    coAuthors: "with P. Mavroidis and Neeraj RS",
+    title: "The Day the Music Died’: The Curious Case of Peru-Agricultural Products",
+    journal: "Global Trade and Customs Journal, Volume 11, Issue 2",
+    year: "2016",
+    coAuthors: null,
     type: "Journal Article",
-    shortView: "A legal analysis of the WTO dispute EU - CVDs on Biodiesel (Indonesia), focusing on whether export levies paid by Indonesian biodiesel producers should have been considered when assessing the benefit received from government grants."
-  },
-  {
-    id: 7,
-    title: "European Union",
-    journal: "International Trade Law Review (LBR)",
-    year: "2022–2024",
-    coAuthors: "with N. Kuplewatzky",
-    type: "Book Chapter / Review",
-    shortView: "This chapter examines the EU’s role in global economic governance, particularly its engagement with institutions such as the WTO, G7, G20, IMF and World Bank. It highlights that although the EU strongly promotes multilateralism, its influence is weakened by the absence of a clear and coordinated strategy with its Member States."
+    shortView: "An analysis of the Peru-Agricultural Products dispute and its implications for WTO law.",
+    links: [
+      { label: "DOI", url: "https://doi.org/10.54648/gtcj2016011" },
+      { label: "Kluwer Law", url: "https://kluwerlawonline.com/JournalArticle/Global+Trade+and+Customs+Journal/11.2/GTCJ2016011" }
+    ]
   }
 ];
 
@@ -100,7 +115,7 @@ export default function AcademicPage() {
       <section id="academic-section-top" className="max-w-7xl mx-auto px-6 pt-6 pb-12 scroll-mt-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
           {/* Left Side: Main Statement & Stats */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
+          <div className="lg:col-span-5 lg:sticky lg:top-28 text-[var(--brand-maroon-light)] p-8 md:p-10 ">
             <div>
               <div className="flex items-center gap-3 text-[var(--brand-maroon)] font-bold text-sm uppercase tracking-wider mb-4">
                 <span>Dr. Akhil Raina's Academic Work</span>

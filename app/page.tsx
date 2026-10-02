@@ -82,13 +82,13 @@ export default function Home() {
               {wideHeroText ? (
                 <p className="text-base md:text-lg mb-8 text-[#1a1a1a] leading-relaxed text-center mx-auto md:max-w-fit">
                   We advise governments, manufacturers, exporters, importers, as well as industry associations <br className="hidden md:block" />
-                  on WTO law, trade remedies, customs, and regulatory compliance and emerging ESG-related requirements.
+                  on WTO law, trade remedies, customs, and regulatory compliance, including ESG-related requirements.
                 </p>
               ) : (
                 <p className="text-base md:text-lg mb-8 text-[#1a1a1a] leading-relaxed text-center mx-auto max-w-[700px]">
                   We advise governments, manufacturers, exporters, importers, as well <br className="hidden md:block" />
                   as industry associations on WTO law, trade remedies, customs, and <br className="hidden md:block" />
-                  regulatory compliance and emerging ESG-related requirements.
+                  regulatory compliance, including ESG-related requirements.
                 </p>
               )}
             </motion.div>
@@ -230,7 +230,7 @@ export default function Home() {
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300 -z-10 opacity-20"></div>
-                <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full aspect-[3/4] rounded-2xl object-cover object-bottom" />
               </div>
             </motion.div>
 
@@ -310,7 +310,7 @@ export default function Home() {
             <div className="w-full md:w-5/12 flex-shrink-0 relative z-10">
               <div className="relative group">
                 <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300 -z-10 opacity-20"></div>
-                <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full aspect-[3/4] rounded-2xl object-cover object-bottom" />
               </div>
             </div>
 
@@ -394,11 +394,6 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-2 text-[var(--brand-peach)] font-bold tracking-widest uppercase text-sm">
-                <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
-                What We Do
-                <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
-              </div>
               <h2 className="text-4xl md:text-5xl font-bold font-serif">Our Services</h2>
             </motion.div>
           ) : (
@@ -461,12 +456,12 @@ export default function Home() {
                     )}
 
                     {/* Back of Card */}
-                    <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-[var(--brand-peach)]/60 rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-2xl shadow-[var(--brand-peach)]/20 z-0">
+                    <div className="absolute inset-0 w-full h-full bg-[#FDE9D9] border border-[var(--brand-peach)] rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-xl shadow-[var(--brand-maroon)]/5 z-0">
                       <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                         <div className="flex flex-col items-center justify-center h-full z-10 w-full gap-4">
-                          <p className="text-sm text-white/90 leading-relaxed">{service.details}</p>
+                          <p className="text-md text-[var(--brand-maroon-dark)] font-medium leading-relaxed">{service.details}</p>
                         </div>
-                        <div className="mt-6 pt-4 border-t border-white/20 w-full flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[var(--brand-peach)] z-10">
+                        <div className="mt-6 pt-4 border-t border-[var(--brand-maroon)]/20 w-full flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[var(--brand-maroon)] z-10">
                           <span>Explore Practice</span>
                           <ChevronRight className="ml-1 w-4 h-4" />
                         </div>
@@ -506,12 +501,12 @@ export default function Home() {
                       </div>
                     )}
 
-                    <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-[var(--brand-peach)]/60 rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-2xl shadow-[var(--brand-peach)]/20 z-0">
+                    <div className="absolute inset-0 w-full h-full bg-white border border-[var(--brand-peach)] rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-xl shadow-[var(--brand-maroon)]/5 z-0">
                       <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                         <div className="flex flex-col items-center justify-center h-full z-10 w-full gap-4">
-                          <p className="text-sm text-white/90 leading-relaxed">{service.details}</p>
+                          <p className="text-sm text-[var(--brand-maroon-dark)] font-medium leading-relaxed">{service.details}</p>
                         </div>
-                        <div className="mt-6 pt-4 border-t border-white/20 w-full flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[var(--brand-peach)] z-10">
+                        <div className="mt-6 pt-4 border-t border-[var(--brand-maroon)]/20 w-full flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[var(--brand-maroon)] z-10">
                           <span>Explore Practice</span>
                           <ChevronRight className="ml-1 w-4 h-4" />
                         </div>
@@ -546,11 +541,6 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm">
-              <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-              Global Reach
-              <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)]">Representative Matters</h2>
           </motion.div>
         ) : (
@@ -576,113 +566,113 @@ export default function Home() {
 
       {/* Section 5: The Way We Work */}
       {false && (
-      <section className="w-full bg-[var(--brand-maroon-dark)] text-[var(--brand-light)] py-24 relative overflow-hidden">
-        {/* Ambient background glows */}
-        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)]/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <section className="w-full bg-[var(--brand-maroon-dark)] text-[var(--brand-light)] py-24 relative overflow-hidden">
+          {/* Ambient background glows */}
+          <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)]/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-peach)]/5 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          {animEnabled ? (
-            <motion.div
-              className="flex flex-col items-center text-center mb-12 md:mb-20 gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white font-serif">The Way We Work</h2>
-              <p className="text-lg text-white/80 max-w-2xl">A structured, strategic approach to delivering excellence in every mandate.</p>
-            </motion.div>
-          ) : (
-            <div className="flex flex-col items-center text-center mb-12 md:mb-20 gap-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-white font-serif">The Way We Work</h2>
-              <p className="text-lg text-white/80 max-w-2xl">A structured, strategic approach to delivering excellence in every mandate.</p>
-            </div>
-          )}
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            {animEnabled ? (
+              <motion.div
+                className="flex flex-col items-center text-center mb-12 md:mb-20 gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-white font-serif">The Way We Work</h2>
+                <p className="text-lg text-white/80 max-w-2xl">A structured, strategic approach to delivering excellence in every mandate.</p>
+              </motion.div>
+            ) : (
+              <div className="flex flex-col items-center text-center mb-12 md:mb-20 gap-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-white font-serif">The Way We Work</h2>
+                <p className="text-lg text-white/80 max-w-2xl">A structured, strategic approach to delivering excellence in every mandate.</p>
+              </div>
+            )}
 
-          <div className="relative mt-12 md:mt-24 w-full">
-            {/* Animated Central Horizontal Line (Desktop only) */}
-            <div className="hidden md:block absolute top-1/2 left-[12.5%] right-[12.5%] h-1 bg-white/10 transform -translate-y-1/2 z-0 rounded-full overflow-hidden">
-              {animEnabled && (
-                <motion.div
-                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-[var(--brand-peach)]/10 via-[var(--brand-peach)] to-[var(--brand-peach)] rounded-full origin-left"
-                  initial={{ width: "0%" }}
-                  whileInView={{ width: "100%" }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                />
-              )}
-            </div>
-
-            {/* Mobile Vertical Line */}
-            <div className="md:hidden absolute left-10 top-0 bottom-0 w-1 bg-gradient-to-b from-white/10 via-[var(--brand-peach)]/30 to-transparent z-0 rounded-full"></div>
-
-            <div className="flex flex-col md:grid md:grid-cols-4 gap-12 md:gap-6 relative z-10">
-              {[
-                { step: '1', title: 'Consultation & Confidentiality', desc: 'We discuss your case and consult you with the latest laws ensuring your privacy and confidentiality.' },
-                { step: '2', title: 'Evaluation & Strategy', desc: 'Our team analyzes your case from every corner and customizes a tailored strategy to maximize success.' },
-                { step: '3', title: 'Strong Representation', desc: 'We vehemently advocate for your rights and provide well-timed services without any delay.' },
-                { step: '4', title: 'Resolution & Support', desc: 'We achieve the best outcome and provide ongoing assistance throughout the legal journey and thereafter.' },
-              ].map((item, index) => {
-                const isTop = index % 2 === 0;
-                return animEnabled ? (
+            <div className="relative mt-12 md:mt-24 w-full">
+              {/* Animated Central Horizontal Line (Desktop only) */}
+              <div className="hidden md:block absolute top-1/2 left-[12.5%] right-[12.5%] h-1 bg-white/10 transform -translate-y-1/2 z-0 rounded-full overflow-hidden">
+                {animEnabled && (
                   <motion.div
-                    key={index}
-                    className="relative flex items-center md:block group md:min-h-[450px] w-full"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-[var(--brand-peach)]/10 via-[var(--brand-peach)] to-[var(--brand-peach)] rounded-full origin-left"
+                    initial={{ width: "0%" }}
+                    whileInView={{ width: "100%" }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.2 }}
-                  >
-                    {/* Icon */}
-                    <div className="absolute left-10 -translate-x-1/2 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--brand-maroon)] flex items-center justify-center shadow-xl shadow-[var(--brand-peach)]/5 border-4 border-white/10 group-hover:border-[var(--brand-peach)] group-hover:scale-110 transition-all duration-500 z-20">
-                      <span className="text-xl md:text-2xl font-black text-[var(--brand-peach)]">{item.step}</span>
-                    </div>
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                  />
+                )}
+              </div>
 
-                    {/* Zig-Zag Vertical Connector (Desktop only) */}
-                    <div className={`hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 bg-white/10 z-10 ${isTop ? 'bottom-1/2 h-[3.5rem]' : 'top-1/2 h-[3.5rem]'}`}>
-                      <motion.div
-                        className={`w-full h-full bg-[var(--brand-peach)] origin-${isTop ? 'bottom' : 'top'}`}
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
-                      />
-                    </div>
+              {/* Mobile Vertical Line */}
+              <div className="md:hidden absolute left-10 top-0 bottom-0 w-1 bg-gradient-to-b from-white/10 via-[var(--brand-peach)]/30 to-transparent z-0 rounded-full"></div>
 
-                    {/* Content Box */}
-                    <div className={`w-full bg-[var(--brand-maroon)] backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/10 group-hover:bg-[var(--brand-maroon)]/80 group-hover:border-[var(--brand-peach)]/50 group-hover:shadow-xl transition-all duration-300 z-20 relative ml-24 md:ml-0 md:absolute md:left-0 md:right-0 ${isTop ? 'md:bottom-[calc(50%+3.5rem)]' : 'md:top-[calc(50%+3.5rem)]'} max-w-[calc(100%-7rem)] md:max-w-none`}>
-                      <h3 className="font-bold text-lg mb-3 text-white group-hover:text-[var(--brand-peach)] transition-colors duration-500 md:text-center font-serif">{item.title}</h3>
-                      <p className="text-white/80 leading-relaxed text-sm md:text-center">{item.desc}</p>
-                    </div>
+              <div className="flex flex-col md:grid md:grid-cols-4 gap-12 md:gap-6 relative z-10">
+                {[
+                  { step: '1', title: 'Consultation & Confidentiality', desc: 'We discuss your case and consult you with the latest laws ensuring your privacy and confidentiality.' },
+                  { step: '2', title: 'Evaluation & Strategy', desc: 'Our team analyzes your case from every corner and customizes a tailored strategy to maximize success.' },
+                  { step: '3', title: 'Strong Representation', desc: 'We vehemently advocate for your rights and provide well-timed services without any delay.' },
+                  { step: '4', title: 'Resolution & Support', desc: 'We achieve the best outcome and provide ongoing assistance throughout the legal journey and thereafter.' },
+                ].map((item, index) => {
+                  const isTop = index % 2 === 0;
+                  return animEnabled ? (
+                    <motion.div
+                      key={index}
+                      className="relative flex items-center md:block group md:min-h-[450px] w-full"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.2 }}
+                    >
+                      {/* Icon */}
+                      <div className="absolute left-10 -translate-x-1/2 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--brand-maroon)] flex items-center justify-center shadow-xl shadow-[var(--brand-peach)]/5 border-4 border-white/10 group-hover:border-[var(--brand-peach)] group-hover:scale-110 transition-all duration-500 z-20">
+                        <span className="text-xl md:text-2xl font-black text-[var(--brand-peach)]">{item.step}</span>
+                      </div>
 
-                  </motion.div>
-                ) : (
-                  <div key={index} className="relative flex items-center md:block group md:min-h-[450px] w-full">
-                    {/* Icon */}
-                    <div className="absolute left-10 -translate-x-1/2 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--brand-maroon)] flex items-center justify-center shadow-xl shadow-[var(--brand-peach)]/5 border-4 border-white/10 group-hover:border-[var(--brand-peach)] group-hover:scale-110 transition-all duration-300 z-20">
-                      <span className="text-xl md:text-2xl font-black text-[var(--brand-peach)]">{item.step}</span>
-                    </div>
+                      {/* Zig-Zag Vertical Connector (Desktop only) */}
+                      <div className={`hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 bg-white/10 z-10 ${isTop ? 'bottom-1/2 h-[3.5rem]' : 'top-1/2 h-[3.5rem]'}`}>
+                        <motion.div
+                          className={`w-full h-full bg-[var(--brand-peach)] origin-${isTop ? 'bottom' : 'top'}`}
+                          initial={{ scaleY: 0 }}
+                          whileInView={{ scaleY: 1 }}
+                          viewport={{ once: true, margin: "-100px" }}
+                          transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
+                        />
+                      </div>
 
-                    {/* Zig-Zag Vertical Connector (Desktop only) */}
-                    <div className={`hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 bg-white/10 z-10 ${isTop ? 'bottom-1/2 h-[3.5rem]' : 'top-1/2 h-[3.5rem]'}`}></div>
+                      {/* Content Box */}
+                      <div className={`w-full bg-[var(--brand-maroon)] backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/10 group-hover:bg-[var(--brand-maroon)]/80 group-hover:border-[var(--brand-peach)]/50 group-hover:shadow-xl transition-all duration-300 z-20 relative ml-24 md:ml-0 md:absolute md:left-0 md:right-0 ${isTop ? 'md:bottom-[calc(50%+3.5rem)]' : 'md:top-[calc(50%+3.5rem)]'} max-w-[calc(100%-7rem)] md:max-w-none`}>
+                        <h3 className="font-bold text-lg mb-3 text-white group-hover:text-[var(--brand-peach)] transition-colors duration-500 md:text-center font-serif">{item.title}</h3>
+                        <p className="text-white/80 leading-relaxed text-sm md:text-center">{item.desc}</p>
+                      </div>
 
-                    {/* Content Box */}
-                    <div className={`w-full bg-[var(--brand-maroon)] backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/10 group-hover:bg-[var(--brand-maroon)]/80 group-hover:border-[var(--brand-peach)]/50 group-hover:shadow-xl transition-all duration-300 z-20 relative ml-24 md:ml-0 md:absolute md:left-0 md:right-0 ${isTop ? 'md:bottom-[calc(50%+3.5rem)]' : 'md:top-[calc(50%+3.5rem)]'} max-w-[calc(100%-7rem)] md:max-w-none`}>
-                      <h3 className="font-bold text-lg mb-3 text-white group-hover:text-[var(--brand-peach)] transition-colors md:text-center font-serif">{item.title}</h3>
-                      <p className="text-white/80 leading-relaxed text-sm md:text-center">{item.desc}</p>
+                    </motion.div>
+                  ) : (
+                    <div key={index} className="relative flex items-center md:block group md:min-h-[450px] w-full">
+                      {/* Icon */}
+                      <div className="absolute left-10 -translate-x-1/2 md:left-1/2 md:top-1/2 md:-translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--brand-maroon)] flex items-center justify-center shadow-xl shadow-[var(--brand-peach)]/5 border-4 border-white/10 group-hover:border-[var(--brand-peach)] group-hover:scale-110 transition-all duration-300 z-20">
+                        <span className="text-xl md:text-2xl font-black text-[var(--brand-peach)]">{item.step}</span>
+                      </div>
+
+                      {/* Zig-Zag Vertical Connector (Desktop only) */}
+                      <div className={`hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 bg-white/10 z-10 ${isTop ? 'bottom-1/2 h-[3.5rem]' : 'top-1/2 h-[3.5rem]'}`}></div>
+
+                      {/* Content Box */}
+                      <div className={`w-full bg-[var(--brand-maroon)] backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/10 group-hover:bg-[var(--brand-maroon)]/80 group-hover:border-[var(--brand-peach)]/50 group-hover:shadow-xl transition-all duration-300 z-20 relative ml-24 md:ml-0 md:absolute md:left-0 md:right-0 ${isTop ? 'md:bottom-[calc(50%+3.5rem)]' : 'md:top-[calc(50%+3.5rem)]'} max-w-[calc(100%-7rem)] md:max-w-none`}>
+                        <h3 className="font-bold text-lg mb-3 text-white group-hover:text-[var(--brand-peach)] transition-colors md:text-center font-serif">{item.title}</h3>
+                        <p className="text-white/80 leading-relaxed text-sm md:text-center">{item.desc}</p>
+                      </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
       )}
 
       {/* Section 6: Academic */}
-      <section className="w-full bg-white py-24 border-t border-[var(--brand-peach)]/50 relative overflow-hidden">
+      <section className="w-full text-[var(--brand-maroon-light)] py-24 border-t border-[var(--brand-peach)]/50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           {animEnabled ? (
             <motion.div

@@ -21,11 +21,6 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-3">
-                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-                About Us
-                <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
                 A Boutique Practice, Dedicated To <br className="hidden md:block" />
                 <span className="text-[var(--brand-maroon)]">International Trade</span>
@@ -71,7 +66,7 @@ export default function AboutPage() {
               >
                 <div className="relative group">
                   <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20"></div>
-                  <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                  <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full aspect-[3/4] rounded-2xl object-cover object-bottom" />
                 </div>
               </motion.div>
 
@@ -120,7 +115,7 @@ export default function AboutPage() {
               <div className="w-full md:w-5/12 flex-shrink-0">
                 <div className="relative group">
                   <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20"></div>
-                  <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full h-auto rounded-2xl object-cover" />
+                  <img src="/images/akhil.jpeg" alt="Dr. Akhil Raina" className="w-full aspect-[3/4] rounded-2xl object-cover object-bottom" />
                 </div>
               </div>
 
@@ -187,7 +182,7 @@ export default function AboutPage() {
         </section>
 
         {/* Publications Section */}
-        <section>
+        {/* <section>
           {animEnabled ? (
             <motion.h2
               className="text-3xl font-bold mb-10 text-[var(--brand-maroon-dark)] border-b-2 border-[var(--brand-peach)] pb-4"
@@ -245,7 +240,7 @@ export default function AboutPage() {
               )}
             </ul>
           </div>
-        </section>
+        </section> */}
 
       </div>
     </div>
