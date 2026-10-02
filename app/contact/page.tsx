@@ -19,47 +19,47 @@ const MapPinIcon = ({ className }: { className?: string }) => (
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col items-center bg-[var(--brand-maroon-dark)] min-h-[calc(100vh-80px)] text-white">
+    <div className="flex flex-col items-center bg-[var(--brand-light)] min-h-[calc(100vh-80px)] text-[var(--brand-maroon-dark)]">
       
       {/* Hero Section */}
       <section className="relative w-full px-6 py-16 md:py-24 flex flex-col items-center text-center overflow-hidden flex-grow">
         {/* Subtle Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-maroon)] via-[var(--brand-maroon-dark)] to-[#2d0d0f] -z-10" />
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[var(--brand-maroon)] rounded-full filter blur-3xl opacity-30 -z-10" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[var(--brand-maroon-light)] rounded-full filter blur-3xl opacity-20 -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-peach-dark)]/30 via-[var(--brand-peach)]/20 to-[var(--brand-light)] -z-10" />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[var(--brand-peach-dark)] rounded-full filter blur-3xl opacity-40 -z-10" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[var(--brand-peach)] rounded-full filter blur-3xl opacity-40 -z-10" />
 
         <div className="max-w-6xl mx-auto z-10 w-full">
-          <div className="inline-flex items-center gap-2 text-[var(--brand-peach)] font-bold tracking-widest uppercase text-sm mb-4">
-            <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
+          <div className="inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm mb-4">
+            <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
             Get In Touch
-            <span className="w-8 h-[2px] bg-[var(--brand-peach)]"></span>
+            <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-serif mb-12 tracking-tight leading-[1.1] text-white">
-            Contact <span className="text-[var(--brand-peach)]">Us</span>
+          <h1 className="text-4xl md:text-6xl font-bold font-serif mb-12 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
+            Contact <span className="text-[var(--brand-maroon)]">Us</span>
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             
             {/* Offices Card */}
-            <div className="bg-[var(--brand-maroon)]/90 backdrop-blur-sm rounded-3xl p-8 border border-[var(--brand-peach)]/30 shadow-2xl shadow-black/40 flex flex-col justify-between group hover:-translate-y-2 hover:border-[var(--brand-peach)]/70 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 border border-[var(--brand-maroon-light)]/20 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col justify-between group hover:-translate-y-2 hover:border-[var(--brand-maroon)]/40 hover:shadow-2xl hover:shadow-[var(--brand-maroon)]/10 transition-all duration-300">
               <div>
-                <div className="w-14 h-14 bg-[var(--brand-peach)]/15 rounded-2xl flex items-center justify-center mb-6 text-[var(--brand-peach)] group-hover:scale-110 group-hover:bg-[var(--brand-peach)] group-hover:text-[var(--brand-maroon-dark)] transition-all duration-300">
+                <div className="w-14 h-14 bg-[var(--brand-maroon)]/10 rounded-2xl flex items-center justify-center mb-6 text-[var(--brand-maroon)] group-hover:scale-110 group-hover:bg-[var(--brand-maroon)] group-hover:text-[var(--brand-light)] transition-all duration-300">
                   <MapPinIcon className="w-7 h-7" />
                 </div>
-                <h2 className="font-serif font-bold text-xl mb-6 pb-3 border-b border-[var(--brand-peach)]/20 text-white tracking-wide">
+                <h2 className="font-serif font-bold text-xl mb-6 pb-3 border-b border-[var(--brand-maroon)]/20 text-[var(--brand-maroon-dark)] tracking-wide">
                   Offices
                 </h2>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-peach)] mb-1">Brussels</h3>
-                    <p className="text-sm text-white/90 leading-relaxed font-light">
+                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-maroon-light)] mb-1">Brussels</h3>
+                    <p className="text-sm text-[var(--brand-maroon-dark)]/90 leading-relaxed font-medium">
                       Avenue de Tervueren 257,<br />
                       Woluwe St. Pierre, 1150 – Belgium
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-peach)] mb-1">New Delhi</h3>
-                    <p className="text-sm text-white/90 leading-relaxed font-light">
+                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-maroon-light)] mb-1">New Delhi</h3>
+                    <p className="text-sm text-[var(--brand-maroon-dark)]/90 leading-relaxed font-medium">
                       E-410, Greater Kailash Part 2,<br />
                       Delhi – 110048 – India
                     </p>
@@ -69,29 +69,29 @@ export default function ContactPage() {
             </div>
             
             {/* Email Card */}
-            <div className="bg-[var(--brand-maroon)]/90 backdrop-blur-sm rounded-3xl p-8 border border-[var(--brand-peach)]/30 shadow-2xl shadow-black/40 flex flex-col justify-between group hover:-translate-y-2 hover:border-[var(--brand-peach)]/70 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 border border-[var(--brand-maroon-light)]/20 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col justify-between group hover:-translate-y-2 hover:border-[var(--brand-maroon)]/40 hover:shadow-2xl hover:shadow-[var(--brand-maroon)]/10 transition-all duration-300">
               <div>
-                <div className="w-14 h-14 bg-[var(--brand-peach)]/15 rounded-2xl flex items-center justify-center mb-6 text-[var(--brand-peach)] group-hover:scale-110 group-hover:bg-[var(--brand-peach)] group-hover:text-[var(--brand-maroon-dark)] transition-all duration-300">
+                <div className="w-14 h-14 bg-[var(--brand-maroon)]/10 rounded-2xl flex items-center justify-center mb-6 text-[var(--brand-maroon)] group-hover:scale-110 group-hover:bg-[var(--brand-maroon)] group-hover:text-[var(--brand-light)] transition-all duration-300">
                   <MailIcon className="w-7 h-7" />
                 </div>
-                <h2 className="font-serif font-bold text-xl mb-6 pb-3 border-b border-[var(--brand-peach)]/20 text-white tracking-wide">
+                <h2 className="font-serif font-bold text-xl mb-6 pb-3 border-b border-[var(--brand-maroon)]/20 text-[var(--brand-maroon-dark)] tracking-wide">
                   Email
                 </h2>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-peach)] mb-1">Counsel</h3>
+                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-maroon-light)] mb-1">Counsel</h3>
                     <a
                       href="mailto:akhil@rainalegal.com"
-                      className="text-sm font-medium text-white hover:text-[var(--brand-peach)] transition-colors break-all block"
+                      className="text-sm font-semibold text-[var(--brand-maroon-dark)] hover:text-[var(--brand-maroon-light)] transition-colors break-all block"
                     >
                       akhil@rainalegal.com
                     </a>
                   </div>
                   <div>
-                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-peach)] mb-1">Assistant</h3>
+                    <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-maroon-light)] mb-1">Assistant</h3>
                     <a
                       href="mailto:assistant@rainalegal.com"
-                      className="text-sm font-medium text-white hover:text-[var(--brand-peach)] transition-colors break-all block"
+                      className="text-sm font-semibold text-[var(--brand-maroon-dark)] hover:text-[var(--brand-maroon-light)] transition-colors break-all block"
                     >
                       assistant@rainalegal.com
                     </a>
@@ -101,19 +101,19 @@ export default function ContactPage() {
             </div>
             
             {/* Phone Card */}
-            <div className="bg-[var(--brand-maroon)]/90 backdrop-blur-sm rounded-3xl p-8 border border-[var(--brand-peach)]/30 shadow-2xl shadow-black/40 flex flex-col justify-between group hover:-translate-y-2 hover:border-[var(--brand-peach)]/70 transition-all duration-300">
+            <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 border border-[var(--brand-maroon-light)]/20 shadow-xl shadow-[var(--brand-maroon)]/5 flex flex-col justify-between group hover:-translate-y-2 hover:border-[var(--brand-maroon)]/40 hover:shadow-2xl hover:shadow-[var(--brand-maroon)]/10 transition-all duration-300">
               <div>
-                <div className="w-14 h-14 bg-[var(--brand-peach)]/15 rounded-2xl flex items-center justify-center mb-6 text-[var(--brand-peach)] group-hover:scale-110 group-hover:bg-[var(--brand-peach)] group-hover:text-[var(--brand-maroon-dark)] transition-all duration-300">
+                <div className="w-14 h-14 bg-[var(--brand-maroon)]/10 rounded-2xl flex items-center justify-center mb-6 text-[var(--brand-maroon)] group-hover:scale-110 group-hover:bg-[var(--brand-maroon)] group-hover:text-[var(--brand-light)] transition-all duration-300">
                   <PhoneIcon className="w-7 h-7" />
                 </div>
-                <h2 className="font-serif font-bold text-xl mb-6 pb-3 border-b border-[var(--brand-peach)]/20 text-white tracking-wide">
+                <h2 className="font-serif font-bold text-xl mb-6 pb-3 border-b border-[var(--brand-maroon)]/20 text-[var(--brand-maroon-dark)] tracking-wide">
                   Phone
                 </h2>
                 <div>
-                  <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-peach)] mb-1">Direct Line</h3>
+                  <h3 className="text-xs uppercase tracking-widest font-bold text-[var(--brand-maroon-light)] mb-1">Direct Line</h3>
                   <a
                     href="tel:+32487136150"
-                    className="text-lg font-medium text-white hover:text-[var(--brand-peach)] transition-colors block"
+                    className="text-lg font-semibold text-[var(--brand-maroon-dark)] hover:text-[var(--brand-maroon-light)] transition-colors block"
                   >
                     +32 487 136 150
                   </a>

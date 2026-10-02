@@ -317,7 +317,7 @@ export default function Home() {
             <div className="w-full md:w-7/12 flex flex-col relative z-10">
               <div className="mb-2 inline-flex items-center gap-2 text-[var(--brand-maroon-light)] font-bold tracking-widest uppercase text-sm">
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
-                Our Founder
+                Managing Partner
               </div>
 
               <h3 className="text-4xl md:text-5xl font-bold text-[var(--brand-maroon-dark)] mb-6 leading-tight">Dr. Akhil Raina</h3>
@@ -415,10 +415,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
             {[
-              { id: '01', title: 'ITD', full: 'International Trade Law', image: '/images/wto-dispute.png', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement', details: 'Navigating complex WTO disputes, bilateral agreements, and international trade regulations.' },
-              { id: '02', title: 'TD', full: 'Trade Defence', image: '/images/trade-defence.png', icon: '/images/icon-td.png', slug: 'trade-defence', details: 'Protecting domestic industries through anti-dumping, anti-subsidy, and safeguard investigations.' },
-              { id: '03', title: 'Customs', full: 'Customs', image: '/images/customs.png', icon: '/images/icon-ci.png', slug: 'customs-and-importation', details: 'Optimizing supply chains, customs classifications, rules of origin, and import/export compliance.' },
-              { id: '04', title: 'ESG & RA', full: 'Trade-related ESG', image: '/images/esg-regulatory.png', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory', details: 'Advising on CBAM, supply chain due diligence, and international sustainability compliance.' },
+              { id: '01', title: 'International Trade Disputes', full: 'Representation in complex disputes.', image: '/images/wto-dispute.png', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement', details: 'Navigating complex WTO disputes, bilateral agreements, and international trade regulations.' },
+              { id: '02', title: 'Trade Defence', full: 'Strategic counsel for protection of market access.', image: '/images/trade-defence.png', icon: '/images/icon-td.png', slug: 'trade-defence', details: 'Protecting domestic industries through anti-dumping, anti-subsidy, and safeguard investigations.' },
+              { id: '03', title: 'Customs & Importation', full: 'Tariffs, valuation & supply chain compliance.', image: '/images/customs.png', icon: '/images/icon-ci.png', slug: 'customs-and-importation', details: 'Optimizing supply chains, customs classifications, rules of origin, and import/export compliance.' },
+              { id: '04', title: 'ESG & Regulatory Advisory', full: 'CBAM, EUDR & similar sustainability policy.', image: '/images/esg-regulatory.png', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory', details: 'Advising on CBAM, supply chain due diligence, and international sustainability compliance.' },
             ].map((service, index) => (
               animEnabled ? (
                 <motion.div
