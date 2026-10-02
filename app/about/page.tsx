@@ -95,9 +95,9 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Education</h3>
                     <ul className="text-[var(--brand-maroon-light)] space-y-2">
-                      <li><span className="text-[var(--brand-maroon-dark)]">PhD</span> (Belgium; Marie Curie Fellow)</li>
-                      <li><span className="text-[var(--brand-maroon-dark)]">LLM</span> (Spain; ELSA Scholar)</li>
-                      <li><span className="text-[var(--brand-maroon-dark)]">BSc, LLB</span> (India; Trade & Inv. Law Honours)</li>
+                      <li>PhD (Belgium; Marie Curie Fellow)</li>
+                      <li>LLM (Spain; ELSA Scholar)</li>
+                      <li>BSc, LLB (India; Trade & Inv. Law Honours)</li>
                     </ul>
                   </div>
                 </div>
@@ -138,9 +138,9 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-sm font-bold mb-4 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Education</h3>
                     <ul className="text-[var(--brand-maroon-light)] space-y-2">
-                      <li><span className="text-[var(--brand-maroon-dark)]">PhD</span> (Belgium; Marie Curie Fellow)</li>
-                      <li><span className="text-[var(--brand-maroon-dark)]">LLM</span> (Spain; ELSA Scholar)</li>
-                      <li><span className="text-[var(--brand-maroon-dark)]">BSc, LLB</span> (India; Trade & Inv. Law Honours)</li>
+                      <li>PhD (Belgium; Marie Curie Fellow)</li>
+                      <li>LLM (Spain; ELSA Scholar)</li>
+                      <li>BSc, LLB (India; Trade & Inv. Law Honours)</li>
                     </ul>
                   </div>
                 </div>

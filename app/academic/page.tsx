@@ -105,7 +105,7 @@ export default function AcademicPage() {
               Academics
             </h1>
             <p className="text-lg md:text-xl text-[var(--brand-maroon-light)] font-light leading-[1.15]">
-              Teaching, research, and publication - seamlessly integrated with legal practice.
+              Teaching, research, and publication are integrated into our legal practice.
             </p>
           </div>
         </div>
@@ -118,11 +118,9 @@ export default function AcademicPage() {
           <div className="lg:col-span-5 lg:sticky lg:top-28 text-[var(--brand-maroon-light)] p-8 md:p-10 ">
             <div>
               <div className="flex items-center gap-3 text-[var(--brand-maroon)] font-bold text-sm uppercase tracking-wider mb-4">
-                <span>Dr. Akhil Raina's Academic Work</span>
+                <span></span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-[var(--brand-maroon-dark)] mb-6 leading-snug">
-                Advancing trade law discourse through rigor, research, and global education.
-              </h2>
+              
               <p className="text-base md:text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-6">
                 Dr. Raina's academic work runs alongside his legal practice. He teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>.
               </p>

@@ -19,9 +19,9 @@ interface DomainSection {
 const domains: DomainSection[] = [
   {
     id: "wto",
-    title: "WTO Dispute Settlement",
+    title: "WTO and FTA Dispute Settlement",
     subtitle: "State-to-State & Multilateral Litigation",
-    summary: "Advised and represented governments in high-stakes WTO dispute settlement proceedings and trade law matters.",
+    summary: "Advised and represented governments in high-stakes WTO and FTA dispute settlement proceedings.",
     items: [
       {
         caseNumber: "DS630",
@@ -46,7 +46,7 @@ const domains: DomainSection[] = [
       {
         caseNumber: "Additional Advisory Experience",
         title: "",
-        desc: "We have also advised governments on a broad range of WTO law issues, SPS measures, national security, anti-suit injunctions, local content requirements, import duties, and intellectual property, including patent-related matters."
+        desc: "We have also advised governments on a broad range of WTO law issues, such as SPS measures, national security, anti-suit injunctions, local content requirements, import duties, and intellectual property."
       }
     ]
   },

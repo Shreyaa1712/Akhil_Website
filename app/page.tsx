@@ -259,7 +259,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[var(--brand-maroon-dark)]">International Trade Disputes</h4>
-                    <p className="text-sm text-[var(--brand-maroon-light)]">Expert representation in complex disputes.</p>
+                    <p className="text-sm text-[var(--brand-maroon-light)]">Representation in complex disputes.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -268,7 +268,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[var(--brand-maroon-dark)]">Trade Defence</h4>
-                    <p className="text-sm text-[var(--brand-maroon-light)]">Strategic counsel for market protection.</p>
+                    <p className="text-sm text-[var(--brand-maroon-light)]">Strategic counsel for protection of market access.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -286,7 +286,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-bold text-[var(--brand-maroon-dark)]">ESG & Regulatory Advisory</h4>
-                    <p className="text-sm text-[var(--brand-maroon-light)]">CBAM, EUDR & sustainability policy.</p>
+                    <p className="text-sm text-[var(--brand-maroon-light)]">CBAM, EUDR & similar sustainability policy.</p>
                   </div>
                 </div>
               </div>
@@ -411,8 +411,8 @@ export default function Home() {
 
             {[
               { id: '01', title: 'WTO Dispute Settlement', full: 'Representation in complex disputes.', image: '/images/wto-dispute.png', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement', details: 'Advising and representing governments in complex WTO disputes at the State-to-State level.' },
-              { id: '02', title: 'Trade Defence', full: 'Strategic counsel for protection of market access.', image: '/images/trade-defence.png', icon: '/images/icon-td.png', slug: 'trade-defence', details: 'Handling anti-dumping, anti-subsidy and safeguard investigations across their full life-cycle, acting for both governments and industry.' },
-              { id: '03', title: 'Customs, Sanctions and Export Controls', full: 'Tariffs, valuation & supply chain compliance.', image: '/images/customs.png', icon: '/images/icon-ci.png', slug: 'customs-and-importation', details: 'Advising companies on importation issues, tariff classification, valuation, rules of origin, sanctions, export controls, and supply chain risks.' },
+              { id: '02', title: 'Trade Defence', full: 'Strategic counsel for protection of market access.', image: '/images/trade-defence.png', icon: '/images/icon-td.png', slug: 'trade-defence', details: 'Representing companies in anti-dumping, anti-subsidy and safeguard investigations across their full life-cycle, acting for both governments and industry.' },
+              { id: '03', title: 'Customs, Sanctions and Export Controls', full: 'Tariffs, valuation & supply chain compliance.', image: '/images/customs.png', icon: '/images/icon-ci.png', slug: 'customs-and-importation', details: 'Optimising companies on importation issues, and assisting in customs classification, valuation, rules of origin, sanctions, export controls, and supply chain risks.' },
               { id: '04', title: 'ESG & Regulatory Advisory', full: 'CBAM, EUDR & similar sustainability policy.', image: '/images/esg-regulatory.png', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory', details: 'Advising companies and governments on sustainability and ESG frameworks, including CBAM, EUDR, CSDDD, forced labor laws, and supply chain due diligence.' },
             ].map((service, index) => (
               animEnabled ? (
@@ -430,23 +430,23 @@ export default function Home() {
                   >
                     {/* Front of Card */}
                     {process.env.NEXT_PUBLIC_USE_IMAGES === "true" ? (
-                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10 overflow-hidden">
+                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon-card)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10 overflow-hidden shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
                         <div className="absolute inset-0 w-full h-full">
-                          <img src={service.image} alt={service.full} className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-maroon)] via-[var(--brand-maroon)]/80 to-[var(--brand-maroon)]/30"></div>
+                          <img src={service.image} alt={service.full} className="w-full h-full object-cover opacity-55 group-hover:scale-110 transition-transform duration-700" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-maroon-card-strong)] via-[var(--brand-maroon-card)]/80 to-[var(--brand-maroon-card)]/20"></div>
                         </div>
                         <div className="w-full h-full p-8 flex flex-col justify-end items-center text-center relative z-10">
                           <h3 className="text-4xl font-bold font-serif mb-2 text-white drop-shadow-md">{service.title}</h3>
                         </div>
                       </div>
                     ) : (
-                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10">
+                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon-card)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
                         <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                           <div className="absolute inset-0 w-full h-full overflow-hidden rounded-3xl pointer-events-none">
                             <div className="absolute top-0 left-0 w-0 h-1 bg-[var(--brand-peach)] shadow-[0_0_12px_var(--brand-peach)] group-hover:w-full transition-all duration-500 ease-out"></div>
                           </div>
                           <div className="flex flex-col items-center z-10 w-full pt-4">
-                            <div className="h-20 w-20 bg-[var(--brand-peach)] rounded-2xl flex items-center justify-center mb-6 p-4 shadow-xl">
+                            <div className="h-20 w-20 bg-[var(--brand-peach)]/95 rounded-2xl flex items-center justify-center mb-6 p-4 shadow-xl">
                               <img src={service.icon} alt={service.title} className="w-full h-full object-contain filter drop-shadow-md" style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)' }} />
                             </div>
                             <h3 className="text-2xl font-bold font-serif mb-2 text-[var(--brand-peach)]">{service.title}</h3>
@@ -456,7 +456,7 @@ export default function Home() {
                     )}
 
                     {/* Back of Card */}
-                    <div className="absolute inset-0 w-full h-full bg-[#FDE9D9] border border-[var(--brand-peach)] rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-xl shadow-[var(--brand-maroon)]/5 z-0">
+                    <div className="absolute inset-0 w-full h-full bg-[#f7e7dc] border border-[var(--brand-peach)] rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-xl shadow-[var(--brand-maroon)]/5 z-0">
                       <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                         <div className="flex flex-col items-center justify-center h-full z-10 w-full gap-4">
                           <p className="text-md text-[var(--brand-maroon-dark)] font-medium leading-relaxed">{service.details}</p>
@@ -476,23 +476,23 @@ export default function Home() {
                     className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] block"
                   >
                     {process.env.NEXT_PUBLIC_USE_IMAGES === "true" ? (
-                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10 overflow-hidden">
+                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon-card)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10 overflow-hidden shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
                         <div className="absolute inset-0 w-full h-full">
-                          <img src={service.image} alt={service.full} className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-maroon)] via-[var(--brand-maroon)]/80 to-[var(--brand-maroon)]/30"></div>
+                          <img src={service.image} alt={service.full} className="w-full h-full object-cover opacity-55 group-hover:scale-110 transition-transform duration-700" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-maroon-card-strong)] via-[var(--brand-maroon-card)]/80 to-[var(--brand-maroon-card)]/20"></div>
                         </div>
                         <div className="w-full h-full p-8 flex flex-col justify-end items-center text-center relative z-10">
                           <h3 className="text-4xl font-bold font-serif mb-2 text-white drop-shadow-md">{service.title}</h3>
                         </div>
                       </div>
                     ) : (
-                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10">
+                      <div className="absolute inset-0 w-full h-full bg-[var(--brand-maroon-card)] border border-white/10 rounded-3xl [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-10 shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
                         <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                           <div className="absolute inset-0 w-full h-full overflow-hidden rounded-3xl pointer-events-none">
                             <div className="absolute top-0 left-0 w-0 h-1 bg-[var(--brand-peach)] shadow-[0_0_12px_var(--brand-peach)] group-hover:w-full transition-all duration-500 ease-out"></div>
                           </div>
                           <div className="flex flex-col items-center z-10 w-full pt-4">
-                            <div className="h-20 w-20 bg-[var(--brand-peach)] rounded-2xl flex items-center justify-center mb-6 p-4 shadow-xl">
+                            <div className="h-20 w-20 bg-[var(--brand-peach)]/95 rounded-2xl flex items-center justify-center mb-6 p-4 shadow-xl">
                               <img src={service.icon} alt={service.title} className="w-full h-full object-contain filter drop-shadow-md" style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(43%) saturate(5152%) hue-rotate(342deg) brightness(85%) contrast(100%)' }} />
                             </div>
                             <h3 className="text-2xl font-bold font-serif mb-2 text-[var(--brand-peach)]">{service.title}</h3>
@@ -501,7 +501,7 @@ export default function Home() {
                       </div>
                     )}
 
-                    <div className="absolute inset-0 w-full h-full bg-white border border-[var(--brand-peach)] rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-xl shadow-[var(--brand-maroon)]/5 z-0">
+                    <div className="absolute inset-0 w-full h-full bg-[#f7e7dc] border border-[var(--brand-peach)] rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] shadow-xl shadow-[var(--brand-maroon)]/5 z-0">
                       <div className="w-full h-full p-8 flex flex-col justify-between items-center text-center">
                         <div className="flex flex-col items-center justify-center h-full z-10 w-full gap-4">
                           <p className="text-sm text-[var(--brand-maroon-dark)] font-medium leading-relaxed">{service.details}</p>

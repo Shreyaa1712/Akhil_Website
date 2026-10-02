@@ -133,6 +133,8 @@
   --brand-maroon-light: #7a2228;
   --brand-maroon:      #491316;
   --brand-maroon-dark: #3b1114;
+  --brand-maroon-card: #6d2b2f;
+  --brand-maroon-card-strong: #5b2027;
 }
 
 @theme inline {
