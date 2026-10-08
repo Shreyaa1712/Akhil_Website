@@ -66,8 +66,8 @@ export default function AcademicPublications({
               {/* Dot Indicator */}
               <div
                 className={`absolute -left-[30px] md:-left-[38px] top-7 w-3.5 h-3.5 rounded-full border-2 border-white transition-all duration-500 z-10 ${idx < visibleItems.length
-                    ? "bg-[var(--brand-maroon)] shadow-xs scale-100 group-hover:scale-125"
-                    : "bg-[var(--brand-peach-dark)]"
+                  ? "bg-[var(--brand-maroon)] shadow-xs scale-100 group-hover:scale-125"
+                  : "bg-[var(--brand-peach-dark)]"
                   }`}
               />
 
