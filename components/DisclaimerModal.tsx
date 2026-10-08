@@ -37,15 +37,15 @@ export default function DisclaimerModal() {
         
         <div className="text-gray-700 text-sm md:text-base space-y-6 mb-10 leading-relaxed font-medium">
           <p>
-            The rules of the Bar Council of India prohibit law firms from advertising and soliciting work through communication in the public domain. This website is meant solely for the purpose of information and not for the purpose of advertising. <span className="text-[var(--brand-maroon)]">AR Legal</span> does not intend to solicit clients through this website. We do not take responsibility for decisions taken by the reader based solely on the information provided in the website.
+            The rules of the Bar Council of India prohibit law firms from advertising and soliciting work through communication in the public domain. This website is meant solely for the purpose of information and not for the purpose of advertising. <span className="text-[var(--brand-maroon)]">AR Legal</span> does not intend to solicit clients through this website. We do not take responsibility for decisions taken by the reader based solely on the information provided on the website.
           </p>
 
           <p>
-            By clicking on &apos;ENTER&apos;, the visitor acknowledges that the information provided in the website <span className="text-[var(--brand-maroon)]">(a) does not amount to advertising or solicitation and (b) is meant only for the visitor&apos;s understanding about our activities and who we are.</span>
+            By clicking on &apos;ENTER&apos;, the visitor acknowledges that the information provided on the website <span className="text-[var(--brand-maroon)]">(a) does not amount to advertising or solicitation and (b) is meant only for the visitor&apos;s understanding about our activities and who we are.</span>
           </p>
 
           <p>
-            By continuing to use this site you consent to the use of cookies on your device as described in our <span className="text-[var(--brand-maroon)]">Cookie Policy</span>.
+            By continuing to use this site, you consent to the use of cookies on your device as described in our <span className="text-[var(--brand-maroon)]">Cookie Policy</span>.
           </p>
         </div>
 

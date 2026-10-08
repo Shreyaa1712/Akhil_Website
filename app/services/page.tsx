@@ -20,7 +20,7 @@ const services = [
     slug: "trade-defence",
     image: "/images/trade-defence.png",
     icon: "/images/icon-td.png",
-    description: "Representing companies in anti-dumping, anti-subsidy and safeguard investigations across their full life-cycle, acting for both governments and industry.",
+    description: "Representing companies in anti-dumping, anti-subsidy, and safeguard investigations across their full life-cycle, acting for both governments and industry.",
   },
   {
     id: "03",
@@ -28,7 +28,7 @@ const services = [
     slug: "customs-and-importation",
     image: "/images/customs.png",
     icon: "/images/icon-ci.png",
-    description: "Optimising companies on importation issues, and assisting in customs classification, valuation, rules of origin, sanctions, export controls, and supply chain risks.",
+    description: "Optimising for companies on importation issues, and advising them in customs classification, valuation, rules of origin matters, sanctions, export controls, and supply chain risks.",
   },
   {
     id: "04",
@@ -36,7 +36,7 @@ const services = [
     slug: "esg-and-regulatory-advisory",
     image: "/images/esg-regulatory.png",
     icon: "/images/icon-esg.png",
-    description: "Advising companies and governments on sustainability and ESG frameworks, including CBAM, EUDR, CSDDD, forced labor laws, and supply chain due diligence.",
+    description: "Advising companies and governments on sustainability and ESG frameworks, including CBAM, EUDR, CSDDD, forced labour laws, and supply chain due diligence.",
   },
 ];
 

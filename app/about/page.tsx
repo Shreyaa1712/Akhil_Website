@@ -22,7 +22,7 @@ export default function AboutPage() {
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-                A Boutique Practice, Dedicated To <br className="hidden md:block" />
+                A Boutique Practice Dedicated To <br className="hidden md:block" />
                 <span className="text-[var(--brand-maroon)]">International Trade</span>
               </h1>
             </motion.div>
@@ -34,7 +34,7 @@ export default function AboutPage() {
                 <span className="w-8 h-[2px] bg-[var(--brand-maroon-light)]"></span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight leading-[1.1] text-[var(--brand-maroon-dark)]">
-                A Boutique Practice, Dedicated To <br className="hidden md:block" />
+                A Boutique Practice Dedicated To <br className="hidden md:block" />
                 <span className="text-[var(--brand-maroon)]">International Trade</span>
               </h1>
             </div>
@@ -199,15 +199,15 @@ export default function AboutPage() {
           <div className="bg-white rounded-3xl p-8 shadow-xl shadow-[var(--brand-maroon)]/5 border border-[var(--brand-peach)]/50">
             <ul className="space-y-6 text-[var(--brand-maroon-light)]">
               {[
-                { title: "Benefit Analysis in EU-CVDs on Biodiesel (Indonesia)", source: "Indian Journal of International Economic Law (2026)" },
+                { title: "Benefit Analysis in EU-CVDs on Biodiesel (Indonesia)", source: "Indian Journal of International Economic Law (2025)" },
                 { title: "European Union", source: "International Trade Law Review (LBR, 2022-2024)" },
-                { title: "EU and Global Economic Governance", source: "60 Years of European Integration (Hart Publishing, 2020)" },
                 { title: "Is the Rules-Based Multilateral Trade Order in Decline?", source: "Cambridge International Law Journal (2021)" },
                 { title: "Compliance with WTO Rulings and MAS", source: "Presentation at the 8th Biennial Conference, Asian Society of International Law (2021)" },
+                { title: "Legal Problems with Data Localization Requirements", source: "Global Trade and Customs Journal (2020)" },
+                { title: "EU and Global Economic Governance", source: "60 Years of European Integration (Hart Publishing, 2020)" },
                 { title: "Evolution of EU Trade Law through the Prism of Competence", source: "Journal of World Trade (2019)" },
                 { title: "What is a Safeguard Measure under WTO Law?", source: "Trade Law & Development (2018)" },
                 { title: "Good Faith in WTO Dispute Settlement", source: "Global Trade and Customs Journal (2016)" },
-                { title: "Legal Problems with Data Localization Requirements", source: "Global Trade and Customs Journal (2020)" },
               ].map((pub, idx) =>
                 animEnabled ? (
                   <motion.li

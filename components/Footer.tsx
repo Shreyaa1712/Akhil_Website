@@ -49,13 +49,13 @@ export default function Footer() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           >
             <p className="text-[var(--brand-maroon-light)] text-sm leading-relaxed font-medium">
-              A boutique practice dedicated to international trade law, trade defence, and regulatory policy. Based in Brussels and New Delhi.
+              A boutique practice dedicated to international trade law and regulatory policy. Based in Brussels and New Delhi.
             </p>
           </motion.div>
         ) : (
           <div className="max-w-md mx-auto -mt-4">
             <p className="text-[var(--brand-maroon-light)] text-sm leading-relaxed font-medium">
-              A boutique practice dedicated to international trade law, trade defence, and regulatory policy. Based in Brussels and New Delhi.
+              A boutique practice dedicated to international trade law and regulatory policy. Based in Brussels and New Delhi.
             </p>
           </div>
         )}

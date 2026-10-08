@@ -25,7 +25,7 @@ const servicesData = {
     title: "ESG & Regulatory Advisory",
     image: "/images/esg-regulatory.png",
     icon: "/images/icon-esg.png",
-    content: `We advise companies on the implications for their businesses of emerging sustainability and ESG frameworks. We have experience with the EU’s Carbon Border Adjustment Mechanism (CBAM), Deforestation Regulation (EUDR), and Corporate Sustainability Due Diligence Directive (CSDDD), as well as global foreced labour regulations. We support clients with planning, supply chain due diligence, and engagement with regulators around the world.`
+    content: `We advise companies on the implications for their businesses of emerging sustainability and ESG frameworks. We have experience with the EU’s Carbon Border Adjustment Mechanism (CBAM), Deforestation Regulation (EUDR), and Corporate Sustainability Due Diligence Directive (CSDDD), as well as global forced labour regulations. We support clients with planning, supply chain due diligence, and engagement with regulators around the world.`
   }
 };
 

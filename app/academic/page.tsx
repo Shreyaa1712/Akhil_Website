@@ -16,58 +16,6 @@ export const metadata = {
 const publications = [
   {
     id: 1,
-    title: "The Evolution of EU Trade Law Through the Prism of Competence: A Quantitative, Longitudinal Perspective",
-    journal: "Journal of World Trade, Volume 53, Issue 3",
-    year: "2019",
-    coAuthors: "with Michal Ovádek",
-    type: "Journal Article",
-    shortView: "A data-driven study of EU trade law using a dataset of over 6,000 legal acts, revealing that expanding EU trade competence has not led to a corresponding increase in trade legislation.",
-    links: [
-      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Journal+of+World+Trade/53.3/TRAD2019022" },
-      { label: "DOI", url: "https://doi.org/10.54648/trad2019022" }
-    ]
-  },
-  {
-    id: 2,
-    title: "What is a Safeguard Measure under WTO Law?",
-    journal: "10(2) TRADE L. & DEV. 463",
-    year: "2019",
-    coAuthors: null,
-    type: "Journal Article",
-    shortView: "A clarifying analysis of safeguard measures under WTO law, addressing questions that have resurfaced amid US-China trade tensions.",
-    links: [
-      { label: "PDF", url: "https://www.tradelawdevelopment.com/_files/ugd/9e8518_3e6c3009c4194d0cb6f53f81daa1660a.pdf" },
-      { label: "Journal Issue", url: "https://www.tradelawdevelopment.com/10-2" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Meditations in an Emergency: The Appellate Body Deadlock – What It Is, Why It Is a Problem, and What to Do About It",
-    journal: "Global Trade and Customs Journal, Volume 13, Issue 9",
-    year: "2018",
-    coAuthors: null,
-    type: "Journal Article",
-    shortView: "An examination of the US blockade on WTO Appellate Body appointments and a proposed path forward for global trade dispute resolution.",
-    links: [
-      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Global+Trade+and+Customs+Journal/13.9/GTCJ2018043" },
-      { label: "DOI", url: "https://doi.org/10.54648/gtcj2018043" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Legal Problems with Data Localization Requirements: The Case of the Russian Federation",
-    journal: "Global Trade and Customs Journal, Volume 15, Issue 9",
-    year: "2020",
-    coAuthors: "with Simón Hernández",
-    type: "Journal Article",
-    shortView: "A legal analysis of Russia's data localization laws, concluding they violate WTO market access obligations with no valid justification under existing exceptions.",
-    links: [
-      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Global+Trade+and+Customs+Journal/15.9/GTCJ2020084" },
-      { label: "DOI", url: "https://doi.org/10.54648/gtcj2020084" }
-    ]
-  },
-  {
-    id: 5,
     title: "The Benefit Analysis in EU – CVDs on Biodiesel (Indonesia): E Uno Plura",
     journal: "16(1) Indian Journal of International Economic Law",
     year: "2025",
@@ -80,8 +28,60 @@ const publications = [
     ]
   },
   {
+    id: 2,
+    title: "Legal Problems with Data Localization Requirements: The Case of the Russian Federation",
+    journal: "Global Trade and Customs Journal, Volume 15, Issue 9",
+    year: "2020",
+    coAuthors: "with Simón Hernández",
+    type: "Journal Article",
+    shortView: "A legal analysis of Russia's data localization laws, concluding they violate WTO market access obligations with no valid justification under existing exceptions.",
+    links: [
+      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Global+Trade+and+Customs+Journal/15.9/GTCJ2020084" },
+      { label: "DOI", url: "https://doi.org/10.54648/gtcj2020084" }
+    ]
+  },
+  {
+    id: 3,
+    title: "The Evolution of EU Trade Law Through the Prism of Competence: A Quantitative, Longitudinal Perspective",
+    journal: "Journal of World Trade, Volume 53, Issue 3",
+    year: "2019",
+    coAuthors: "with Michal Ovádek",
+    type: "Journal Article",
+    shortView: "A data-driven study of EU trade law using a dataset of over 6,000 legal acts, revealing that expanding EU trade competence has not led to a corresponding increase in trade legislation.",
+    links: [
+      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Journal+of+World+Trade/53.3/TRAD2019022" },
+      { label: "DOI", url: "https://doi.org/10.54648/trad2019022" }
+    ]
+  },
+  {
+    id: 4,
+    title: "What is a Safeguard Measure under WTO Law?",
+    journal: "10(2) TRADE L. & DEV. 463",
+    year: "2019",
+    coAuthors: null,
+    type: "Journal Article",
+    shortView: "A clarifying analysis of safeguard measures under WTO law, addressing questions that have resurfaced amid US-China trade tensions.",
+    links: [
+      { label: "PDF", url: "https://www.tradelawdevelopment.com/_files/ugd/9e8518_3e6c3009c4194d0cb6f53f81daa1660a.pdf" },
+      { label: "Journal Issue", url: "https://www.tradelawdevelopment.com/10-2" }
+    ]
+  },
+  {
+    id: 5,
+    title: "Meditations in an Emergency: The Appellate Body Deadlock – What It Is, Why It Is a Problem, and What to Do About It",
+    journal: "Global Trade and Customs Journal, Volume 13, Issue 9",
+    year: "2018",
+    coAuthors: null,
+    type: "Journal Article",
+    shortView: "An examination of the US blockade on WTO Appellate Body appointments and a proposed path forward for global trade dispute resolution.",
+    links: [
+      { label: "Kluwer Law", url: "https://kluwerlawonline.com/journalarticle/Global+Trade+and+Customs+Journal/13.9/GTCJ2018043" },
+      { label: "DOI", url: "https://doi.org/10.54648/gtcj2018043" }
+    ]
+  },
+  {
     id: 6,
-    title: "The Day the Music Died’: The Curious Case of Peru-Agricultural Products",
+    title: "The Day the Music Died: The Curious Case of Peru-Agricultural Products",
     journal: "Global Trade and Customs Journal, Volume 11, Issue 2",
     year: "2016",
     coAuthors: null,

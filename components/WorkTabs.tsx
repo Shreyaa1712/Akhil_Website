@@ -35,13 +35,13 @@ const domains: DomainSection[] = [
       },
       {
         caseNumber: "DS602",
-        title: "China – Anti- Dumping and Countervailing Measures on Wine",
+        title: "China – Anti-Dumping and Countervailing Measures on Wine",
         desc: "Represented China in WTO dispute settlement proceedings concerning Australia's challenge to MOFCOM’s anti-dumping and countervailing measures on wine. Secured a mutually agreed solution, no panel report issued."
       },
       {
         caseNumber: "SACU",
         title: "Safeguard Measure on Frozen Bone-In Chicken Cuts",
-        desc: "Represented the EU in bilateral FTA proceedings challenging SACU's safeguard measure on frozen bone-in chicken cuts. Secured a favorable outcome on both substantive and procedural issues."
+        desc: "Represented the EU in bilateral FTA proceedings challenging SACU's safeguard measure on frozen bone-in chicken cuts. Secured a favourable outcome on both substantive and procedural issues."
       },
       {
         caseNumber: "Additional Advisory Experience",
