@@ -4,10 +4,10 @@ import { Metadata } from "next";
 
 const servicesData = {
   "wto-dispute-settlement": {
-    title: "WTO Dispute Settlement",
+    title: "WTO and FTA Dispute Settlement",
     image: "/images/wto-dispute.png",
     icon: "/images/icon-itd.png",
-    content: `We advise governments on complex issues arising under WTO law and represent governments in State-to-State trade disputes. Our practice covers trade in goods, sanitary and phytosanitary measures, technical barriers to trade, local content requirements, intellectual property, and national security. We also advise governments on treaty interpretation, WTO negotiations, institutional reform, and broader international trade policy.`
+    content: `We advise governments on complex issues arising under WTO law and FTAs. We represent governments in State-to-State trade disputes, and our practice covers trade in goods, bilateral safeguard measures, sanitary and phytosanitary measures, technical barriers to trade, local content requirements, intellectual property, and national security. We also advise governments on treaty interpretation, FTA negotiations, institutional reform, and broader international trade policy.`
   },
   "trade-defence": {
     title: "Trade Defence",

@@ -82,13 +82,13 @@ export default function Home() {
               {wideHeroText ? (
                 <p className="text-base md:text-lg mb-8 text-[#1a1a1a] leading-relaxed text-center mx-auto md:max-w-fit">
                   We advise governments, manufacturers, exporters, importers, as well as industry associations <br className="hidden md:block" />
-                  on WTO law, trade remedies, customs, and regulatory compliance, including ESG-related requirements.
+                  on WTO law, FTAs, trade remedies, custom issues, as well as regulatory and ESG compliance.
                 </p>
               ) : (
                 <p className="text-base md:text-lg mb-8 text-[#1a1a1a] leading-relaxed text-center mx-auto max-w-[700px]">
                   We advise governments, manufacturers, exporters, importers, as well <br className="hidden md:block" />
-                  as industry associations on WTO law, trade remedies, customs, and <br className="hidden md:block" />
-                  regulatory compliance, including ESG-related requirements.
+                  as industry associations on WTO law, FTAs, trade remedies, custom <br className="hidden md:block" />
+                  issues, as well as regulatory and ESG compliance.
                 </p>
               )}
             </motion.div>
@@ -97,13 +97,13 @@ export default function Home() {
               {wideHeroText ? (
                 <p className="text-base md:text-lg mb-8 text-[#1a1a1a] leading-relaxed text-center mx-auto md:max-w-fit">
                   We advise governments, manufacturers, exporters, importers, as well as industry associations <br className="hidden md:block" />
-                  on WTO law, trade remedies, customs, and regulatory compliance and emerging ESG-related requirements.
+                  on WTO law, FTAs, trade remedies, custom issues, as well as regulatory and ESG compliance.
                 </p>
               ) : (
                 <p className="text-base md:text-lg mb-8 text-[#1a1a1a] leading-relaxed text-center mx-auto max-w-[700px]">
                   We advise governments, manufacturers, exporters, importers, as well <br className="hidden md:block" />
-                  as industry associations on WTO law, trade remedies, customs, and <br className="hidden md:block" />
-                  regulatory compliance, including ESG-related requirements.
+                  as industry associations on WTO law, FTAs, trade remedies, custom <br className="hidden md:block" />
+                  issues, as well as regulatory and ESG compliance.
                 </p>
               )}
             </div>
@@ -410,7 +410,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
             {[
-              { id: '01', title: 'WTO Dispute Settlement', full: 'Representation in complex disputes.', image: '/images/wto-dispute.png', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement', details: 'Advising and representing governments in complex WTO disputes at the State-to-State level.' },
+              { id: '01', title: 'WTO and FTA Dispute Settlement', full: 'Advising and representing governments in complex international trade litigation.', image: '/images/wto-dispute.png', icon: '/images/icon-itd.png', slug: 'wto-dispute-settlement', details: 'Advising and representing governments in complex international trade litigation.' },
               { id: '02', title: 'Trade Defence', full: 'Strategic counsel for protection of market access.', image: '/images/trade-defence.png', icon: '/images/icon-td.png', slug: 'trade-defence', details: 'Representing companies in anti-dumping, anti-subsidy, and safeguard investigations across their full life-cycle, acting for both governments and industry.' },
               { id: '03', title: 'Customs, Sanctions and Export Controls', full: 'Tariffs, valuation & supply chain compliance.', image: '/images/customs.png', icon: '/images/icon-ci.png', slug: 'customs-and-importation', details: 'Optimising for companies on importation issues, and advising them in customs classification, valuation, rules of origin matters, sanctions, export controls, and supply chain risks.' },
               { id: '04', title: 'ESG & Regulatory Advisory', full: 'CBAM, EUDR & similar sustainability policy.', image: '/images/esg-regulatory.png', icon: '/images/icon-esg.png', slug: 'esg-and-regulatory-advisory', details: 'Advising companies and governments on sustainability and ESG frameworks, including CBAM, EUDR, CSDDD, forced labour laws, and supply chain due diligence.' },
@@ -689,20 +689,8 @@ export default function Home() {
                   </h2>
 
                   <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
-                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> (formerly <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute, Bern</strong>), training government officials and students across Europe, Asia, Africa, and South America.
+                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> (and previously at <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute, Bern</strong>); he also trains government officials and students across Europe, Asia, Africa, and South America.
                   </p>
-
-                  <div className="flex flex-wrap gap-4 pt-2">
-                    <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
-                      KU Leuven & ELPO Athens Faculty
-                    </div>
-                    <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
-                      10+ Peer-Reviewed Publications
-                    </div>
-                    <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
-                      Global Capacity Building
-                    </div>
-                  </div>
                 </div>
 
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
@@ -731,20 +719,8 @@ export default function Home() {
                   </h2>
 
                   <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
-                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> (formerly <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute, Bern</strong>), training government officials and students across Europe, Asia, Africa, and South America.
+                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> (and previously at <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute, Bern</strong>); he also trains government officials and students across Europe, Asia, Africa, and South America.
                   </p>
-
-                  <div className="flex flex-wrap gap-4 pt-2">
-                    <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
-                      KU Leuven & ELPO Athens Faculty
-                    </div>
-                    <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
-                      10+ Peer-Reviewed Publications
-                    </div>
-                    <div className="bg-white/80 backdrop-blur border border-[var(--brand-peach)]/50 rounded-xl px-4 py-3 text-sm font-semibold text-[var(--brand-maroon-dark)] shadow-sm">
-                      Global Capacity Building
-                    </div>
-                  </div>
                 </div>
 
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">

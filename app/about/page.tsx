@@ -77,9 +77,9 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
               >
-                <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry.</p>
+                <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry</p>
                 <p className="text-lg leading-relaxed mb-8 text-[var(--brand-maroon-light)]">
-                  Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience litigating trade disputes.
+                  Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience litigating international trade disputes, representing clients in trade remedy investigations, and advising governments and companies on trade-related ESG mandates.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
@@ -120,9 +120,9 @@ export default function AboutPage() {
               </div>
 
               <div className="w-full md:w-7/12 flex flex-col">
-                <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry.</p>
+                <p className="text-2xl font-bold mb-4 text-[var(--brand-maroon-dark)] leading-tight">Counsel to governments and industry</p>
                 <p className="text-lg leading-relaxed mb-8 text-[var(--brand-maroon-light)]">
-                  Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience litigating trade disputes.
+                  Licensed to practice in India and registered at the Brussels Bar. More than a decade of experience litigating international trade disputes, representing clients in trade remedy investigations, and advising governments and companies on trade-related ESG mandates.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">

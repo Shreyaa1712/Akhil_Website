@@ -115,12 +115,20 @@ export default function AcademicPage() {
       <section id="academic-section-top" className="max-w-7xl mx-auto px-6 pt-6 pb-12 scroll-mt-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
           {/* Left Side: Main Statement & Stats */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 text-[var(--brand-maroon-light)] p-8 md:p-10 ">
-            <div>
-              <div className="flex items-center gap-3 text-[var(--brand-maroon)] font-bold text-sm uppercase tracking-wider mb-4">
-                <span></span>
+          <div className="lg:col-span-5 text-[var(--brand-maroon-light)] p-4 sm:p-6 md:p-8">
+            {/* Academic Photo */}
+            <div className="relative group mb-8">
+              <div className="absolute inset-0 bg-[var(--brand-maroon)] rounded-2xl transform translate-x-3 translate-y-3 -z-10 opacity-20 transition-transform duration-300 group-hover:translate-x-4 group-hover:translate-y-4"></div>
+              <div className="relative overflow-hidden rounded-2xl border border-[var(--brand-peach)]/60 bg-white shadow-xl">
+                <img
+                  src="/images/dr-raina-academic.jpg"
+                  alt="Dr. Akhil Raina lecturing at Vrije Universiteit Brussel"
+                  className="w-full aspect-[4/5] object-cover object-[center_28%] transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-              
+            </div>
+
+            <div>
               <p className="text-base md:text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-6">
                 Dr. Raina's academic work runs alongside his legal practice. He teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>.
               </p>

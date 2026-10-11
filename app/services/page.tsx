@@ -8,11 +8,11 @@ const animEnabled = process.env.NEXT_PUBLIC_ENABLE_ANIMATIONS === "true";
 const services = [
   {
     id: "01",
-    title: "WTO Dispute Settlement",
+    title: "WTO and FTA Dispute Settlement",
     slug: "wto-dispute-settlement",
     image: "/images/wto-dispute.png",
     icon: "/images/icon-itd.png",
-    description: "Advising and representing governments in complex WTO disputes at the State-to-State level.",
+    description: "Advising and representing governments in complex international trade litigation.",
   },
   {
     id: "02",
