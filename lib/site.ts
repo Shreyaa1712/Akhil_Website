@@ -17,6 +17,8 @@ export const FIRM = {
   url: SITE_URL,
   /** Logo: relative path from /public */
   logoPath: "/images/logo.png",
+  /** OpenGraph landscape image (1200x630): relative path from /public */
+  ogImagePath: "/images/og-image.png",
   email: {
     counsel: "akhil@rainalegal.com",
     assistant: "assistant@rainalegal.com",
@@ -51,17 +53,31 @@ export const FIRM = {
 
 export const KEY_PERSON = {
   name: "Akhil Raina",
+  honorificPrefix: "Dr.",
   jobTitle: "Managing Partner",
   worksFor: FIRM.name,
   email: FIRM.email.counsel,
   /** URL of the About page (canonical page describing him) */
   url: absUrl("/about"),
-  /**
-   * TODO: Fill in the following when available – do NOT invent values.
-   * linkedIn: "https://www.linkedin.com/in/...",
-   * photo: "/images/akhil.jpeg",   (already in repo – confirm the right path)
-   * qualifications: ["PhD (KU Leuven)", "LLM (Spain)", "BSc LLB (India)"],
-   * practiceAreas: ["WTO Law", "Trade Defence", "Customs", "Trade-related ESG"],
-   * otherProfileUrls: [],
-   */
+  photo: "/images/akhil.jpeg",
+  linkedIn: "https://www.linkedin.com/in/akhilraina/",
+  googleScholar: "https://scholar.google.com/citations?user=WeXVVUsAAAAJ&hl=en",
+  otherProfileUrls: [
+    "https://scholar.google.com/citations?user=WeXVVUsAAAAJ&hl=en",
+  ] as string[],
+  sameAs: [
+    "https://www.linkedin.com/in/akhilraina/",
+    "https://scholar.google.com/citations?user=WeXVVUsAAAAJ&hl=en",
+  ] as string[],
+  qualifications: [
+    "PhD (Belgium; Marie Curie Fellow)",
+    "LLM (Spain; ELSA Scholar)",
+    "BSc, LLB (India; Trade & Inv. Law Honours)",
+  ] as string[],
+  practiceAreas: [
+    "WTO and FTA Dispute Settlement",
+    "Trade Defence",
+    "Customs, Sanctions and Export Controls",
+    "ESG & Regulatory Advisory",
+  ] as string[],
 } as const;

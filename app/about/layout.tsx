@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
-import { FIRM, absUrl } from "@/lib/site";
+import { FIRM, KEY_PERSON, absUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About AR Legal and Akhil Raina, Managing Partner",
@@ -23,15 +23,24 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": absUrl("/about#person"),
-  name: "Akhil Raina",
-  jobTitle: "Managing Partner",
+  name: KEY_PERSON.name,
+  honorificPrefix: KEY_PERSON.honorificPrefix,
+  jobTitle: KEY_PERSON.jobTitle,
   worksFor: {
     "@type": "LegalService",
     "@id": absUrl("/#organization"),
     name: FIRM.name,
   },
-  email: FIRM.email.counsel,
-  url: absUrl("/about"),
+  image: absUrl(KEY_PERSON.photo),
+  email: KEY_PERSON.email,
+  url: KEY_PERSON.url,
+  sameAs: [...KEY_PERSON.sameAs],
+  knowsAbout: [...KEY_PERSON.practiceAreas],
+  hasCredential: KEY_PERSON.qualifications.map((qualification) => ({
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "degree",
+    name: qualification,
+  })),
 };
 
 // ---------- ProfilePage / AboutPage JSON-LD ----------

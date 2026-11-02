@@ -23,7 +23,7 @@ export default function Footer() {
           >
             <Link href="/" className="inline-block group">
               <img
-                src="/apple-icon.png"
+                src="/images/logo.png"
                 alt="AR Legal Logo"
                 className="h-32 md:h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
@@ -32,7 +32,7 @@ export default function Footer() {
         ) : (
           <Link href="/" className="inline-block group">
             <img
-              src="/apple-icon.png"
+              src="/images/logo.png"
               alt="AR Legal Logo"
               className="h-32 md:h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />

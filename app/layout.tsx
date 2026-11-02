@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import JsonLd from "@/components/JsonLd";
-import { FIRM, absUrl } from "@/lib/site";
+import { FIRM, KEY_PERSON, absUrl } from "@/lib/site";
 
 // ---------- Root Metadata ----------
 export const metadata: Metadata = {
@@ -45,8 +45,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absUrl(FIRM.logoPath),
-        alt: "AR Legal Logo",
+        url: absUrl(FIRM.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "AR Legal - International Trade Law",
       },
     ],
   },
@@ -55,11 +57,16 @@ export const metadata: Metadata = {
     title: "AR Legal | Law Firm in Brussels and New Delhi",
     description:
       "A boutique international trade law practice in Brussels and New Delhi, advising on WTO disputes, trade defence, customs, and ESG regulatory mandates.",
-    images: [absUrl(FIRM.logoPath)],
+    images: [absUrl(FIRM.ogImagePath)],
   },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", type: "image/png", sizes: "180x180" },
+    ],
   },
 };
 
@@ -89,8 +96,11 @@ const legalServiceJsonLd = {
   employee: {
     "@type": "Person",
     "@id": absUrl("/about#person"),
-    name: "Akhil Raina",
-    jobTitle: "Managing Partner",
+    name: KEY_PERSON.name,
+    honorificPrefix: KEY_PERSON.honorificPrefix,
+    jobTitle: KEY_PERSON.jobTitle,
+    url: KEY_PERSON.url,
+    sameAs: [...KEY_PERSON.sameAs],
   },
   location: FIRM.offices.map((office) => ({
     "@type": "Place",

@@ -13,7 +13,7 @@ export default function Navbar() {
         {/* Logo Section */}
         <Link href="/" className="flex items-center group">
           <img
-            src="/apple-icon.png"
+            src="/images/logo.png"
             alt="AR Legal Logo"
             className="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
