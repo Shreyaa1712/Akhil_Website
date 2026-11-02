@@ -1,7 +1,11 @@
 import { Metadata } from "next";
+import { absUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | AR Legal",
+  title: "Cookie Policy",
+  description: "AR Legal's cookie policy – information about the cookies we use and how to manage your preferences.",
+  alternates: { canonical: absUrl("/cookie-policy") },
+  robots: { index: false, follow: false },
 };
 
 export default function CookiePolicyPage() {

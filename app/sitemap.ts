@@ -1,23 +1,21 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.arlegal.eu';
-
-  // Define all static routes in the application
-  const staticRoutes = [
-    '',
-    '/about',
-    '/services',
-    '/work',
-    '/academic',
-    '/contact',
-    '/privacy-policy',
-    '/cookie-policy',
+  // No trailing slash – matches next.config.ts (no trailingSlash: true set)
+  const routes = [
+    { path: '',          priority: 1.0, freq: 'weekly'  as const },
+    { path: '/about',    priority: 0.9, freq: 'monthly' as const },
+    { path: '/services', priority: 0.9, freq: 'monthly' as const },
+    { path: '/work',     priority: 0.8, freq: 'monthly' as const },
+    { path: '/academic', priority: 0.8, freq: 'monthly' as const },
+    { path: '/contact',  priority: 0.8, freq: 'monthly' as const },
+    { path: '/privacy-policy', priority: 0.3, freq: 'yearly' as const },
+    { path: '/cookie-policy',  priority: 0.3, freq: 'yearly' as const },
   ];
 
-  // Define dynamic service slugs
   const serviceSlugs = [
     'wto-dispute-settlement',
     'trade-defence',
@@ -25,19 +23,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'esg-and-regulatory-advisory',
   ];
 
-  const routes = staticRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
+  const staticEntries: MetadataRoute.Sitemap = routes.map(({ path, priority, freq }) => ({
+    url: `${SITE_URL}${path}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'weekly' as const : 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: freq,
+    priority,
   }));
 
-  const serviceRoutes = serviceSlugs.map((slug) => ({
-    url: `${baseUrl}/services/${slug}`,
+  const serviceEntries: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
+    url: `${SITE_URL}/services/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: 0.9,
+    priority: 0.85,
   }));
 
-  return [...routes, ...serviceRoutes];
+  return [...staticEntries, ...serviceEntries];
 }

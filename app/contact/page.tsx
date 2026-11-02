@@ -1,8 +1,23 @@
 import { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { FIRM, absUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Us | AR Legal",
-  description: "Contact AR Legal. Offices in Brussels and New Delhi.",
+  title: "Contact",
+  description:
+    "Contact AR Legal. Offices in Brussels (Avenue de Tervueren 257) and New Delhi (Greater Kailash Part 2). Reach Dr. Akhil Raina at akhil@rainalegal.com or +32 487 136 150.",
+  alternates: {
+    canonical: absUrl("/contact"),
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+    { "@type": "ListItem", position: 2, name: "Contact", item: absUrl("/contact") },
+  ],
 };
 
 const MailIcon = ({ className }: { className?: string }) => (
@@ -19,7 +34,9 @@ const MapPinIcon = ({ className }: { className?: string }) => (
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col items-center bg-[var(--brand-light)] min-h-[calc(100vh-80px)] text-[var(--brand-maroon-dark)]">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <div className="flex flex-col items-center bg-[var(--brand-light)] min-h-[calc(100vh-80px)] text-[var(--brand-maroon-dark)]">
       
       {/* Hero Section */}
       <section className="relative w-full px-6 py-16 md:py-24 flex flex-col items-center text-center overflow-hidden flex-grow">
@@ -122,5 +139,6 @@ export default function ContactPage() {
       </section>
 
     </div>
+    </>
   );
 }

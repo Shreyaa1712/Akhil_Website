@@ -1,17 +1,35 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import AnimatedStat from "@/components/AnimatedStat";
 import AcademicPublications from "@/components/AcademicPublications";
-
-export const dynamic = "force-static";
+import JsonLd from "@/components/JsonLd";
+import { absUrl } from "@/lib/site";
 
 const ArrowRight = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
 );
 
-export const metadata = {
-  title: "Academics | AR Legal",
-  description: "Dr. Akhil Raina's academic endeavours, teaching at KU Leuven & ELPO Athens, research, and selected publications in international trade law.",
+export const dynamic = "force-static";
+
+export const metadata: Metadata = {
+  title: "Academics",
+  description:
+    "Dr. Akhil Raina's academic work alongside his legal practice. He teaches at KU Leuven and has previously taught at the World Trade Institute (University of Bern). Research published by Oxford and Cambridge.",
+  alternates: {
+    canonical: absUrl("/academic"),
+  },
 };
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+    { "@type": "ListItem", position: 2, name: "Academics", item: absUrl("/academic") },
+  ],
+};
+
+
 
 const publications = [
   {
@@ -96,7 +114,9 @@ const publications = [
 
 export default function AcademicPage() {
   return (
-    <div className="w-full bg-[var(--brand-light)] text-[var(--brand-maroon-dark)] pb-24">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <div className="w-full bg-[var(--brand-light)] text-[var(--brand-maroon-dark)] pb-24">
       {/* Hero Section */}
       <section className="relative w-full py-4 md:py-5 bg-gradient-to-b from-[var(--brand-peach)]/30 to-[var(--brand-light)] border-b border-[var(--brand-peach)]/40 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -130,7 +150,7 @@ export default function AcademicPage() {
 
             <div>
               <p className="text-base md:text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-6">
-                Dr. Raina's academic work runs alongside his legal practice. He teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>.
+                Dr. Raina's academic work runs alongside his legal practice. He teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>.
               </p>
               <p className="text-base md:text-lg text-[var(--brand-maroon-light)] leading-relaxed mb-8">
                 He supervises master's dissertations and regularly publishes with leading academic presses. He teaches university students and trains government officials across <strong className="text-[var(--brand-maroon-dark)]">Europe, Asia, Africa, and South America</strong>.
@@ -151,5 +171,6 @@ export default function AcademicPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

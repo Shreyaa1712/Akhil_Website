@@ -1,7 +1,11 @@
 import { Metadata } from "next";
+import { absUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | AR Legal",
+  title: "Privacy Policy",
+  description: "AR Legal's privacy policy – how we collect, use and protect your personal data in accordance with Belgian and EU data protection law.",
+  alternates: { canonical: absUrl("/privacy-policy") },
+  robots: { index: false, follow: false },
 };
 
 export default function PrivacyPolicyPage() {

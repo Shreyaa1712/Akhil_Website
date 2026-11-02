@@ -105,7 +105,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-sm font-bold mb-3 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Academia</h3>
                   <p className="text-sm leading-relaxed text-[var(--brand-maroon-light)]">
-                    Dr. Raina&apos;s academic work runs alongside his legal practice and forms an integral part of his professional work. His research has been published by Oxford University Press and Cambridge University Press, and he has taught at institutions including KU Leuven in Belgium and the World Trade Institute in Switzerland, with teaching engagements in Greece and India as well. He has also trained students and government officials across Europe, Asia, Africa, and South America.
+                    Dr. Raina&apos;s academic work runs alongside his legal practice and forms an integral part of his professional work. His research has been published by Oxford and Cambridge, and he has taught at institutions including KU Leuven in Belgium and the World Trade Institute in Switzerland, with teaching engagements in India as well. He has trained students and government officials across Europe, Asia, Africa, and South America.
                   </p>
                 </div>
               </motion.div>
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-sm font-bold mb-3 uppercase tracking-widest text-[var(--brand-maroon)] border-b border-[var(--brand-peach)] pb-2">Academia</h3>
                   <p className="text-sm leading-relaxed text-[var(--brand-maroon-light)]">
-                    Dr. Raina&apos;s academic work runs alongside his legal practice and forms an integral part of his professional work. His research has been published by Oxford University Press and Cambridge University Press, and he has taught at institutions including KU Leuven in Belgium and the World Trade Institute in Switzerland, with teaching engagements in Greece and India as well. He has also trained students and government officials across Europe, Asia, Africa, and South America.
+                    Dr. Raina&apos;s academic work runs alongside his legal practice and forms an integral part of his professional work. His research has been published by Oxford and Cambridge, and he has taught at institutions including KU Leuven in Belgium and the World Trade Institute in Switzerland, with teaching engagements in India as well. He has trained students and government officials across Europe, Asia, Africa, and South America.
                   </p>
                 </div>
               </div>

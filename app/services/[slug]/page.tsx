@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { absUrl } from "@/lib/site";
 
 const servicesData = {
   "wto-dispute-settlement": {
@@ -41,9 +43,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const service = servicesData[slug as keyof typeof servicesData];
   if (!service) return { title: "Service Not Found" };
+  const description = service.content.length > 155
+    ? service.content.substring(0, 152) + "..."
+    : service.content;
   return {
-    title: `${service.title} | AR Legal`,
-    description: service.content.substring(0, 160) + "...",
+    title: service.title,
+    description,
+    alternates: {
+      canonical: absUrl(`/services/${slug}`),
+    },
   };
 }
 
@@ -55,8 +63,20 @@ export default async function ServicePage({ params }: Params) {
     notFound();
   }
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: absUrl("/") },
+      { "@type": "ListItem", position: 2, name: "Services", item: absUrl("/services") },
+      { "@type": "ListItem", position: 3, name: service!.title, item: absUrl(`/services/${slug}`) },
+    ],
+  };
+
   return (
-    <div className="bg-[var(--brand-light)] min-h-screen text-black pb-12">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <div className="bg-[var(--brand-light)] min-h-screen text-black pb-12">
       <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="mb-8">
           <Link href="/services" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[var(--brand-maroon)] opacity-90 hover:opacity-100 transition-opacity">
@@ -87,5 +107,6 @@ export default async function ServicePage({ params }: Params) {
         </div>
       </div>
     </div>
+    </>
   );
 }
