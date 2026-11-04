@@ -689,7 +689,7 @@ export default function Home() {
                   </h2>
 
                   <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
-                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> (and previously at <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute, Bern</strong>); he also trains government officials and students across Europe, Asia, Africa, and South America.
+                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>; he also trains government officials and students across Europe, Asia, Africa, and South America.
                   </p>
                 </div>
 
@@ -719,7 +719,7 @@ export default function Home() {
                   </h2>
 
                   <p className="text-lg text-[var(--brand-maroon-light)] leading-relaxed">
-                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and <strong className="text-[var(--brand-maroon-dark)]">ELPO Athens</strong> (and previously at <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute, Bern</strong>); he also trains government officials and students across Europe, Asia, Africa, and South America.
+                    Teaching, research, and publication are integrated into our legal practice. Dr. Akhil Raina teaches at <strong className="text-[var(--brand-maroon-dark)]">KU Leuven</strong> and has previously taught at the <strong className="text-[var(--brand-maroon-dark)]">World Trade Institute (University of Bern)</strong>; he also trains government officials and students across Europe, Asia, Africa, and South America.
                   </p>
                 </div>
 
